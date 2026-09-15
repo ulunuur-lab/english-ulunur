@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary: 79 70 229;     /* indigo-600 */
+    --color-primary-dark: 67 56 202; /* indigo-700 */
+    --color-accent: 124 58 237;      /* violet-600 */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-slate-900;
+  }
+}
+
+/* Custom scrollbar */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+}
+
+/* Markdown content styling */
+.prose-lesson h1 {
+  @apply text-2xl font-bold text-slate-900 mb-4 mt-6 border-b border-slate-200 pb-2;
+}
+.prose-lesson h2 {
+  @apply text-xl font-semibold text-slate-800 mb-3 mt-5;
+}
+.prose-lesson h3 {
+  @apply text-lg font-semibold text-slate-700 mb-2 mt-4;
+}
+.prose-lesson p {
+  @apply mb-3 leading-relaxed text-slate-700;
+}
+.prose-lesson ul, .prose-lesson ol {
+  @apply mb-3 pl-6;
+}
+.prose-lesson ul {
+  @apply list-disc;
+}
+.prose-lesson ol {
+  @apply list-decimal;
+}
+.prose-lesson li {
+  @apply mb-1 text-slate-700;
+}
+.prose-lesson strong {
+  @apply font-bold text-slate-900;
+}
+.prose-lesson blockquote {
+  @apply border-l-4 border-indigo-400 bg-indigo-50 pl-4 py-2 my-3 rounded-r-lg;
+}
+.prose-lesson code {
+  @apply bg-slate-100 text-indigo-600 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+.prose-lesson pre {
+  @apply bg-slate-800 text-slate-100 p-4 rounded-lg overflow-x-auto my-4;
+}
+.prose-lesson hr {
+  @apply border-slate-200 my-6;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Pulse glow for streak */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(99, 102, 241, 0); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite;
 }

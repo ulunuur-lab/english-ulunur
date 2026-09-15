@@ -1,0 +1,222 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id           Int        @id @default(autoincrement())
+  name         String
+  email        String     @unique
+  passwordHash String
+  role         String     @default("student") // "teacher" | "student"
+  createdAt    DateTime   @default(now())
+
+  homeworks          Homework[]
+  notes              Note[]
+  progress           Progress[]
+  userTopicProgress  UserTopicProgress[]
+  levelChecks        LevelCheck[]
+}
+
+model Lesson {
+  id          Int             @id @default(autoincrement())
+  title       String
+  skill       String          // grammar | vocabulary | reading | listening | writing | speaking
+  content     String          // markdown content
+  orderIndex  Int             @default(0)
+  isPublished Boolean         @default(false)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  progress    LessonProgress[]
+}
+
+model LessonProgress {
+  id          Int      @id @default(autoincrement())
+  lessonId    Int
+  userId      Int
+  isCompleted Boolean  @default(false)
+  completedAt DateTime?
+
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([lessonId, userId])
+}
+
+model Homework {
+  id              Int      @id @default(autoincrement())
+  title           String
+  instructions    String   // markdown
+  type            String   // written | fill_blank | upload
+  dueDate         DateTime
+  status          String   @default("assigned") // assigned | in_progress | submitted | reviewed
+  studentResponse String?
+  fileUrl         String?
+  teacherFeedback String?
+  score           Int?
+  assignedToId    Int
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  assignedTo User @relation(fields: [assignedToId], references: [id])
+}
+
+model VocabList {
+  id    Int         @id @default(autoincrement())
+  topic String
+  description String?
+  createdAt DateTime @default(now())
+
+  cards VocabCard[]
+}
+
+model VocabCard {
+  id              Int     @id @default(autoincrement())
+  listId          Int
+  word            String
+  definition      String
+  exampleSentence String?
+  audioUrl        String?
+
+  list     VocabList      @relation(fields: [listId], references: [id], onDelete: Cascade)
+  progress VocabProgress?
+}
+
+model VocabProgress {
+  id          Int      @id @default(autoincrement())
+  cardId      Int      @unique
+  easeFactor  Float    @default(2.5)
+  interval    Int      @default(0)    // days
+  repetitions Int      @default(0)
+  nextReview  DateTime @default(now())
+  lastReview  DateTime?
+
+  card VocabCard @relation(fields: [cardId], references: [id], onDelete: Cascade)
+}
+
+model Test {
+  id              Int            @id @default(autoincrement())
+  title           String
+  timeLimitMinutes Int?
+  isPublished     Boolean        @default(false)
+  createdAt       DateTime       @default(now())
+
+  questions TestQuestion[]
+  results   TestResult[]
+}
+
+model TestQuestion {
+  id            Int    @id @default(autoincrement())
+  testId        Int
+  type          String // mcq | fill_blank | match | reorder | short_answer
+  questionText  String
+  questionData  String // JSON for options, pairs, etc.
+  correctAnswer String
+
+  test Test @relation(fields: [testId], references: [id], onDelete: Cascade)
+}
+
+model TestResult {
+  id          Int      @id @default(autoincrement())
+  testId      Int
+  score       Int
+  totalPoints Int
+  answers     String   // JSON
+  completedAt DateTime @default(now())
+
+  test Test @relation(fields: [testId], references: [id], onDelete: Cascade)
+}
+
+model Progress {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  skill     String   // reading | writing | listening | speaking | grammar | vocabulary
+  score     Int      @default(0) // 0-100
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, skill])
+}
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  authorId  Int
+  content   String
+  isPinned  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  author User @relation(fields: [authorId], references: [id])
+}
+
+model Resource {
+  id        Int      @id @default(autoincrement())
+  title     String
+  type      String   // pdf | audio | video | link
+  url       String
+  skill     String?
+  topic     String?
+  createdAt DateTime @default(now())
+}
+
+model ActivityLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  action    String   // lesson_completed | homework_submitted | vocab_reviewed | test_completed
+  details   String?  // JSON with extra info
+  createdAt DateTime @default(now())
+}
+
+model Streak {
+  id            Int      @id @default(autoincrement())
+  userId        Int      @unique
+  currentStreak Int      @default(0)
+  longestStreak Int      @default(0)
+  lastActiveDate DateTime?
+}
+
+model RoadmapTopic {
+  id          Int      @id @default(autoincrement())
+  world       Int      // 1 to 5
+  orderIndex  Int      // 1 to 60
+  title       String
+  description String
+  skill       String   // grammar | vocabulary | reading | writing | speaking
+  lessonId    Int?
+  isBoss      Boolean  @default(false)
+  quizData    String?  // JSON array of interactive practice questions
+
+  userProgress UserTopicProgress[]
+}
+
+model UserTopicProgress {
+  id          Int          @id @default(autoincrement())
+  userId      Int
+  topicId     Int
+  status      String       @default("locked") // locked | unlocked | completed
+  score       Int?
+  completedAt DateTime?
+
+  topic RoadmapTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  user  User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, topicId])
+}
+
+model LevelCheck {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  type        String   // "diagnostic" | "weekly"
+  weekNumber  Int?
+  score       Int
+  levelResult String   // "B1.1" | "B1.2" | "B1+" | "B2.1" | "B2+"
+  breakdown   String   // JSON of sub-skill results
+  completedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
