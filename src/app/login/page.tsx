@@ -3,14 +3,17 @@ import { getSession } from "@/lib/auth";
 import LoginForm from "./LoginForm";
 
 export default async function LoginPage() {
-  const session = await getSession();
-
-  if (session.isLoggedIn) {
-    if (session.role === "teacher") {
-      redirect("/teacher");
-    } else {
-      redirect("/dashboard");
+  try {
+    const session = await getSession();
+    if (session.isLoggedIn) {
+      if (session.role === "teacher") {
+        redirect("/teacher");
+      } else {
+        redirect("/dashboard");
+      }
     }
+  } catch (e) {
+    // If not logged in or session error, stay on login page
   }
 
   return (
