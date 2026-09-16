@@ -1,20 +1,5 @@
-import { redirect } from "next/navigation";
-import { getSession } from "@/lib/auth";
+import DiagnosticLanding from "./DiagnosticLanding";
 
-export default async function Home() {
-  try {
-    const session = await getSession();
-
-    if (!session.isLoggedIn) {
-      redirect("/login");
-    }
-
-    if (session.role === "teacher") {
-      redirect("/teacher");
-    } else {
-      redirect("/dashboard");
-    }
-  } catch (e) {
-    redirect("/login");
-  }
+export default function HomePage() {
+  return <DiagnosticLanding />;
 }
