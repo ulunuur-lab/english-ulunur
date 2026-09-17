@@ -649,48 +649,48 @@
     const TELEGRAM_BOT_TOKEN = "8828359607:AAFEpXaJusqaorQtIhd2sDMm4enaVWxnmuY";
     const TELEGRAM_CHAT_ID = "7957347033";
 
-    // 35 SOF LUG'AT SAVOLLARI (INGLIZCHA -> O'ZBEKCHA)
+    // 35 REALISTIK VA QULAY LUG'AT SAVOLLARI (INGLIZCHA -> O'ZBEKCHA)
     const VOCAB_DATA = [
-      // --- 1-10: A2 DARАJA (Boshlang'ich) ---
-      { id: 1, tier: 1, tierName: "A2 Baza", word: "afford", pos: "fe'l", ans: "qurbi yetmoq / puli yetmoq", opts: ["qurbi yetmoq / puli yetmoq", "qarz bermoq", "sotib yubormoq", "tejamoq"] },
-      { id: 2, tier: 1, tierName: "A2 Baza", word: "borrow", pos: "fe'l", ans: "qarzga olmoq (vaqtincha)", opts: ["sovg'a qilmoq", "qarzga olmoq (vaqtincha)", "qarz bermoq", "topib olmoq"] },
-      { id: 3, tier: 1, tierName: "A2 Baza", word: "improve", pos: "fe'l", ans: "yaxshilamoq / rivojlantirmoq", opts: ["yaxshilamoq / rivojlantirmoq", "buzmoq", "tugatmoq", "o'zgartirmaslik"] },
-      { id: 4, tier: 1, tierName: "A2 Baza", word: "decide", pos: "fe'l", ans: "qaror qilmoq", opts: ["shubhalanmoq", "rad etmoq", "qaror qilmoq", "taklif qilmoq"] },
-      { id: 5, tier: 1, tierName: "A2 Baza", word: "complain", pos: "fe'l", ans: "shikoyat qilmoq", opts: ["maqtamoq", "shikoyat qilmoq", "minnatdor bo'lmoq", "tushuntirmoq"] },
-      { id: 6, tier: 1, tierName: "A2 Baza", word: "refuse", pos: "fe'l", ans: "rad etmoq / yo'q demoq", opts: ["rad etmoq / yo'q demoq", "qabul qilmoq", "ruxsat bermoq", "yordam bermoq"] },
-      { id: 7, tier: 1, tierName: "A2 Baza", word: "convenient", pos: "sifat", ans: "qulay (vaqt/joy bo'yicha)", opts: ["xavfli", "qulay (vaqt/joy bo'yicha)", "qimmat", "uzoq"] },
-      { id: 8, tier: 1, tierName: "A2 Baza", word: "proud", pos: "sifat", ans: "faxrlangan / mag'rur", opts: ["uyalgan", "qo'rqqan", "faxrlangan / mag'rur", "g'amgin"] },
-      { id: 9, tier: 1, tierName: "A2 Baza", word: "advice", pos: "ot", ans: "maslahat", opts: ["maslahat", "xabar", "qoida", "vazifa"] },
-      { id: 10, tier: 1, tierName: "A2 Baza", word: "notice", pos: "fe'l", ans: "payqamoq / sezib qolmoq", opts: ["e'tibor bermaslik", "payqamoq / sezib qolmoq", "unutmoq", "yo'qotmoq"] },
+      // --- 1-10: A1/A2 BAZA (Kundalik eng oddiy so'zlar) ---
+      { id: 1, tier: 1, tierName: "A1/A2 Baza", word: "choose", pos: "fe'l", ans: "tanlamoq", opts: ["tanlamoq", "sotmoq", "yozmoq", "kutmoq"] },
+      { id: 2, tier: 1, tierName: "A1/A2 Baza", word: "forget", pos: "fe'l", ans: "unutmoq / esdan chiqarmoq", opts: ["eslamoq", "unutmoq / esdan chiqarmoq", "topmoq", "bormoq"] },
+      { id: 3, tier: 1, tierName: "A1/A2 Baza", word: "invite", pos: "fe'l", ans: "taklif qilmoq", opts: ["taklif qilmoq", "haydamoq", "to'xtatmoq", "sotib olmoq"] },
+      { id: 4, tier: 1, tierName: "A1/A2 Baza", word: "expensive", pos: "sifat", ans: "qimmat", opts: ["arzon", "eski", "qimmat", "chiroyli"] },
+      { id: 5, tier: 1, tierName: "A1/A2 Baza", word: "dangerous", pos: "sifat", ans: "xavfli", opts: ["xavfli", "qiziqarli", "tinch", "tez"] },
+      { id: 6, tier: 1, tierName: "A1/A2 Baza", word: "angry", pos: "sifat", ans: "jahldor / achchiqlangan", opts: ["xursand", "charchagan", "jahldor / achchiqlangan", "och qolgan"] },
+      { id: 7, tier: 1, tierName: "A1/A2 Baza", word: "explain", pos: "fe'l", ans: "tushuntirmoq", opts: ["tinglamoq", "tushuntirmoq", "yashirmoq", "qidirmoq"] },
+      { id: 8, tier: 1, tierName: "A1/A2 Baza", word: "delicious", pos: "sifat", ans: "mazali / shirin", opts: ["issiq", "achchiq", "mazali / shirin", "quruq"] },
+      { id: 9, tier: 1, tierName: "A1/A2 Baza", word: "wait", pos: "fe'l", ans: "kutmoq", opts: ["yugurmoq", "kutmoq", "uxlamoq", "gapirmoq"] },
+      { id: 10, tier: 1, tierName: "A1/A2 Baza", word: "healthy", pos: "sifat", ans: "sog'lom / foydali", opts: ["kasal", "sog'lom / foydali", "zaif", "qiyin"] },
 
-      // --- 11-25: B1 DARAJA (O'rta) ---
-      { id: 11, tier: 2, tierName: "B1 O'rta", word: "hesitate", pos: "fe'l", ans: "ikkilanmoq", opts: ["shoshilmoq", "ikkilanmoq", "rozi bo'lmoq", "unutmoq"] },
-      { id: 12, tier: 2, tierName: "B1 O'rta", word: "achieve", pos: "fe'l", ans: "erishmoq / qo'lga kiritmoq", opts: ["erishmoq / qo'lga kiritmoq", "yo'qotmoq", "kechikmoq", "qidirmoq"] },
-      { id: 13, tier: 2, tierName: "B1 O'rta", word: "disappointed", pos: "sifat", ans: "hafsalasi pir bo'lgan", opts: ["xursand bo'lgan", "hafsalasi pir bo'lgan", "hayratda qolgan", "charchagan"] },
-      { id: 14, tier: 2, tierName: "B1 O'rta", word: "anxious", pos: "sifat", ans: "xavotirli / bezovta", opts: ["xotirjam", "qiziqqon", "xavotirli / bezovta", "befarq"] },
-      { id: 15, tier: 2, tierName: "B1 O'rta", word: "essential", pos: "sifat", ans: "o'ta muhim / zarur", opts: ["ortiqcha", "o'ta muhim / zarur", "arzon", "tasodifiy"] },
-      { id: 16, tier: 2, tierName: "B1 O'rta", word: "encourage", pos: "fe'l", ans: "ruhlantirmoq / dalda bermoq", opts: ["ruhlantirmoq / dalda bermoq", "to'xtatib qolmoq", "tanqid qilmoq", "qo'rqitmoq"] },
-      { id: 17, tier: 2, tierName: "B1 O'rta", word: "predict", pos: "fe'l", ans: "oldindan aytib bermoq", opts: ["tasdiqlamoq", "eslab qolmoq", "oldindan aytib bermoq", "rad etmoq"] },
-      { id: 18, tier: 2, tierName: "B1 O'rta", word: "rarely", pos: "ravish", ans: "kamdan-kam / kam hollarda", opts: ["tez-tez", "kamdan-kam / kam hollarda", "har doim", "har kuni"] },
-      { id: 19, tier: 2, tierName: "B1 O'rta", word: "cope with", pos: "ibora / fe'l", ans: "eplamoq / yengib o'tmoq", opts: ["qochib ketmoq", "taslim bo'lmoq", "eplamoq / yengib o'tmoq", "e'tibor bermaslik"] },
-      { id: 20, tier: 2, tierName: "B1 O'rta", word: "reliable", pos: "sifat", ans: "ishonchli / suyansa bo'ladigan", opts: ["ishonchli / suyansa bo'ladigan", "xiyonatkor", "kuchsiz", "qo'pol"] },
-      { id: 21, tier: 2, tierName: "B1 O'rta", word: "opportunity", pos: "ot", ans: "imkoniyat / qulay vaziyat", opts: ["xavf-xatar", "to'siq", "reja", "imkoniyat / qulay vaziyat"] },
-      { id: 22, tier: 2, tierName: "B1 O'rta", word: "fluent", pos: "sifat", ans: "ravon / erkin (gapiradigan)", opts: ["sekin", "ravon / erkin (gapiradigan)", "qiyin", "chalkash"] },
-      { id: 23, tier: 2, tierName: "B1 O'rta", word: "persuade", pos: "fe'l", ans: "ko'ndirmoq / ishontirmoq", opts: ["ko'ndirmoq / ishontirmoq", "buyruq bermoq", "jazolamoq", "aldamoq"] },
-      { id: 24, tier: 2, tierName: "B1 O'rta", word: "put off", pos: "ibora / fe'l", ans: "kechiktirmoq / keyinga qoldirmoq", opts: ["boshlamoq", "kechiktirmoq / keyinga qoldirmoq", "bekor qilmoq", "tezlashtirmoq"] },
-      { id: 25, tier: 2, tierName: "B1 O'rta", word: "curious", pos: "sifat", ans: "qiziquvchan / bilishga intiluvchan", opts: ["jahldor", "beparvo", "xavotirli", "qiziquvchan / bilishga intiluvchan"] },
+      // --- 11-25: A2/B1 DARAJA (Jonli muloqot so'zlari) ---
+      { id: 11, tier: 2, tierName: "A2/B1 O'rta", word: "decide", pos: "fe'l", ans: "qaror qilmoq", opts: ["shubhalanmoq", "rad etmoq", "qaror qilmoq", "taklif qilmoq"] },
+      { id: 12, tier: 2, tierName: "A2/B1 O'rta", word: "arrive", pos: "fe'l", ans: "yetib kelmoq", opts: ["jo'nab ketmoq", "yetib kelmoq", "yo'qolmoq", "qaytmoq"] },
+      { id: 13, tier: 2, tierName: "A2/B1 O'rta", word: "borrow", pos: "fe'l", ans: "qarzga olmoq (vaqtincha)", opts: ["sovg'a qilmoq", "qarzga olmoq (vaqtincha)", "qarz bermoq", "topib olmoq"] },
+      { id: 14, tier: 2, tierName: "A2/B1 O'rta", word: "prepare", pos: "fe'l", ans: "tayyorlanmoq / tayyorlamoq", opts: ["buzmoq", "tayyorlanmoq / tayyorlamoq", "unutmoq", "kechikmoq"] },
+      { id: 15, tier: 2, tierName: "A2/B1 O'rta", word: "promise", pos: "fe'l", ans: "va'da bermoq", opts: ["so'ramoq", "va'da bermoq", "inkor qilmoq", "buyurmoq"] },
+      { id: 16, tier: 2, tierName: "A2/B1 O'rta", word: "complain", pos: "fe'l", ans: "shikoyat qilmoq", opts: ["maqtamoq", "shikoyat qilmoq", "minnatdor bo'lmoq", "kulmoq"] },
+      { id: 17, tier: 2, tierName: "A2/B1 O'rta", word: "simple", pos: "sifat", ans: "oddiy / sodda", opts: ["og'ir", "chalkash", "oddiy / sodda", "uzoq"] },
+      { id: 18, tier: 2, tierName: "A2/B1 O'rta", word: "proud", pos: "sifat", ans: "faxrlangan / mag'rur", opts: ["uyalgan", "qo'rqqan", "faxrlangan / mag'rur", "g'amgin"] },
+      { id: 19, tier: 2, tierName: "A2/B1 O'rta", word: "notice", pos: "fe'l", ans: "payqamoq / sezib qolmoq", opts: ["e'tiborsiz qoldirmoq", "payqamoq / sezib qolmoq", "unutmoq", "yo'qotmoq"] },
+      { id: 20, tier: 2, tierName: "A2/B1 O'rta", word: "busy", pos: "sifat", ans: "band / bo'sh emas", opts: ["erkin", "zerikarli", "band / bo'sh emas", "sekin"] },
+      { id: 21, tier: 2, tierName: "A2/B1 O'rta", word: "happen", pos: "fe'l", ans: "sodir bo'lmoq / bo'lmoq", opts: ["boshlanmoq", "sodir bo'lmoq / bo'lmoq", "tugamoq", "yo'qolmoq"] },
+      { id: 22, tier: 2, tierName: "A2/B1 O'rta", word: "spend", pos: "fe'l", ans: "sarflamoq (vaqt/pul)", opts: ["topmoq", "tejamoq", "sarflamoq (vaqt/pul)", "sovg'a qilmoq"] },
+      { id: 23, tier: 2, tierName: "A2/B1 O'rta", word: "remember", pos: "fe'l", ans: "eslamoq / yodda tutmoq", opts: ["unutmoq", "eslamoq / yodda tutmoq", "tushuntirmoq", "so'ramoq"] },
+      { id: 24, tier: 2, tierName: "A2/B1 O'rta", word: "change", pos: "fe'l", ans: "o'zgarmoq / o'zgartirmoq", opts: ["saqlab qolmoq", "o'zgarmoq / o'zgartirmoq", "buzmoq", "to'xtamoq"] },
+      { id: 25, tier: 2, tierName: "A2/B1 O'rta", word: "prefer", pos: "fe'l", ans: "afzal ko'rmoq", opts: ["yomon ko'rmoq", "afzal ko'rmoq", "rad etmoq", "qo'rqmoq"] },
 
-      // --- 26-35: B2 DARAJA (Yuqori O'rta) ---
-      { id: 26, tier: 3, tierName: "B2 Murakkab", word: "reluctant", pos: "sifat", ans: "istaksiz / xohlamay turgan", opts: ["istaksiz / xohlamay turgan", "quvnoq", "g'ayratli", "chaqqon"] },
-      { id: 27, tier: 3, tierName: "B2 Murakkab", word: "consequence", pos: "ot", ans: "oqibat / natija", opts: ["sabab", "oqibat / natija", "boshlanish", "xato"] },
-      { id: 28, tier: 3, tierName: "B2 Murakkab", word: "crucial", pos: "sifat", ans: "hal qiluvchi / o'ta muhim", opts: ["oddiy", "ahamiyatsiz", "hal qiluvchi / o'ta muhim", "ikkinchi darajali"] },
-      { id: 29, tier: 3, tierName: "B2 Murakkab", word: "boost", pos: "fe'l", ans: "oshirmoq / kuchaytirmoq", opts: ["oshirmoq / kuchaytirmoq", "kamaytirmoq", "to'xtatmoq", "yo'qotmoq"] },
-      { id: 30, tier: 3, tierName: "B2 Murakkab", word: "setback", pos: "ot", ans: "to'siq / orqaga ketish", opts: ["yutuq", "mukofot", "to'siq / orqaga ketish", "tezlashuv"] },
-      { id: 31, tier: 3, tierName: "B2 Murakkab", word: "accurate", pos: "sifat", ans: "aniq / to'g'ri / xatosiz", opts: ["taxminiy", "umumiy", "noaniq", "aniq / to'g'ri / xatosiz"] },
-      { id: 32, tier: 3, tierName: "B2 Murakkab", word: "emphasize", pos: "fe'l", ans: "alohida ta'kidlamoq", opts: ["alohida ta'kidlamoq", "inkor qilmoq", "sir saqlamoq", "shivirlamoq"] },
-      { id: 33, tier: 3, tierName: "B2 Murakkab", word: "broaden", pos: "fe'l", ans: "kengaytirmoq", opts: ["toraytirmoq", "kengaytirmoq", "qisqartirmoq", "to'smoq"] },
-      { id: 34, tier: 3, tierName: "B2 Murakkab", word: "thoroughly", pos: "ravish", ans: "to'liq / puxta / ipidan-ignasigacha", opts: ["yuzaki", "qisman", "shoshilinch", "to'liq / puxta / ipidan-ignasigacha"] },
-      { id: 35, tier: 3, tierName: "B2 Murakkab", word: "temporary", pos: "sifat", ans: "vaqtinchalik", opts: ["doimiy / abadiy", "vaqtinchalik", "qat'iy", "o'zgarmas"] }
+      // --- 26-35: B1 DARAJA (Mustahkam poydevor) ---
+      { id: 26, tier: 3, tierName: "B1 Bosqich", word: "improve", pos: "fe'l", ans: "yaxshilamoq / rivojlantirmoq", opts: ["yaxshilamoq / rivojlantirmoq", "buzmoq", "qisqartirmoq", "to'xtatmoq"] },
+      { id: 27, tier: 3, tierName: "B1 Bosqich", word: "advice", pos: "ot", ans: "maslahat", opts: ["xabar", "maslahat", "qoida", "buyruq"] },
+      { id: 28, tier: 3, tierName: "B1 Bosqich", word: "convenient", pos: "sifat", ans: "qulay (vaqt/joy bo'yicha)", opts: ["xavfli", "qulay (vaqt/joy bo'yicha)", "qimmat", "uzoq"] },
+      { id: 29, tier: 3, tierName: "B1 Bosqich", word: "afford", pos: "fe'l", ans: "qurbi yetmoq / puli yetmoq", opts: ["qurbi yetmoq / puli yetmoq", "qarz bermoq", "sotib yubormoq", "tejamoq"] },
+      { id: 30, tier: 3, tierName: "B1 Bosqich", word: "achieve", pos: "fe'l", ans: "erishmoq / qo'lga kiritmoq", opts: ["erishmoq / qo'lga kiritmoq", "yo'qotmoq", "kechikmoq", "qidirmoq"] },
+      { id: 31, tier: 3, tierName: "B1 Bosqich", word: "disappointed", pos: "sifat", ans: "hafsalasi pir bo'lgan", opts: ["xursand bo'lgan", "hafsalasi pir bo'lgan", "hayratda qolgan", "charchagan"] },
+      { id: 32, tier: 3, tierName: "B1 Bosqich", word: "confident", pos: "sifat", ans: "o'ziga ishongan", opts: ["uyatchan", "qo'rqqan", "o'ziga ishongan", "shubhali"] },
+      { id: 33, tier: 3, tierName: "B1 Bosqich", word: "avoid", pos: "fe'l", ans: "chetlab o'tmoq / o'zini tiymoq", opts: ["qidirmoq", "chetlab o'tmoq / o'zini tiymoq", "qabul qilmoq", "boshlamoq"] },
+      { id: 34, tier: 3, tierName: "B1 Bosqich", word: "reliable", pos: "sifat", ans: "ishonchli / suyansa bo'ladigan", opts: ["ishonchli / suyansa bo'ladigan", "xiyonatkor", "kuchsiz", "qo'pol"] },
+      { id: 35, tier: 3, tierName: "B1 Bosqich", word: "patient", pos: "sifat", ans: "sabrli / sabr-toqatli", opts: ["shoshqaloq", "jahldor", "sabrli / sabr-toqatli", "dangasa"] }
     ];
 
     let currentIndex = 0;
