@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulunur's English | Vocabulary Diagnostic & Placement Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #131d33;
+      --card-hover: #1b2744;
+      --border: #1e293b;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent: #8b5cf6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(11, 17, 32, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 12px 20px;
+    }
+
+    .nav-container {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    }
+
+    .brand-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+    }
+
+    .teacher-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 999px;
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+      flex-grow: 1;
+    }
+
+    /* CARD WRAPPER */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* INTRO SCREEN */
+    .intro-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .intro-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .intro-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .intro-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    @media (max-width: 640px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .info-item {
+      background: rgba(11, 17, 32, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .info-item-num {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--emerald);
+    }
+
+    .info-item-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* NAME INPUT */
+    .input-box {
+      width: 100%;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .input-box:focus {
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    /* TEST CONTAINER */
+    .test-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .q-step {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .tier-1 {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .tier-2 {
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .tier-3 {
+      background: rgba(244, 63, 94, 0.15);
+      color: var(--rose);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #6366f1);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .q-category {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .q-text {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .q-text strong {
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .opt-btn {
+      background: rgba(11, 17, 32, 0.6);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .opt-btn:hover:not(:disabled) {
+      background: var(--card-hover);
+      border-color: #475569;
+    }
+
+    .opt-btn.selected {
+      border-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .opt-btn.correct {
+      border-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+      font-weight: 700;
+    }
+
+    .opt-btn.wrong {
+      border-color: var(--rose);
+      background: rgba(244, 63, 94, 0.18);
+      color: #fb7185;
+      text-decoration: line-through;
+    }
+
+    .opt-letter {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .opt-btn.correct .opt-letter {
+      background: var(--emerald);
+      color: #fff;
+    }
+
+    .opt-btn.wrong .opt-letter {
+      background: var(--rose);
+      color: #fff;
+    }
+
+    .explanation-box {
+      background: rgba(11, 17, 32, 0.8);
+      border-left: 4px solid var(--emerald);
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .test-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* RESULT SCREEN */
+    .result-container {
+      display: none;
+    }
+
+    .score-banner {
+      text-align: center;
+      padding: 28px 16px;
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.12), transparent);
+      border-radius: 14px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .score-circle {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--emerald);
+      margin-bottom: 4px;
+      letter-spacing: -1px;
+    }
+
+    .score-band {
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .band-a2 {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .band-b1 {
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .band-b2 {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .tiers-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .tier-row {
+      background: rgba(11, 17, 32, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+
+    .tier-row-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .tier-row-bar-bg {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .tier-row-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .roadmap-box {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .roadmap-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #818cf8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .roadmap-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .roadmap-list li {
+      display: flex;
+      gap: 10px;
+    }
+
+    .roadmap-list li::before {
+      content: "•";
+      color: #818cf8;
+      font-weight: bold;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo-badge">VD</div>
+        <div>
+          <div class="brand-title">Ulunur's English</div>
+          <div class="brand-subtitle">Vocab Diagnostic & Level Sizer</div>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <div id="teacher-mode-pill" class="teacher-badge">
+          🛡️ Ulunur Mode (Muted)
+        </div>
+        <a href="index.html" class="btn-secondary">
+          ← Back to Week 1
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- STEP 1: WELCOME & START -->
+    <section id="screen-intro" class="card">
+      <div class="intro-header">
+        <div class="intro-tag">CEFR CALIBRATED</div>
+        <h1 class="intro-title">Vocabulary Level Diagnostic</h1>
+        <p class="intro-desc">
+          Pinpoint your precise working vocabulary band. This 35-question check measures everyday fluency, intermediate collocations, phrasal verbs, and B2 threshold words to build your tailored learning roadmap.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-item-num">10 Qs</div>
+          <div class="info-item-label">Foundation (A2 / Low B1)</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-num">13 Qs</div>
+          <div class="info-item-label">Core Fluency (B1)</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-num">12 Qs</div>
+          <div class="info-item-label">B2 Bridge & Threshold</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-muted);">
+          Enter your name to begin:
+        </label>
+        <input type="text" id="student-name-input" class="input-box" placeholder="e.g. Malika" oninput="handleNameInput(this.value)" />
+        
+        <div id="name-hint" style="display: none; color: var(--amber); font-size: 12px; margin-top: 8px; font-weight: 600;">
+          🛡️ Ulunur detected: Teacher preview mode activated. Telegram alerts will be muted.
+        </div>
+
+        <button class="btn-primary" style="margin-top: 16px;" onclick="startTest()">
+          Start Diagnostic Check →
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 2: ACTIVE QUESTION SCREEN -->
+    <section id="screen-test" class="card" style="display: none;">
+      <div class="test-header">
+        <span class="q-step" id="q-counter">Question 1 of 35</span>
+        <span class="tier-badge tier-1" id="q-tier-badge">Tier 1: Foundation</span>
+      </div>
+
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="q-progress-fill"></div>
+      </div>
+
+      <div class="q-category" id="q-category">COLLOCATION</div>
+      <div class="q-text" id="q-text">Loading question...</div>
+
+      <div class="options-grid" id="options-grid"></div>
+
+      <div class="explanation-box" id="explanation-box"></div>
+
+      <div class="test-actions">
+        <button class="btn-primary" id="next-btn" style="width: auto; padding: 12px 28px; display: none;" onclick="handleNextClick()">
+          Next Question →
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 3: RESULT & ROADMAP SCREEN -->
+    <section id="screen-result" class="card result-container">
+      <div class="score-banner">
+        <div class="score-band band-b1" id="result-band-tag">Assessing...</div>
+        <div class="score-circle" id="result-score">0/35</div>
+        <p style="font-size: 15px; font-weight: 600; color: var(--text);" id="result-headline">Diagnostic Complete</p>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;" id="result-sub">
+          Results have been dispatched to your teacher's dashboard.
+        </p>
+      </div>
+
+      <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 14px;">CEFR Tier Breakdown</h3>
+      <div class="tiers-summary">
+        <!-- Tier 1 -->
+        <div class="tier-row">
+          <div class="tier-row-top">
+            <span style="color: var(--emerald);">Tier 1: Foundation (A2 / Low B1)</span>
+            <span id="tier1-score">0 / 10</span>
+          </div>
+          <div class="tier-row-bar-bg">
+            <div class="tier-row-bar-fill" id="tier1-bar" style="background: var(--emerald); width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="tier-row">
+          <div class="tier-row-top">
+            <span style="color: var(--primary);">Tier 2: Core B1 Fluency</span>
+            <span id="tier2-score">0 / 13</span>
+          </div>
+          <div class="tier-row-bar-bg">
+            <div class="tier-row-bar-fill" id="tier2-bar" style="background: var(--primary); width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="tier-row">
+          <div class="tier-row-top">
+            <span style="color: var(--rose);">Tier 3: B2 Bridge & Threshold</span>
+            <span id="tier3-score">0 / 12</span>
+          </div>
+          <div class="tier-row-bar-bg">
+            <div class="tier-row-bar-fill" id="tier3-bar" style="background: var(--rose); width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONALIZED VOCAB ROADMAP -->
+      <div class="roadmap-box">
+        <div class="roadmap-title">
+          <span>🧭</span>
+          <span>Your Personalized Vocabulary Roadmap</span>
+        </div>
+        <ul class="roadmap-list" id="roadmap-list">
+          <li>Analyzing results...</li>
+        </ul>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px;">
+        <a href="index.html" class="btn-primary" style="flex: 1; min-width: 200px; text-decoration: none;">
+          Go to Week 1 Course →
+        </a>
+        <button class="btn-secondary" style="padding: 14px 20px; font-size: 14px;" onclick="retakeTest()">
+          🔄 Retake Test
+        </button>
+      </div>
+
+      <div class="status-pill" id="telegram-status">
+        📡 Connecting to Telegram...
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    Ulunur's English 1-on-1 Intensive • Vocabulary Sizing Engine • B1 to B2 Pathway
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const TELEGRAM_BOT_TOKEN = "8828359607:AAFEpXaJusqaorQtIhd2sDMm4enaVWxnmuY";
+    const TELEGRAM_CHAT_ID = "7957347033";
+
+    // 35 DIAGNOSTIC QUESTIONS
+    const VOCAB_QUESTIONS = [
+      // --- TIER 1: FOUNDATION (A2 -> Low B1) [Q1-Q10] ---
+      {
+        id: 1,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Phrasal Verb",
+        sentence: "I asked my brother to help me with the homework, but he ______ because he was too busy.",
+        options: ["turned down my request", "turned off my request", "turned up my request", "turned into my request"],
+        ans: "turned down my request",
+        expl: "'Turn down' means to refuse or reject an offer or request."
+      },
+      {
+        id: 2,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Collocation",
+        sentence: "If you want to improve your pronunciation, you have to ______ an effort to speak every day.",
+        options: ["do", "make", "take", "give"],
+        ans: "make",
+        expl: "We say 'make an effort', not 'do an effort'."
+      },
+      {
+        id: 3,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Emotions & Adjectives",
+        sentence: "Sara felt very ______ before the interview because she really needed the job and was worried.",
+        options: ["anxious", "proud", "curious", "exhausted"],
+        ans: "anxious",
+        expl: "'Anxious' means worried, nervous, or uneasy about something."
+      },
+      {
+        id: 4,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Character & Personality",
+        sentence: "Tom is the most ______ person in our office; if he promises to send a report by 5 PM, he always does.",
+        options: ["reliable", "sensitive", "generous", "polite"],
+        ans: "reliable",
+        expl: "'Reliable' means trustworthy, dependable, and consistent."
+      },
+      {
+        id: 5,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Phrasal Verb",
+        sentence: "He tried to learn guitar for two months, but he decided to ______ because his fingers hurt.",
+        options: ["give up", "give in", "give away", "give back"],
+        ans: "give up",
+        expl: "'Give up' means to quit or abandon doing an activity."
+      },
+      {
+        id: 6,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Everyday Verbs",
+        sentence: "We would love to go on holiday to Japan this summer, but we simply cannot ______ it right now.",
+        options: ["afford", "spend", "invest", "charge"],
+        ans: "afford",
+        expl: "'Afford' means to have enough money or resources to be able to pay for something."
+      },
+      {
+        id: 7,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Confusing Verbs",
+        sentence: "I forgot my umbrella at home. Could you please ______ me yours until tomorrow?",
+        options: ["lend", "borrow", "hire", "rent"],
+        ans: "lend",
+        expl: "'Lend' means to give temporarily ('lend to someone'). 'Borrow' means to take temporarily ('borrow from someone')."
+      },
+      {
+        id: 8,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Practical Adjectives",
+        sentence: "Living near the metro station is very ______ because I can get anywhere in the city within 20 minutes.",
+        options: ["convenient", "comfortable", "suitable", "crowded"],
+        ans: "convenient",
+        expl: "'Convenient' describes something that is easy, useful, and fits your schedule."
+      },
+      {
+        id: 9,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Phrasal Verb",
+        sentence: "Could you please ______ my cat while I am away on a business trip this weekend?",
+        options: ["look after", "look into", "look for", "look up"],
+        ans: "look after",
+        expl: "'Look after' means to take care of someone or a pet."
+      },
+      {
+        id: 10,
+        tier: 1,
+        tierName: "Tier 1: Foundation",
+        category: "Prepositional Phrasal Verb",
+        sentence: "I have been studying non-stop, so I am really ______ to relaxing on the beach next weekend.",
+        options: ["looking forward", "waiting forward", "expecting forward", "hoping forward"],
+        ans: "looking forward",
+        expl: "'Look forward to' (+ -ing or noun) means to anticipate something with pleasure."
+      },
+
+      // --- TIER 2: CORE B1 FLUENCY [Q11-Q23] ---
+      {
+        id: 11,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Nuanced Verb",
+        sentence: "Don't ______ to ask questions during the meeting if there is anything you don't understand.",
+        options: ["hesitate", "prevent", "refuse", "delay"],
+        ans: "hesitate",
+        expl: "'Hesitate' means to pause or be reluctant before doing something due to uncertainty."
+      },
+      {
+        id: 12,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Collocation",
+        sentence: "The teacher asked the students to ______ attention to the diagram on the board.",
+        options: ["pay", "give", "make", "hold"],
+        ans: "pay",
+        expl: "The standard English collocation is 'pay attention to'."
+      },
+      {
+        id: 13,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Action Verb",
+        sentence: "After months of rigorous training, she finally managed to ______ her dream of running a marathon.",
+        options: ["achieve", "complete", "gain", "arrive"],
+        ans: "achieve",
+        expl: "We 'achieve' a goal, dream, or ambition through deliberate effort."
+      },
+      {
+        id: 14,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Phrasal Verb",
+        sentence: "We had to pull over at the nearest gas station because we were about to ______ fuel.",
+        options: ["run out of", "run down with", "run away from", "run through"],
+        ans: "run out of",
+        expl: "'Run out of' means to use up the entire supply of something until none remains."
+      },
+      {
+        id: 15,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Participle Adjective",
+        sentence: "I was deeply ______ with the movie; the trailer looked exciting, but the plot was boring.",
+        options: ["disappointed", "disappointing", "disappoint", "disappointment"],
+        ans: "disappointed",
+        expl: "Use '-ed' (disappointed) for how a person feels, and '-ing' (disappointing) for the thing causing the feeling."
+      },
+      {
+        id: 16,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Discourse & Connectors",
+        sentence: "______ having a terrible headache, Mark delivered an outstanding presentation.",
+        options: ["Despite", "Although", "Even though", "However"],
+        ans: "Despite",
+        expl: "'Despite' is followed by a noun or gerund (-ing). 'Although' requires a subject + verb clause."
+      },
+      {
+        id: 17,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Phrasal Verb",
+        sentence: "It was difficult to ______ the immense pressure at her new job, but she stayed calm and organized.",
+        options: ["cope with", "come with", "put with", "keep with"],
+        ans: "cope with",
+        expl: "'Cope with' means to manage or deal successfully with a difficult situation."
+      },
+      {
+        id: 18,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Adverbs of Frequency",
+        sentence: "He lives on the other side of the world, so we ______ see each other in person—maybe once every three years.",
+        options: ["rarely", "frequently", "constantly", "regularly"],
+        ans: "rarely",
+        expl: "'Rarely' means very seldom, almost never."
+      },
+      {
+        id: 19,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Essential Adjectives",
+        sentence: "Good communication is ______ for building strong teamwork and avoiding misunderstandings.",
+        options: ["essential", "optional", "partial", "temporary"],
+        ans: "essential",
+        expl: "'Essential' means absolutely necessary and vital."
+      },
+      {
+        id: 20,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Phrasal Verb",
+        sentence: "Never ______ until tomorrow what you can do today.",
+        options: ["put off", "put on", "put away", "put out"],
+        ans: "put off",
+        expl: "'Put off' means to delay or postpone doing something."
+      },
+      {
+        id: 21,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Conversational Phrasal Verb",
+        sentence: "We haven't seen each other since university! Let's grab coffee this Saturday to ______ on news.",
+        options: ["catch up", "take up", "make up", "bring up"],
+        ans: "catch up",
+        expl: "'Catch up' means to discuss what has happened since you last spoke."
+      },
+      {
+        id: 22,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Collocation",
+        sentence: "Over 500 athletes gathered to ______ part in the regional championship.",
+        options: ["take", "make", "have", "play"],
+        ans: "take",
+        expl: "'Take part in' is the fixed phrase meaning to participate."
+      },
+      {
+        id: 23,
+        tier: 2,
+        tierName: "Tier 2: Core B1",
+        category: "Adjective + Preposition",
+        sentence: "Were you ______ the fact that the meeting had been rescheduled to 9 AM?",
+        options: ["aware of", "conscious about", "familiar for", "known with"],
+        ans: "aware of",
+        expl: "'Aware of' means having knowledge or conscious perception of something."
+      },
+
+      // --- TIER 3: B1+ TO EARLY B2 THRESHOLD [Q24-Q35] ---
+      {
+        id: 24,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Abstract Noun",
+        sentence: "Every decision you make as a manager carries serious ______ for the company's future.",
+        options: ["consequences", "conclusions", "intentions", "conditions"],
+        ans: "consequences",
+        expl: "'Consequence' means a result or effect of an action, typically an important or negative one."
+      },
+      {
+        id: 25,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Nuanced Adjective",
+        sentence: "At first, Elena was ______ to speak English in front of native speakers because she was afraid of mistakes.",
+        options: ["reluctant", "eager", "enthusiastic", "careless"],
+        ans: "reluctant",
+        expl: "'Reluctant' means unwilling, hesitant, and disinclined."
+      },
+      {
+        id: 26,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Dynamic Verb",
+        sentence: "Positive feedback from her teacher gave her a huge confidence ______ before the final test.",
+        options: ["boost", "raise", "climb", "spread"],
+        ans: "boost",
+        expl: "A 'boost' is an act that helps to increase, encourage, or improve something."
+      },
+      {
+        id: 27,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Advanced Phrasal Verb",
+        sentence: "The engineering team needs to ______ an innovative solution before the deadline next Friday.",
+        options: ["come up with", "come across with", "come down to", "come through with"],
+        ans: "come up with",
+        expl: "'Come up with' means to think of or produce an idea, proposal, or solution."
+      },
+      {
+        id: 28,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Precision Adjective",
+        sentence: "The GPS gave us ______ directions, guiding us right to the hotel entrance without any wrong turns.",
+        options: ["accurate", "appropriate", "adequate", "approximate"],
+        ans: "accurate",
+        expl: "'Accurate' means completely correct in all details, exact, and error-free."
+      },
+      {
+        id: 29,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Idiomatic Phrasal",
+        sentence: "Before moving to our new apartment, we decided to declutter and ______ old furniture we never used.",
+        options: ["get rid of", "put down with", "run out on", "keep up with"],
+        ans: "get rid of",
+        expl: "'Get rid of' means to throw away, discard, or eliminate something unwanted."
+      },
+      {
+        id: 30,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Formal / Discourse Verb",
+        sentence: "The report aimed to ______ the importance of mental health programs in the workplace.",
+        options: ["emphasize", "exaggerate", "interfere", "insist"],
+        ans: "emphasize",
+        expl: "'Emphasize' means to give special importance or prominence to something."
+      },
+      {
+        id: 31,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "High-Impact Adjective",
+        sentence: "Regular sleep and balanced nutrition play a ______ role in memory retention and cognitive focus.",
+        options: ["crucial", "shallow", "trivial", "vague"],
+        ans: "crucial",
+        expl: "'Crucial' means of paramount importance, critical, or decisive."
+      },
+      {
+        id: 32,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Intermediate Noun",
+        sentence: "Losing funding was a temporary ______, but the team adjusted their strategy and finished the project.",
+        options: ["setback", "breakdown", "turnout", "drawback"],
+        ans: "setback",
+        expl: "A 'setback' is an unexpected difficulty or reversal that delays progress."
+      },
+      {
+        id: 33,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Cognitive Verb",
+        sentence: "Traveling alone forced him to step outside his comfort zone and ______ his cultural perspectives.",
+        options: ["broaden", "widen out", "magnify", "lengthen"],
+        ans: "broaden",
+        expl: "We say 'broaden your horizons' or 'broaden your perspectives'."
+      },
+      {
+        id: 34,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Precision Adverb",
+        sentence: "The inspector examined the building ______ before approving the construction permit.",
+        options: ["thoroughly", "hardly", "barely", "superficially"],
+        ans: "thoroughly",
+        expl: "'Thoroughly' means completely, carefully, with great attention to detail."
+      },
+      {
+        id: 35,
+        tier: 3,
+        tierName: "Tier 3: B2 Threshold",
+        category: "Fixed Expression",
+        sentence: "You shouldn't take your good health for ______; you need to exercise and eat well every day.",
+        options: ["granted", "given", "sure", "accepted"],
+        ans: "granted",
+        expl: "'Take something for granted' means to assume it will always be there without truly appreciating it."
+      }
+    ];
+
+    let currentQIndex = 0;
+    let studentAnswers = {};
+    let studentName = "";
+
+    // INIT
+    function init() {
+      const stored = localStorage.getItem("ulunur_student_name");
+      if (stored) {
+        studentName = stored;
+        document.getElementById("student-name-input").value = stored;
+        handleNameInput(stored);
+      }
+    }
+
+    function handleNameInput(val) {
+      const isUlunur = val.trim().toLowerCase() === "ulunur";
+      document.getElementById("name-hint").style.display = isUlunur ? "block" : "none";
+      document.getElementById("teacher-mode-pill").style.display = isUlunur ? "inline-flex" : "none";
+    }
+
+    function startTest() {
+      const input = document.getElementById("student-name-input").value.trim();
+      if (!input) {
+        alert("Please enter your name to begin.");
+        return;
+      }
+      studentName = input;
+      localStorage.setItem("ulunur_student_name", studentName);
+
+      document.getElementById("screen-intro").style.display = "none";
+      document.getElementById("screen-test").style.display = "block";
+      currentQIndex = 0;
+      studentAnswers = {};
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = VOCAB_QUESTIONS[currentQIndex];
+      const total = VOCAB_QUESTIONS.length;
+      
+      // Progress & Tier
+      document.getElementById("q-counter").textContent = `Question ${currentQIndex + 1} of ${total}`;
+      const fillPct = Math.round(((currentQIndex) / total) * 100);
+      document.getElementById("q-progress-fill").style.width = `${fillPct}%`;
+
+      const badge = document.getElementById("q-tier-badge");
+      badge.className = `tier-badge tier-${q.tier}`;
+      badge.textContent = q.tierName;
+
+      document.getElementById("q-category").textContent = q.category;
+      
+      // Highlight blank with clean span
+      const formattedSentence = q.sentence.replace("______", "<strong>______</strong>");
+      document.getElementById("q-text").innerHTML = formattedSentence;
+
+      // Options
+      const grid = document.getElementById("options-grid");
+      grid.innerHTML = "";
+
+      const letters = ["A", "B", "C", "D"];
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "opt-btn";
+        btn.innerHTML = `<span class="opt-letter">${letters[idx]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectOption(opt, btn);
+        grid.appendChild(btn);
+      });
+
+      // Reset explanation and next button
+      const expl = document.getElementById("explanation-box");
+      expl.style.display = "none";
+      expl.innerHTML = "";
+
+      document.getElementById("next-btn").style.display = "none";
+    }
+
+    function selectOption(chosenText, btnEl) {
+      const q = VOCAB_QUESTIONS[currentQIndex];
+      if (studentAnswers[currentQIndex] !== undefined) return; // already answered
+
+      studentAnswers[currentQIndex] = chosenText;
+      const isCorrect = chosenText === q.ans;
+
+      // Highlight buttons
+      const allBtns = document.querySelectorAll(".opt-btn");
+      allBtns.forEach(b => {
+        b.disabled = true;
+        const textSpan = b.querySelectorAll("span")[1];
+        if (textSpan && textSpan.textContent === q.ans) {
+          b.classList.add("correct");
+        }
+      });
+
+      if (!isCorrect) {
+        btnEl.classList.add("wrong");
+      }
+
+      // Show explanation
+      const explBox = document.getElementById("explanation-box");
+      explBox.style.display = "block";
+      explBox.style.borderLeftColor = isCorrect ? "var(--emerald)" : "var(--rose)";
+      explBox.innerHTML = `<strong>${isCorrect ? "✅ Correct!" : "❌ Note:"}</strong> ${q.expl}`;
+
+      // Show Next button
+      const nextBtn = document.getElementById("next-btn");
+      nextBtn.style.display = "inline-flex";
+      nextBtn.textContent = (currentQIndex === VOCAB_QUESTIONS.length - 1) ? "View Results & Roadmap →" : "Next Question →";
+    }
+
+    function handleNextClick() {
+      if (currentQIndex < VOCAB_QUESTIONS.length - 1) {
+        currentQIndex++;
+        renderQuestion();
+      } else {
+        finishTest();
+      }
+    }
+
+    async function finishTest() {
+      document.getElementById("screen-test").style.display = "none";
+      const resultScreen = document.getElementById("screen-result");
+      resultScreen.style.display = "block";
+
+      // Calculate Scores
+      let totalScore = 0;
+      let tier1Score = 0; // out of 10
+      let tier2Score = 0; // out of 13
+      let tier3Score = 0; // out of 12
+
+      let missedQuestions = [];
+
+      VOCAB_QUESTIONS.forEach((q, idx) => {
+        const given = studentAnswers[idx];
+        const correct = given === q.ans;
+        if (correct) {
+          totalScore++;
+          if (q.tier === 1) tier1Score++;
+          if (q.tier === 2) tier2Score++;
+          if (q.tier === 3) tier3Score++;
+        } else {
+          missedQuestions.push({
+            qNum: idx + 1,
+            word: q.ans,
+            chosen: given || "Skipped",
+            tier: q.tierName,
+            cat: q.category
+          });
+        }
+      });
+
+      // Update UI Scores
+      document.getElementById("result-score").textContent = `${totalScore}/35`;
+      
+      const t1Pct = Math.round((tier1Score / 10) * 100);
+      const t2Pct = Math.round((tier2Score / 13) * 100);
+      const t3Pct = Math.round((tier3Score / 12) * 100);
+
+      document.getElementById("tier1-score").textContent = `${tier1Score} / 10 (${t1Pct}%)`;
+      document.getElementById("tier1-bar").style.width = `${t1Pct}%`;
+
+      document.getElementById("tier2-score").textContent = `${tier2Score} / 13 (${t2Pct}%)`;
+      document.getElementById("tier2-bar").style.width = `${t2Pct}%`;
+
+      document.getElementById("tier3-score").textContent = `${tier3Score} / 12 (${t3Pct}%)`;
+      document.getElementById("tier3-bar").style.width = `${t3Pct}%`;
+
+      // Determine Diagnostic Placement Band & Roadmap
+      let bandTitle = "";
+      let bandClass = "";
+      let roadmapItems = [];
+
+      if (totalScore <= 15) {
+        bandTitle = "Foundation Band (A2+ Focus Needed)";
+        bandClass = "band-a2";
+        roadmapItems = [
+          "<strong>Vocabulary Level:</strong> A2 Working Base. Upper-B2 vocabulary (e.g. <em>consequence, reluctant, setback</em>) is currently too steep and causes cognitive overload.",
+          "<strong>Action 1:</strong> Focus exclusively on the top 500 high-frequency B1 verbs and phrasals (<em>look after, run out of, give up, cope with</em>).",
+          "<strong>Action 2:</strong> Replace abstract Quizlet words with everyday action-based collocations (<em>make an effort, pay attention, take part</em>).",
+          "<strong>Target Pace:</strong> 5 new words per day with sentence production drills before introducing B2 academic terms."
+        ];
+      } else if (totalScore <= 25) {
+        bandTitle = "Solid B1 (Bridge Band)";
+        bandClass = "band-b1";
+        roadmapItems = [
+          "<strong>Vocabulary Level:</strong> Solid B1 Core. Everyday conversations and basic work/study contexts are clear, but multi-word phrasal verbs and nuanced B2 adjectives are inconsistent.",
+          "<strong>Action 1: High-Yield Collocations:</strong> Strengthen verb + noun pairs (<em>boost confidence, achieve goals, overcome obstacles</em>).",
+          "<strong>Action 2: Phrasal Verb Fluency:</strong> Shift from isolated flashcards to 3-part phrasals in story contexts (<em>come up with, get rid of, catch up on</em>).",
+          "<strong>Target Pace:</strong> 6–8 B1+ bridge words per day with active Quizlet recall and daily written sentences."
+        ];
+      } else {
+        bandTitle = "B1+ / Threshold to B2 (Intensive Ready)";
+        bandClass = "band-b2";
+        roadmapItems = [
+          "<strong>Vocabulary Level:</strong> High B1 / Early B2 Ready. Strong receptive grasp across all 3 tiers.",
+          "<strong>Action 1: Precision Vocabulary:</strong> Focus on formal register, discourse connectors (<em>furthermore, despite, consequence</em>), and subtle distinctions (<em>accurate vs appropriate</em>).",
+          "<strong>Action 2: Active Speaking & Writing:</strong> Push vocabulary from passive recognition into active speech through daily open-ended prompts.",
+          "<strong>Target Pace:</strong> 8–10 curated B2 words per day."
+        ];
+      }
+
+      const bandTag = document.getElementById("result-band-tag");
+      bandTag.textContent = bandTitle;
+      bandTag.className = `score-band ${bandClass}`;
+
+      // Render Roadmap List
+      const rList = document.getElementById("roadmap-list");
+      rList.innerHTML = "";
+      roadmapItems.forEach(item => {
+        const li = document.createElement("li");
+        li.innerHTML = item;
+        rList.appendChild(li);
+      });
+
+      // Dispatch Telegram Report
+      await sendTelegramReport(totalScore, tier1Score, tier2Score, tier3Score, bandTitle, missedQuestions);
+    }
+
+    async function sendTelegramReport(totalScore, t1, t2, t3, bandTitle, missed) {
+      const isUlunur = studentName.trim().toLowerCase() === "ulunur";
+      const statusEl = document.getElementById("telegram-status");
+
+      if (isUlunur) {
+        statusEl.innerHTML = "🛡️ <b>Ulunur Mode:</b> Result recorded in test preview mode. Telegram message muted.";
+        return;
+      }
+
+      statusEl.innerHTML = "📡 Sending diagnostic analysis to teacher...";
+
+      const totalQs = VOCAB_QUESTIONS.length;
+      const pct = Math.round((totalScore / totalQs) * 100);
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      let tgText = `📚 <b>VOCABULARY LEVEL DIAGNOSTIC REPORT</b>\n`;
+      tgText += `━━━━━━━━━━━━━━━━━━━━\n`;
+      tgText += `👤 <b>Student:</b> ${studentName}\n`;
+      tgText += `⏰ <b>Completed At:</b> ${time}\n`;
+      tgText += `🏆 <b>Total Score:</b> <b>${totalScore}/${totalQs} (${pct}%)</b>\n`;
+      tgText += `🎯 <b>Assessed Band:</b> <b>${bandTitle}</b>\n\n`;
+
+      tgText += `📊 <b>Tier Breakdown:</b>\n`;
+      tgText += `• <b>Tier 1 (A2 Foundation):</b> ${t1}/10 (${Math.round((t1/10)*100)}%)\n`;
+      tgText += `• <b>Tier 2 (Core B1):</b> ${t2}/13 (${Math.round((t2/13)*100)}%)\n`;
+      tgText += `• <b>Tier 3 (B2 Bridge):</b> ${t3}/12 (${Math.round((t3/12)*100)}%)\n\n`;
+
+      if (missed.length > 0) {
+        tgText += `⚠️ <b>Identified Missed Items (${missed.length}):</b>\n`;
+        missed.slice(0, 8).forEach(m => {
+          tgText += `• Q${m.qNum}: Target <i>"${m.word}"</i> (Chose: ${m.chosen}) [${m.cat}]\n`;
+        });
+        if (missed.length > 8) {
+          tgText += `<i>...and ${missed.length - 8} more items.</i>\n`;
+        }
+      } else {
+        tgText += `🌟 <b>Flawless performance across all 35 items!</b>\n`;
+      }
+
+      tgText += `\n🧭 <b>Teacher Recommendation:</b>\n`;
+      if (totalScore <= 15) {
+        tgText += `Prioritize 1,000 core B1 high-frequency words before introducing B2 abstract terms.`;
+      } else if (totalScore <= 25) {
+        tgText += `Good B1 base! Calibrate Week 1-2 vocab packs to focus on practical collocations & phrasals.`;
+      } else {
+        tgText += `Student is ready for full B2 intensive vocab.`;
+      }
+      tgText += `\n━━━━━━━━━━━━━━━━━━━━`;
+
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: tgText,
+            parse_mode: "HTML"
+          })
+        });
+        if (res.ok) {
+          statusEl.innerHTML = "✅ Diagnostic analysis successfully sent to teacher's Telegram!";
+        } else {
+          statusEl.innerHTML = "⚠️ Result calculated, but Telegram delivery encountered an issue.";
+        }
+      } catch (err) {
+        console.error(err);
+        statusEl.innerHTML = "⚠️ Result calculated locally.";
+      }
+    }
+
+    function retakeTest() {
+      currentQIndex = 0;
+      studentAnswers = {};
+      document.getElementById("screen-result").style.display = "none";
+      document.getElementById("screen-test").style.display = "block";
+      renderQuestion();
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>
