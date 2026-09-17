@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulunur's English | B1 → B2+ Diagnostic Level Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #131d33;
+      --border: #1e293b;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent: #8b5cf6;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+      --amber: #f59e0b;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-x: hidden;
+    }
+
+    /* Top Navbar */
+    header {
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 20px;
+    }
+
+    .nav-container {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .teacher-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 999px;
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 36px 28px;
+      width: 100%;
+      max-width: 680px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    /* START SCREEN */
+    #screen-start {
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.3));
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #818cf8;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+
+    .form-group {
+      text-align: left;
+      max-width: 420px;
+      margin: 0 auto 24px;
+    }
+
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 16px 20px;
+      background: #0b1120;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .teacher-hint {
+      display: none;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      border: none;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px var(--primary-glow);
+      transition: transform 0.15s, opacity 0.15s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    .highlights {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    /* QUESTION SCREEN */
+    #screen-quiz {
+      display: none;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 3.33%;
+      transition: width 0.25s ease;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .tier-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #818cf8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .counter {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .topic-name {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .question-text {
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      background: #0b1120;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: #cbd5e1;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option-btn:hover {
+      border-color: #334155;
+      background: #0e1628;
+      color: #fff;
+    }
+
+    .option-btn.selected {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 0 0 2px var(--primary-glow);
+    }
+
+    .quiz-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .btn-secondary {
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      color: #fff;
+      border-color: #475569;
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .btn-next {
+      padding: 12px 28px;
+      border-radius: 12px;
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    .btn-next:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* RESULT SCREEN */
+    #screen-result {
+      display: none;
+      text-align: center;
+    }
+
+    .trophy-icon {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 16px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(20, 184, 166, 0.3));
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);
+    }
+
+    .level-badge {
+      font-size: 34px;
+      font-weight: 800;
+      color: #818cf8;
+      letter-spacing: -0.5px;
+      margin: 8px 0 14px;
+    }
+
+    .score-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      background: #0b1120;
+      border: 1px solid var(--border);
+      padding: 12px 24px;
+      border-radius: 18px;
+      margin-bottom: 24px;
+    }
+
+    .score-block-val {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .score-block-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .divider-v {
+      width: 1px;
+      height: 28px;
+      background: var(--border);
+    }
+
+    .breakdown-box {
+      background: #0b1120;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .breakdown-box h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .tier-row {
+      margin-bottom: 12px;
+    }
+
+    .tier-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .tier-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .tier-track {
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .tier-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 999px;
+      transition: width 0.6s ease;
+    }
+
+    .tg-status-box {
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="logo-badge">UE</div>
+        <div>
+          <div class="brand-title">Ulunur's English</div>
+          <div class="brand-subtitle">B1 → B2+ Diagnostic Assessment</div>
+        </div>
+      </div>
+      <div id="teacher-badge" class="teacher-badge">
+        🛡️ Ulunur Mode (Silent)
+      </div>
+    </div>
+  </header>
+
+  <!-- Main App Container -->
+  <main>
+    <div class="card">
+      
+      <!-- SCREEN 1: START / NAME ENTRY -->
+      <div id="screen-start">
+        <div class="hero-icon">🎓</div>
+        <div class="pill">Placement & Rust Diagnostic</div>
+        <h2>English Level Check</h2>
+        <p class="subtitle">
+          Have a 5-month break from English? This 30-question diagnostic pinpoints exactly what you remember, where the rust is, and your customized starting point towards solid B2+.
+        </p>
+
+        <form id="form-start" onsubmit="handleStart(event)">
+          <div class="form-group">
+            <label for="student-name">What is your name?</label>
+            <input 
+              type="text" 
+              id="student-name" 
+              required 
+              autocomplete="off"
+              placeholder="Enter your name..." 
+              oninput="handleNameInput(this.value)"
+            />
+            <div id="teacher-hint" class="teacher-hint">
+              🛡️ Welcome Ulunur! Telegram notifications will be muted during your test.
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">
+            Start Level Check (30 Questions) →
+          </button>
+        </form>
+
+        <div class="highlights">
+          <span>⏱️ ~15 minutes</span>
+          <span>🎯 30 Questions</span>
+          <span>📊 Immediate CEFR Level</span>
+        </div>
+      </div>
+
+      <!-- SCREEN 2: QUESTION RUNNER -->
+      <div id="screen-quiz">
+        <div class="progress-bar-container">
+          <div id="quiz-progress" class="progress-bar"></div>
+        </div>
+
+        <div class="quiz-header">
+          <span id="q-tier" class="tier-badge">Foundations (A2/B1)</span>
+          <span id="q-counter" class="counter">Question 1 of 30</span>
+        </div>
+
+        <div id="q-topic" class="topic-name">Present Perfect vs Past Simple</div>
+        <div id="q-text" class="question-text">Question text goes here...</div>
+
+        <div id="options-container" class="options-list"></div>
+
+        <div class="quiz-footer">
+          <button id="btn-prev" class="btn-secondary" onclick="handlePrev()" disabled>← Previous</button>
+          <button id="btn-next" class="btn-next" onclick="handleNext()" disabled>Next →</button>
+        </div>
+      </div>
+
+      <!-- SCREEN 3: RESULTS -->
+      <div id="screen-result">
+        <div class="trophy-icon">🏆</div>
+        <div class="pill" id="res-pill">Assessment Complete</div>
+        <h2>Your CEFR Benchmark</h2>
+        <div id="res-level" class="level-badge">Solid B1</div>
+        <p id="res-summary" class="subtitle" style="margin-bottom: 20px;">
+          Summary text...
+        </p>
+
+        <div class="score-banner">
+          <div>
+            <div id="res-score" class="score-block-val">0 / 30</div>
+            <div class="score-block-lbl">Raw Score</div>
+          </div>
+          <div class="divider-v"></div>
+          <div>
+            <div id="res-percent" class="score-block-val" style="color: #818cf8;">0%</div>
+            <div class="score-block-lbl">Accuracy</div>
+          </div>
+        </div>
+
+        <div class="breakdown-box">
+          <h4>Performance by Competency Tier</h4>
+          
+          <div class="tier-row">
+            <div class="tier-meta">
+              <span>1. Foundations (A2/B1)</span>
+              <span id="tier1-val">0/10</span>
+            </div>
+            <div class="tier-track">
+              <div id="tier1-fill" class="tier-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="tier-row">
+            <div class="tier-meta">
+              <span>2. Core B1 Competencies</span>
+              <span id="tier2-val">0/10</span>
+            </div>
+            <div class="tier-track">
+              <div id="tier2-fill" class="tier-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="tier-row">
+            <div class="tier-meta">
+              <span>3. B1+ / B2 Gateways</span>
+              <span id="tier3-val">0/10</span>
+            </div>
+            <div class="tier-track">
+              <div id="tier3-fill" class="tier-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tg-status-box" class="tg-status-box">
+          ✅ Your teacher has received your diagnostic report on Telegram!
+        </div>
+
+        <button class="btn-secondary" onclick="restartTest()">
+          🔄 Take Again / Start Over
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    Ulunur's English • High-Performance 1-on-1 Language Intensive
+  </footer>
+
+  <!-- DATA & APP LOGIC -->
+  <script>
+    // ================= CONFIGURATION =================
+    const TELEGRAM_BOT_TOKEN = "8828359607:AAFEpXaJusqaorQtIhd2sDMm4enaVWxnmuY";
+    const TELEGRAM_CHAT_ID = "7957347033";
+
+    // ================= 30 CALIBRATED B1 QUESTIONS =================
+    const QUESTIONS = [
+      // TIER 1: Foundations (A2/B1)
+      {
+        id: 1, tier: 1, tierName: "Foundations (A2/B1)", topic: "Present Perfect vs Past Simple",
+        question: "I ______ in this apartment since 2022, and I really enjoy the neighborhood.",
+        options: ["am living", "have lived", "lived", "was living"], correctAnswer: "have lived"
+      },
+      {
+        id: 2, tier: 1, tierName: "Foundations (A2/B1)", topic: "Past Simple with Specific Time",
+        question: "Last night at 8 PM, I ______ dinner with my family.",
+        options: ["have had", "had", "was having", "have been having"], correctAnswer: "had"
+      },
+      {
+        id: 3, tier: 1, tierName: "Foundations (A2/B1)", topic: "For vs Since",
+        question: "She has been studying graphic design ______ three months.",
+        options: ["since", "during", "for", "from"], correctAnswer: "for"
+      },
+      {
+        id: 4, tier: 1, tierName: "Foundations (A2/B1)", topic: "Relative Pronouns",
+        question: "The woman ______ car was damaged in the storm called her insurance company.",
+        options: ["who", "which", "whose", "that"], correctAnswer: "whose"
+      },
+      {
+        id: 5, tier: 1, tierName: "Foundations (A2/B1)", topic: "State vs Action Verbs",
+        question: "Right now, I ______ this exercise is quite straightforward.",
+        options: ["am believing", "believe", "believed", "have believed"], correctAnswer: "believe"
+      },
+      {
+        id: 6, tier: 1, tierName: "Foundations (A2/B1)", topic: "Comparatives",
+        question: "This laptop is ______ than my old desktop computer.",
+        options: ["much more fast", "far faster", "more faster", "faster much"], correctAnswer: "far faster"
+      },
+      {
+        id: 7, tier: 1, tierName: "Foundations (A2/B1)", topic: "Much / Many / A Lot Of",
+        question: "We didn't receive ______ feedback on our initial project proposal.",
+        options: ["many", "much", "a few", "several"], correctAnswer: "much"
+      },
+      {
+        id: 8, tier: 1, tierName: "Foundations (A2/B1)", topic: "Present Perfect with Just/Already/Yet",
+        question: "Have you finished preparing the presentation ______?",
+        options: ["already", "just", "yet", "still"], correctAnswer: "yet"
+      },
+      {
+        id: 9, tier: 1, tierName: "Foundations (A2/B1)", topic: "Future Intentions: Going to vs Will",
+        question: "Look at those dark, heavy clouds in the sky! It ______ rain.",
+        options: ["will", "is going to", "rains", "is raining"], correctAnswer: "is going to"
+      },
+      {
+        id: 10, tier: 1, tierName: "Foundations (A2/B1)", topic: "Prepositions of Place & Time",
+        question: "Our international conference takes place ______ July 15th.",
+        options: ["in", "at", "on", "by"], correctAnswer: "on"
+      },
+
+      // TIER 2: Core B1 Competencies
+      {
+        id: 11, tier: 2, tierName: "Core B1", topic: "Past Continuous & Past Simple Narrative",
+        question: "While I ______ down the street, my phone suddenly rang.",
+        options: ["walked", "was walking", "have walked", "had walked"], correctAnswer: "was walking"
+      },
+      {
+        id: 12, tier: 2, tierName: "Core B1", topic: "Past Perfect Sequencing",
+        question: "By the time the train pulled into the station, the passengers ______ on the platform for 40 minutes.",
+        options: ["waited", "were waiting", "had waited", "have waited"], correctAnswer: "had waited"
+      },
+      {
+        id: 13, tier: 2, tierName: "Core B1", topic: "Past Habits: Used to vs Would",
+        question: "I ______ believe in ghosts when I was a young child, but I don't anymore.",
+        options: ["would", "used to", "was used to", "use to"], correctAnswer: "used to"
+      },
+      {
+        id: 14, tier: 2, tierName: "Core B1", topic: "First Conditional with Unless",
+        question: "You will not make noticeable progress ______ you practice actively every week.",
+        options: ["if", "unless", "provided", "in case"], correctAnswer: "unless"
+      },
+      {
+        id: 15, tier: 2, tierName: "Core B1", topic: "Second Conditional (Hypothetical Present)",
+        question: "If I ______ more free time, I would take up a new language.",
+        options: ["have", "had", "would have", "will have"], correctAnswer: "had"
+      },
+      {
+        id: 16, tier: 2, tierName: "Core B1", topic: "Modals of Ability: Could vs Managed to",
+        question: "Although the mountain trail was steep and dangerous, the climbers ______ reach safety before nightfall.",
+        options: ["could", "managed to", "can", "might"], correctAnswer: "managed to"
+      },
+      {
+        id: 17, tier: 2, tierName: "Core B1", topic: "Present Perfect Continuous (Duration)",
+        question: "Her eyes are red because she ______ computer screens for hours.",
+        options: ["looks at", "has been looking at", "had looked at", "is looking at"], correctAnswer: "has been looking at"
+      },
+      {
+        id: 18, tier: 2, tierName: "Core B1", topic: "Phrasal Verbs in Context",
+        question: "We had to ______ the meeting until next Tuesday because the director was sick.",
+        options: ["call off", "put off", "look after", "turn down"], correctAnswer: "put off"
+      },
+      {
+        id: 19, tier: 2, tierName: "Core B1", topic: "Defining vs Non-Defining Clauses",
+        question: "My sister, ______ lives in Berlin, is visiting us next weekend.",
+        options: ["that", "which", "who", "whom"], correctAnswer: "who"
+      },
+      {
+        id: 20, tier: 2, tierName: "Core B1", topic: "Modals of Obligation: Must vs Have to",
+        question: "In the UK, drivers ______ drive on the left-hand side of the road by law.",
+        options: ["must", "have to", "should", "ought to"], correctAnswer: "have to"
+      },
+
+      // TIER 3: B1+ / B2 Gateways
+      {
+        id: 21, tier: 3, tierName: "B1+/B2 Gateways", topic: "Third Conditional (Past Regrets)",
+        question: "If we ______ the train schedule earlier, we wouldn't have missed our departure.",
+        options: ["checked", "had checked", "would check", "would have checked"], correctAnswer: "had checked"
+      },
+      {
+        id: 22, tier: 3, tierName: "B1+/B2 Gateways", topic: "Mixed Conditionals",
+        question: "If I had moved to London last year, I ______ fluent in English right now.",
+        options: ["would have been", "would be", "will be", "had been"], correctAnswer: "would be"
+      },
+      {
+        id: 23, tier: 3, tierName: "B1+/B2 Gateways", topic: "Passive Voice in Complex Tenses",
+        question: "The confidential report ______ by the auditor when the power went out.",
+        options: ["was reviewing", "was being reviewed", "had reviewed", "has been reviewed"], correctAnswer: "was being reviewed"
+      },
+      {
+        id: 24, tier: 3, tierName: "B1+/B2 Gateways", topic: "Causative Verbs (Have/Get Done)",
+        question: "My smartphone screen cracked, so I ______ it repaired at the store yesterday.",
+        options: ["made", "had", "did", "let"], correctAnswer: "had"
+      },
+      {
+        id: 25, tier: 3, tierName: "B1+/B2 Gateways", topic: "Past Modals of Deduction",
+        question: "Sarah didn't answer any calls or emails all afternoon. She ______ asleep.",
+        options: ["must be", "must have been", "can't be", "should have been"], correctAnswer: "must have been"
+      },
+      {
+        id: 26, tier: 3, tierName: "B1+/B2 Gateways", topic: "Gerund vs Infinitive Semantic Shifts",
+        question: "On her long road trip, she stopped ______ gasoline and stretch her legs.",
+        options: ["getting", "to get", "get", "for getting"], correctAnswer: "to get"
+      },
+      {
+        id: 27, tier: 3, tierName: "B1+/B2 Gateways", topic: "Wish / If Only for Past Regrets",
+        question: "I really wish I ______ my phone charger before leaving on this trip.",
+        options: ["packed", "had packed", "would pack", "pack"], correctAnswer: "had packed"
+      },
+      {
+        id: 28, tier: 3, tierName: "B1+/B2 Gateways", topic: "Dependent Prepositions",
+        question: "The project manager insisted ______ reviewing the code before release.",
+        options: ["in", "on", "at", "about"], correctAnswer: "on"
+      },
+      {
+        id: 29, tier: 3, tierName: "B1+/B2 Gateways", topic: "Contrast Linkers (Despite / Although)",
+        question: "______ the severe snowstorm, the flight landed safely on time.",
+        options: ["Although", "Despite", "Even though", "In spite"], correctAnswer: "Despite"
+      },
+      {
+        id: 30, tier: 3, tierName: "B1+/B2 Gateways", topic: "Indirect / Embedded Questions",
+        question: "Could you please tell me what time ______?",
+        options: ["does the supermarket close", "the supermarket closes", "closes the supermarket", "is the supermarket closing"], correctAnswer: "the supermarket closes"
+      }
+    ];
+
+    // ================= STATE =================
+    let studentName = "";
+    let currentIndex = 0;
+    const userAnswers = {};
+
+    function handleNameInput(val) {
+      const isUlunur = val.trim().toLowerCase() === "ulunur";
+      document.getElementById("teacher-badge").style.display = isUlunur ? "flex" : "none";
+      document.getElementById("teacher-hint").style.display = isUlunur ? "block" : "none";
+    }
+
+    function handleStart(e) {
+      e.preventDefault();
+      studentName = document.getElementById("student-name").value.trim();
+      if (!studentName) return;
+
+      document.getElementById("screen-start").style.display = "none";
+      document.getElementById("screen-quiz").style.display = "block";
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentIndex];
+
+      document.getElementById("q-tier").textContent = q.tierName;
+      document.getElementById("q-counter").textContent = `Question ${currentIndex + 1} of ${QUESTIONS.length}`;
+      document.getElementById("q-topic").textContent = q.topic;
+      document.getElementById("q-text").textContent = q.question;
+
+      // Update progress bar
+      const pct = ((currentIndex + 1) / QUESTIONS.length) * 100;
+      document.getElementById("quiz-progress").style.width = `${pct}%`;
+
+      // Render options
+      const optContainer = document.getElementById("options-container");
+      optContainer.innerHTML = "";
+
+      const currentSelected = userAnswers[q.id];
+
+      q.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `option-btn ${currentSelected === opt ? 'selected' : ''}`;
+        btn.innerHTML = `<span>${opt}</span> ${currentSelected === opt ? '<span>✓</span>' : ''}`;
+        btn.onclick = () => selectOption(opt);
+        optContainer.appendChild(btn);
+      });
+
+      document.getElementById("btn-prev").disabled = (currentIndex === 0);
+      document.getElementById("btn-next").disabled = !userAnswers[q.id];
+      document.getElementById("btn-next").textContent = (currentIndex === QUESTIONS.length - 1) ? "Finish Assessment 🏁" : "Next →";
+    }
+
+    function selectOption(opt) {
+      const q = QUESTIONS[currentIndex];
+      userAnswers[q.id] = opt;
+      renderQuestion();
+    }
+
+    function handlePrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    }
+
+    function handleNext() {
+      if (currentIndex < QUESTIONS.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    async function finishQuiz() {
+      let total = 0;
+      let tier1 = 0;
+      let tier2 = 0;
+      let tier3 = 0;
+      const missed = [];
+
+      QUESTIONS.forEach(q => {
+        const ans = userAnswers[q.id];
+        if (ans === q.correctAnswer) {
+          total++;
+          if (q.tier === 1) tier1++;
+          if (q.tier === 2) tier2++;
+          if (q.tier === 3) tier3++;
+        } else {
+          missed.push({
+            qNum: q.id,
+            topic: q.topic,
+            userAns: ans || "None",
+            correctAns: q.correctAnswer
+          });
+        }
+      });
+
+      const pct = Math.round((total / QUESTIONS.length) * 100);
+
+      // Level
+      let level = "Solid B1";
+      let summary = "";
+      if (pct >= 85) {
+        level = "B2 Entry (High Readiness)";
+        summary = "Minimal decay from the break! You have retained your core B1 grammar and are ready to tackle upper-intermediate B2 topics immediately.";
+      } else if (pct >= 65) {
+        level = "B1+ (Ready for B2 Leap)";
+        summary = "Good core foundation! Basic tenses are intact, but complex conditionals, passive voice, and dependent prepositions need rapid refreshing after the break.";
+      } else if (pct >= 45) {
+        level = "B1 (Language Rust Present)";
+        summary = "You have the B1 framework, but the 5-month study break caused noticeable precision loss in verb structures and conditional forms.";
+      } else {
+        level = "A2+ / Rusty B1 (Needs Foundation Boost)";
+        summary = "Significant language rust from the 5-month pause. Core vocabulary is recognized, but grammatical rules need systematic re-anchoring before advancing.";
+      }
+
+      // Populate UI
+      document.getElementById("res-level").textContent = level;
+      document.getElementById("res-summary").textContent = summary;
+      document.getElementById("res-score").textContent = `${total} / ${QUESTIONS.length}`;
+      document.getElementById("res-percent").textContent = `${pct}%`;
+
+      document.getElementById("tier1-val").textContent = `${tier1}/10`;
+      document.getElementById("tier1-fill").style.width = `${(tier1 / 10) * 100}%`;
+
+      document.getElementById("tier2-val").textContent = `${tier2}/10`;
+      document.getElementById("tier2-fill").style.width = `${(tier2 / 10) * 100}%`;
+
+      document.getElementById("tier3-val").textContent = `${tier3}/10`;
+      document.getElementById("tier3-fill").style.width = `${(tier3 / 10) * 100}%`;
+
+      const isUlunur = studentName.trim().toLowerCase() === "ulunur";
+      const tgBox = document.getElementById("tg-status-box");
+
+      if (isUlunur) {
+        tgBox.textContent = "🛡️ Ulunur Test Mode Active: Silent test completed without Telegram notification.";
+        tgBox.style.color = "var(--amber)";
+        tgBox.style.borderColor = "rgba(245, 158, 11, 0.3)";
+        tgBox.style.background = "rgba(245, 158, 11, 0.08)";
+      } else {
+        tgBox.textContent = "✅ Your teacher has received your diagnostic report on Telegram and will build your personalized roadmap!";
+        
+        // Dispatch to Telegram
+        await sendTelegramReport(studentName, total, pct, level, tier1, tier2, tier3, missed);
+      }
+
+      document.getElementById("screen-quiz").style.display = "none";
+      document.getElementById("screen-result").style.display = "block";
+    }
+
+    async function sendTelegramReport(name, score, pct, level, t1, t2, t3, missed) {
+      try {
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        let text = `📊 <b>DIAGNOSTIC LEVEL CHECK REPORT</b>\n`;
+        text += `━━━━━━━━━━━━━━━━━━━━\n`;
+        text += `👤 <b>Student:</b> ${name}\n`;
+        text += `⏰ <b>Time:</b> ${time}\n`;
+        text += `🎯 <b>Score:</b> <b>${score}/30 (${pct}%)</b>\n`;
+        text += `🏷️ <b>Placement:</b> <b>${level}</b>\n\n`;
+
+        text += `📈 <b>COMPETENCY BREAKDOWN:</b>\n`;
+        text += `1️⃣ Foundations (A2/B1): ${t1}/10 ${t1 >= 8 ? '✅ Solid' : '⚠️ Rusty'}\n`;
+        text += `2️⃣ Core B1: ${t2}/10 ${t2 >= 7 ? '✅ Good' : '⚠️ Needs Review'}\n`;
+        text += `3️⃣ B1+/B2 Gateways: ${t3}/10 ${t3 >= 6 ? '🚀 Advanced' : '⏳ Target Focus'}\n\n`;
+
+        if (missed.length > 0) {
+          text += `🔍 <b>MISSED TOPICS & ERRORS (${missed.length}):</b>\n`;
+          missed.forEach(m => {
+            text += `• Q${m.qNum} (${m.topic}):\n   ❌ "${m.userAns}" → ✅ <b>"${m.correctAns}"</b>\n`;
+          });
+          text += `\n`;
+        }
+
+        text += `🗺️ <b>RECOMMENDED ROADMAP FOCUS:</b>\n`;
+        if (t1 < 8) text += `• <b>Week 1:</b> Re-anchor Present Perfect vs Past Simple & Duration (for/since).\n`;
+        if (t2 < 8) text += `• <b>Week 2:</b> Narrative sequencing, habitual past ('used to') & 2nd Conditionals.\n`;
+        if (t3 < 7) text += `• <b>Week 3-4:</b> Mixed Conditionals, Passive Voice across complex tenses & Prepositions.\n`;
+        text += `━━━━━━━━━━━━━━━━━━━━`;
+
+        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: text,
+            parse_mode: "HTML"
+          })
+        });
+      } catch (err) {
+        console.error("Failed to send Telegram notification:", err);
+      }
+    }
+
+    function restartTest() {
+      currentIndex = 0;
+      for (const k in userAnswers) delete userAnswers[k];
+      document.getElementById("screen-result").style.display = "none";
+      document.getElementById("screen-start").style.display = "block";
+    }
+  </script>
+</body>
+</html>
