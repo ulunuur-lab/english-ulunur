@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ulunur's English | Week 1 Intensive</title>
+  <title>Ulunur's English | Jonli Dars & Intensiv Kurs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0b1120;
       --card-bg: #131d33;
+      --card-hover: #1c2742;
       --border: #1e293b;
       --primary: #6366f1;
       --primary-hover: #4f46e5;
-      --primary-glow: rgba(99, 102, 241, 0.25);
+      --primary-glow: rgba(99, 102, 241, 0.35);
       --accent: #8b5cf6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #ef4444;
+      --sky: #0ea5e9;
       --text: #f8fafc;
       --text-muted: #94a3b8;
-      --success: #10b981;
-      --amber: #f59e0b;
-      --danger: #ef4444;
     }
 
     * {
@@ -40,8 +42,9 @@
       justify-content: space-between;
     }
 
+    /* HEADER */
     header {
-      background: rgba(11, 17, 32, 0.9);
+      background: rgba(11, 17, 32, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       position: sticky;
@@ -51,7 +54,7 @@
     }
 
     .nav-container {
-      max-width: 860px;
+      max-width: 960px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -62,25 +65,28 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .logo-badge {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: #fff;
       font-weight: 800;
-      font-size: 14px;
+      font-size: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px var(--primary-glow);
+      box-shadow: 0 4px 14px var(--primary-glow);
     }
 
     .brand-title {
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
     }
 
     .brand-subtitle {
@@ -92,468 +98,913 @@
       display: none;
       align-items: center;
       gap: 6px;
-      padding: 4px 12px;
+      padding: 5px 12px;
       background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       border-radius: 999px;
       color: var(--amber);
       font-size: 11px;
       font-weight: 700;
-      text-transform: uppercase;
     }
 
+    .btn-vocab-test {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-vocab-test:hover {
+      background: rgba(16, 185, 129, 0.25);
+    }
+
+    /* MAIN */
     main {
       flex: 1;
-      max-width: 860px;
+      max-width: 960px;
       width: 100%;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 24px 16px 48px;
     }
 
-    /* Top Week Overview & Days Selector */
-    .week-header {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.2));
-      border: 1px solid rgba(99, 102, 241, 0.3);
-      border-radius: 24px;
-      padding: 24px;
+    /* BANNER */
+    .week-banner {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.06));
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 18px;
+      padding: 20px 24px;
       margin-bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
     }
 
-    .week-title-row {
+    .banner-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 10px;
       flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .user-greeting {
-      font-size: 13px;
-      color: #818cf8;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .week-heading {
-      font-size: 22px;
-      font-weight: 800;
-      color: #fff;
-    }
-
-    /* Day Tabs Grid */
-    .days-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
       gap: 8px;
     }
 
+    .user-tag {
+      font-size: 13px;
+      color: #818cf8;
+      font-weight: 700;
+    }
+
+    .btn-switch-user {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .week-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .week-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* SCHEDULE TABS */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
     @media (max-width: 640px) {
-      .days-grid {
-        grid-template-columns: repeat(4, 1fr);
+      .schedule-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     .day-tab {
-      padding: 10px 6px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
       border-radius: 14px;
-      background: rgba(19, 29, 51, 0.8);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
+      padding: 16px;
       cursor: pointer;
-      text-align: center;
-      transition: all 0.2s;
+      transition: all 0.2s ease;
+      position: relative;
     }
 
-    .day-tab:hover {
-      background: rgba(30, 41, 59, 0.8);
-      color: #fff;
+    .day-tab:hover:not(.locked) {
+      border-color: #475569;
+      background: var(--card-hover);
     }
 
     .day-tab.active {
-      background: var(--primary);
       border-color: var(--primary);
-      color: #fff;
+      background: rgba(99, 102, 241, 0.14);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+    }
+
+    .day-tab.locked {
+      opacity: 0.65;
+      cursor: not-allowed;
+      border-style: dashed;
+    }
+
+    .day-tab-date {
+      font-size: 11px;
       font-weight: 700;
-      box-shadow: 0 4px 14px var(--primary-glow);
-    }
-
-    .day-tab.sunday {
-      border-color: rgba(245, 158, 11, 0.4);
-      color: #fbbf24;
-    }
-
-    .day-tab.sunday.active {
-      background: var(--amber);
-      color: #0b1120;
-      border-color: var(--amber);
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
-    }
-
-    .day-tab-num {
-      font-size: 10px;
       text-transform: uppercase;
-      opacity: 0.7;
-      display: block;
-      margin-bottom: 2px;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
     }
 
-    .day-tab-name {
-      font-size: 12px;
+    .day-tab.active .day-tab-date {
+      color: #818cf8;
+    }
+
+    .day-tab-title {
+      font-size: 14px;
       font-weight: 700;
+      line-height: 1.3;
     }
 
-    /* Daily Content Card */
-    .day-card {
+    .day-tab.locked .day-tab-title {
+      color: var(--text-muted);
+    }
+
+    /* CONTENT BOX */
+    .content-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 32px 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.4);
     }
 
-    /* Sub-section tabs (Lesson, Vocab, Practice, Homework) */
-    .section-nav {
+    .nav-tabs {
       display: flex;
       gap: 8px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 16px;
+      padding-bottom: 14px;
       margin-bottom: 24px;
       overflow-x: auto;
     }
 
-    .section-btn {
-      padding: 8px 16px;
-      border-radius: 12px;
-      background: transparent;
+    .nav-tab-btn {
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
       color: var(--text-muted);
+      padding: 9px 16px;
+      border-radius: 10px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .nav-tab-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .nav-tab-btn.ppt-highlight {
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+
+    .nav-tab-btn.ppt-highlight.active {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #fff;
+      border-color: #f59e0b;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+    }
+
+    /* ========================================================
+       1. LIVE PRESENTATION SLIDES (REPLACES PPT FOR GOOGLE MEET)
+       ======================================================== */
+    .presentation-frame {
+      background: #070d19;
+      border: 1.5px solid #23324d;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    /* Top presentation control bar */
+    .ppt-topbar {
+      background: #0e172a;
+      border-bottom: 1px solid #1e293b;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ppt-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+
+    .ppt-tools {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ppt-tool-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid #2a3850;
+      color: #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: all 0.15s;
     }
 
-    .section-btn:hover {
-      color: #fff;
-      border-color: #334155;
-    }
-
-    .section-btn.active {
-      background: #1e293b;
-      border-color: var(--primary);
+    .ppt-tool-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
       color: #fff;
     }
 
-    /* 1. LESSON EXPLANATION TAB */
-    .lesson-box {
-      line-height: 1.65;
-      font-size: 15px;
+    /* Slide viewport */
+    .slide-viewport {
+      min-height: 440px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at center, #101c36 0%, #070d19 100%);
+    }
+
+    @media (max-width: 640px) {
+      .slide-viewport {
+        padding: 24px 16px;
+        min-height: 380px;
+      }
+    }
+
+    /* Slide elements */
+    .slide-tag {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .slide-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      max-width: 720px;
+      letter-spacing: -0.5px;
+    }
+
+    @media (max-width: 640px) {
+      .slide-title {
+        font-size: 22px;
+      }
+    }
+
+    .slide-body {
+      font-size: 16px;
       color: #cbd5e1;
+      max-width: 720px;
+      line-height: 1.6;
+      width: 100%;
     }
 
-    .lesson-box h3 {
+    /* Visual Timeline Component */
+    .visual-timeline {
+      width: 100%;
+      max-width: 680px;
+      margin: 24px auto 10px;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid #20314f;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .timeline-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .t-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .t-icon-past {
+      background: rgba(239, 68, 68, 0.18);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+
+    .t-icon-present {
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+
+    .t-info-title {
+      font-size: 15px;
+      font-weight: 800;
       color: #fff;
-      font-size: 20px;
+      margin-bottom: 2px;
+    }
+
+    .t-info-desc {
+      font-size: 13.5px;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+
+    /* Comparison Grid in Slide */
+    .slide-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      width: 100%;
+      max-width: 720px;
+      margin: 18px auto;
+      text-align: left;
+    }
+
+    @media (max-width: 600px) {
+      .slide-compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .slide-compare-card {
+      background: rgba(11, 17, 32, 0.8);
+      border-radius: 14px;
+      padding: 16px;
+      border: 1.5px solid #1e293b;
+    }
+
+    .slide-card-red {
+      border-color: rgba(239, 68, 68, 0.35);
+      background: rgba(239, 68, 68, 0.05);
+    }
+
+    .slide-card-green {
+      border-color: rgba(16, 185, 129, 0.35);
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .slide-card-header {
+      font-size: 14px;
       font-weight: 800;
       margin-bottom: 8px;
     }
 
-    .lesson-rule {
-      background: rgba(99, 102, 241, 0.08);
-      border-left: 3px solid var(--primary);
-      padding: 14px 18px;
-      border-radius: 0 14px 14px 0;
-      margin: 16px 0;
+    /* Live Drill Reveal Item */
+    .live-drill-item {
+      background: rgba(11, 17, 32, 0.85);
+      border: 1px solid #25334c;
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 680px;
+      text-align: left;
+    }
+
+    .drill-question {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .drill-answer {
+      display: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 14px;
       font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .btn-reveal {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #a5b4fc;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Bottom presentation control bar */
+    .ppt-footer {
+      background: #0e172a;
+      border-top: 1px solid #1e293b;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ppt-nav-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+
+    .ppt-nav-btn:hover:not(:disabled) {
+      background: #334155;
+      border-color: #475569;
+    }
+
+    .ppt-nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .ppt-nav-btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .ppt-nav-btn.primary:hover:not(:disabled) {
+      background: var(--primary-hover);
+    }
+
+    .ppt-progress-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ppt-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ppt-dot.active {
+      background: #38bdf8;
+      width: 24px;
+    }
+
+    /* Fullscreen specific style */
+    .presentation-frame:fullscreen {
+      border-radius: 0;
+      border: none;
+      width: 100vw;
+      height: 100vh;
+      justify-content: space-between;
+    }
+
+    .presentation-frame:fullscreen .slide-viewport {
+      flex: 1;
+      padding: 48px;
+    }
+
+    .presentation-frame:fullscreen .slide-title {
+      font-size: 38px;
+    }
+
+    .presentation-frame:fullscreen .slide-body {
+      font-size: 18px;
+      max-width: 900px;
+    }
+
+    /* ========================================================
+       2. LESSON TAB (STUDENT SELF-STUDY / SUMMARY)
+       ======================================================== */
+    .instructor-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+    }
+
+    .instructor-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .instructor-info-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #a5b4fc;
+    }
+
+    .instructor-info-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .lesson-content {
+      line-height: 1.7;
+      font-size: 15px;
       color: #e2e8f0;
     }
 
-    .example-list {
-      margin: 16px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .lesson-content h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin: 16px 0 8px;
     }
 
-    .example-item {
-      background: #0b1120;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-
-    .example-item strong {
-      color: #818cf8;
-    }
-
-    .trap-box {
-      background: rgba(239, 68, 68, 0.08);
-      border-left: 3px solid var(--danger);
-      padding: 12px 16px;
+    .rule-card {
+      background: rgba(11, 17, 32, 0.7);
+      border-left: 4px solid var(--primary);
       border-radius: 0 12px 12px 0;
-      color: #fca5a5;
+      padding: 14px 18px;
+      margin: 16px 0;
       font-size: 14px;
-      margin-top: 16px;
     }
 
-    /* 2. QUIZLET FLASHCARDS TAB */
+    .uz-trap-box {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #fde68a;
+    }
+
+    /* ========================================================
+       3. FLASHCARD COMPONENT
+       ======================================================== */
     .flashcard-wrapper {
       perspective: 1000px;
+      width: 100%;
       max-width: 520px;
-      margin: 0 auto 20px;
+      height: 260px;
+      margin: 10px auto 20px;
+      cursor: pointer;
     }
 
     .flashcard {
       width: 100%;
-      height: 240px;
+      height: 100%;
       position: relative;
       transform-style: preserve-3d;
-      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 16px;
     }
 
     .flashcard.flipped {
       transform: rotateY(180deg);
     }
 
-    .card-face {
+    .flashcard-front, .flashcard-back {
       position: absolute;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      border-radius: 20px;
+      border-radius: 16px;
       padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
-    .card-front {
-      background: linear-gradient(145deg, #131d33, #0e172a);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    .flashcard-front {
+      background: linear-gradient(145deg, #131d33, #1e293b);
     }
 
-    .card-front .word-title {
+    .flashcard-back {
+      background: linear-gradient(145deg, #1b2744, #0f172a);
+      transform: rotateY(180deg);
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+
+    .card-word {
       font-size: 32px;
       font-weight: 800;
       color: #fff;
-      letter-spacing: -0.5px;
       margin-bottom: 8px;
     }
 
-    .card-front .hint-pill {
-      font-size: 11px;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: rgba(99, 102, 241, 0.15);
-      color: #818cf8;
+    .card-pos {
+      font-size: 12px;
       font-weight: 700;
-      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.15);
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
     }
 
-    .card-back {
-      background: linear-gradient(145deg, #0e172a, #131d33);
-      transform: rotateY(180deg);
-      border-color: var(--primary);
-      box-shadow: 0 12px 28px var(--primary-glow);
+    .card-hint {
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
-    .card-back .definition {
-      font-size: 16px;
-      font-weight: 600;
-      color: #f1f5f9;
+    .card-uz-trans {
+      font-size: 22px;
+      font-weight: 800;
+      color: #34d399;
       margin-bottom: 12px;
     }
 
-    .card-back .example {
-      font-size: 13px;
-      color: #94a3b8;
+    .card-ex-en {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 4px;
+    }
+
+    .card-ex-uz {
+      font-size: 12.5px;
+      color: var(--text-muted);
       font-style: italic;
     }
 
-    .flashcard-nav {
+    .card-controls {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 16px;
+      margin-bottom: 10px;
     }
 
-    .flashcard-counter {
+    .card-counter {
       font-size: 13px;
       font-weight: 700;
       color: var(--text-muted);
     }
 
-    /* 3. PRACTICE QUIZ TAB */
-    .practice-question {
+    /* ========================================================
+       4. PRACTICE & HOMEWORK
+       ======================================================== */
+    .quiz-q-title {
       font-size: 17px;
       font-weight: 700;
-      color: #fff;
       margin-bottom: 16px;
+      line-height: 1.5;
     }
 
-    .practice-options {
+    .quiz-options {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
-    .practice-opt-btn {
-      width: 100%;
+    .quiz-opt-btn {
+      background: rgba(11, 17, 32, 0.6);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: var(--text);
+      font-size: 14.5px;
+      font-weight: 600;
       text-align: left;
-      padding: 14px 18px;
-      background: #0b1120;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      color: #cbd5e1;
-      font-size: 14px;
-      font-weight: 500;
       cursor: pointer;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 10px;
       transition: all 0.15s;
     }
 
-    .practice-opt-btn:hover:not(.checked) {
-      border-color: #334155;
-      background: #0e1628;
+    .quiz-opt-btn:hover:not(:disabled) {
+      background: var(--card-hover);
+      border-color: #475569;
     }
 
-    .practice-opt-btn.correct {
-      background: rgba(16, 185, 129, 0.15);
-      border-color: var(--success);
-      color: #6ee7b7;
-      font-weight: 700;
+    .quiz-opt-btn.correct {
+      border-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
     }
 
-    .practice-opt-btn.wrong {
-      background: rgba(239, 68, 68, 0.15);
-      border-color: var(--danger);
-      color: #fca5a5;
+    .quiz-opt-btn.wrong {
+      border-color: var(--rose);
+      background: rgba(239, 68, 68, 0.18);
+      color: #f87171;
+      text-decoration: line-through;
     }
 
-    .explanation-box {
-      display: none;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .explanation-box.correct {
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #6ee7b7;
-    }
-
-    .explanation-box.wrong {
-      background: rgba(245, 158, 11, 0.1);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      color: #fcd34d;
-    }
-
-    /* 4. HOMEWORK SUBMISSION TAB */
-    .hw-prompt {
-      background: #0b1120;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      font-size: 14px;
-      color: #cbd5e1;
+    .quiz-expl-box {
+      background: rgba(11, 17, 32, 0.85);
+      border-left: 4px solid var(--emerald);
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      line-height: 1.6;
       margin-bottom: 16px;
+      display: none;
     }
 
-    .hw-prompt strong {
-      color: #fff;
+    .hw-prompt {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    textarea {
+    .hw-textarea {
       width: 100%;
       height: 140px;
-      background: #0b1120;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      color: #fff;
-      font-size: 14px;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      color: var(--text);
+      font-size: 14.5px;
+      line-height: 1.5;
       outline: none;
       resize: vertical;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    textarea:focus {
+    .hw-textarea:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px var(--primary-glow);
     }
 
-    .btn-submit-hw {
-      padding: 14px 24px;
-      border-radius: 14px;
+    .btn-submit {
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: #fff;
       border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 4px 16px var(--primary-glow);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
     }
 
-    .btn-submit-hw:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
+    .btn-submit:hover:not(:disabled) {
+      opacity: 0.95;
+      transform: translateY(-1px);
     }
 
-    .hw-status-msg {
-      display: none;
-      margin-top: 14px;
-      padding: 12px;
-      border-radius: 12px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #6ee7b7;
+    .status-toast {
+      padding: 12px 16px;
+      border-radius: 10px;
       font-size: 13px;
-      text-align: center;
       font-weight: 600;
+      margin-top: 12px;
+      display: none;
     }
 
-    /* Modal for name on first visit */
-    #name-modal {
+    /* MODAL */
+    .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(11, 17, 32, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      display: flex;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      z-index: 100;
+      padding: 16px;
     }
 
-    .modal-card {
+    .modal-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 36px 28px;
+      border-radius: 18px;
+      padding: 28px 24px;
       max-width: 440px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .input-clean {
+      width: 100%;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      margin: 16px 0 8px;
+    }
+
+    .input-clean:focus {
+      border-color: var(--primary);
     }
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 16px;
+      padding: 18px;
       text-align: center;
       font-size: 12px;
       color: var(--text-muted);
@@ -562,826 +1013,1103 @@
 </head>
 <body>
 
-  <!-- Top Navbar -->
+  <!-- HEADER -->
   <header>
     <div class="nav-container">
-      <div class="brand">
+      <a href="index.html" class="brand">
         <div class="logo-badge">UE</div>
         <div>
           <div class="brand-title">Ulunur's English</div>
-          <div class="brand-subtitle">Week 1 Intensive Course</div>
+          <div class="brand-subtitle">Jonli Dars & 1-on-1 Intensiv</div>
         </div>
-      </div>
+      </a>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="vocab.html" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-          🎯 Vocab Level Check
+        <a href="vocab.html" class="btn-vocab-test">
+          🎯 Vocab Test (EN ➔ UZ)
         </a>
         <div id="teacher-badge" class="teacher-badge">
-          🛡️ Ulunur Mode (Silent)
+          🛡️ Ulunur Mode (Muted)
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Training Container -->
+  <!-- MAIN -->
   <main>
-    <!-- Week Header -->
-    <div class="week-header">
-      <div class="week-title-row">
-        <div>
-          <div id="user-greeting" class="user-greeting">Welcome!</div>
-          <div class="week-heading">Week 1: Narrative Precision & Foundations</div>
+    <!-- WEEK SCHEDULE BANNER -->
+    <div class="week-banner">
+      <div class="banner-top">
+        <div class="user-tag" id="user-greeting">Xush kelibsiz! 👋</div>
+        <button class="btn-switch-user" onclick="openNameModal()">👤 Ismni o'zgartirish</button>
+      </div>
+      <h1 class="week-title">Boshlang'ich Intensiv Bosqich</h1>
+      <p class="week-desc">
+        Jonli dars paytida Google Meet'da ekranni ulashing va <strong>🖥️ Dars Taqdimoti (Slides)</strong> orqali dars o'ting. Slaydlarni klaviaturadagi <strong>← va →</strong> strelkalari bilan oson boshqaring!
+      </p>
+    </div>
+
+    <!-- 3 DAYS TABS (Juma, Shanba, Yakshanba) -->
+    <div class="schedule-grid" id="schedule-grid">
+      <!-- Day 1: Juma -->
+      <div id="tab-day-1" class="day-tab active" onclick="handleDayClick(1)">
+        <div class="day-tab-date">
+          <span>18-Sentyabr • Juma</span>
+          <span id="tab-status-1">Ochiq ✨</span>
         </div>
-        <button class="section-btn" onclick="openNameChange()">👤 Change Name</button>
+        <div class="day-tab-title" id="tab-title-1">
+          Present Perfect vs Past Simple
+        </div>
       </div>
 
-      <!-- 7 Days Grid -->
-      <div class="days-grid">
-        <div class="day-tab active" onclick="switchDay(1)">
-          <span class="day-tab-num">Day 1</span>
-          <span class="day-tab-name">Mon</span>
+      <!-- Day 2: Shanba -->
+      <div id="tab-day-2" class="day-tab locked" onclick="handleDayClick(2)">
+        <div class="day-tab-date">
+          <span>19-Sentyabr • Shanba</span>
+          <span id="tab-status-2">🔒 Yopiq</span>
         </div>
-        <div class="day-tab" onclick="switchDay(2)">
-          <span class="day-tab-num">Day 2</span>
-          <span class="day-tab-name">Tue</span>
+        <div class="day-tab-title" id="tab-title-2">
+          🔒 19-Sentyabrda ochiladi
         </div>
-        <div class="day-tab" onclick="switchDay(3)">
-          <span class="day-tab-num">Day 3</span>
-          <span class="day-tab-name">Wed</span>
+      </div>
+
+      <!-- Day 3: Yakshanba -->
+      <div id="tab-day-3" class="day-tab locked" onclick="handleDayClick(3)">
+        <div class="day-tab-date">
+          <span>20-Sentyabr • Yakshanba</span>
+          <span id="tab-status-3">🏆 Sinov</span>
         </div>
-        <div class="day-tab" onclick="switchDay(4)">
-          <span class="day-tab-num">Day 4</span>
-          <span class="day-tab-name">Thu</span>
-        </div>
-        <div class="day-tab" onclick="switchDay(5)">
-          <span class="day-tab-num">Day 5</span>
-          <span class="day-tab-name">Fri</span>
-        </div>
-        <div class="day-tab" onclick="switchDay(6)">
-          <span class="day-tab-num">Day 6</span>
-          <span class="day-tab-name">Sat</span>
-        </div>
-        <div class="day-tab sunday" onclick="switchDay(7)">
-          <span class="day-tab-num">Day 7</span>
-          <span class="day-tab-name">🏆 Sun</span>
+        <div class="day-tab-title" id="tab-title-3">
+          🔒 20-Sentyabrda ochiladi
         </div>
       </div>
     </div>
 
-    <!-- Active Day Container -->
-    <div class="day-card">
+    <!-- MAIN LESSON BOX -->
+    <div class="content-box">
       <!-- Section Switcher -->
-      <div class="section-nav">
-        <button id="tab-btn-lesson" class="section-btn active" onclick="switchSection('lesson')">📖 Lesson</button>
-        <button id="tab-btn-vocab" class="section-btn" onclick="switchSection('vocab')">⚡ Quizlet Vocab (8)</button>
-        <button id="tab-btn-practice" class="section-btn" onclick="switchSection('practice')">🎯 Practice Quiz</button>
-        <button id="tab-btn-hw" class="section-btn" onclick="switchSection('hw')">📝 Homework</button>
+      <div class="nav-tabs">
+        <button id="sec-btn-slides" class="nav-tab-btn ppt-highlight active" onclick="switchSection('slides')">
+          🖥️ Dars Taqdimoti (Slides)
+        </button>
+        <button id="sec-btn-lesson" class="nav-tab-btn" onclick="switchSection('lesson')">
+          📖 Dars Matni
+        </button>
+        <button id="sec-btn-vocab" class="nav-tab-btn" onclick="switchSection('vocab')">
+          ⚡ Quizlet So'zlar (8 ta)
+        </button>
+        <button id="sec-btn-practice" class="nav-tab-btn" onclick="switchSection('practice')">
+          🎯 Mashq Test
+        </button>
+        <button id="sec-btn-hw" class="nav-tab-btn" onclick="switchSection('hw')">
+          📝 Uyga Vazifa
+        </button>
       </div>
 
-      <!-- 1. Lesson View -->
-      <div id="section-lesson" class="lesson-box"></div>
-
-      <!-- 2. Vocab View (Quizlet Style) -->
-      <div id="section-vocab" style="display: none;">
-        <div class="flashcard-wrapper">
-          <div id="flashcard" class="flashcard" onclick="flipCard()">
-            <div class="card-face card-front">
-              <div id="fc-word" class="word-title">accomplish</div>
-              <div class="hint-pill">Tap to see definition & context ↻</div>
+      <!-- 1. LIVE PRESENTATION SLIDES (REPLACES PPT) -->
+      <div id="section-slides">
+        <div class="presentation-frame" id="presentation-frame">
+          <!-- Top bar -->
+          <div class="ppt-topbar">
+            <div class="ppt-badge">
+              <span>● LIVE</span>
+              <span>GOOGLE MEET TAQDIMOT REJIMI</span>
             </div>
-            <div class="card-face card-back">
-              <div id="fc-def" class="definition">to achieve or complete successfully</div>
-              <div id="fc-ex" class="example">"She worked hard to accomplish her B2 goals."</div>
+            <div class="ppt-tools">
+              <span style="font-size: 12px; color: #94a3b8; margin-right: 6px;">
+                ⌨️ Klaviatura: <strong>←</strong> / <strong>→</strong>
+              </span>
+              <button class="ppt-tool-btn" onclick="toggleFullscreen()">
+                ⛶ To'liq Ekran
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Slide Viewport -->
+          <div class="slide-viewport" id="slide-viewport">
+            <!-- Dynamic Slide Injected by JS -->
+          </div>
+
+          <!-- Bottom navigation -->
+          <div class="ppt-footer">
+            <button class="ppt-nav-btn" id="btn-prev-slide" onclick="prevSlide()">
+              ← Oldingi Slayd
+            </button>
+
+            <div class="ppt-progress-dots" id="ppt-dots-container"></div>
+
+            <button class="ppt-nav-btn primary" id="btn-next-slide" onclick="nextSlide()">
+              Keyingi Slayd →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. LESSON (O'zbekcha murabbiy matni) -->
+      <div id="section-lesson" style="display: none;">
+        <div class="instructor-box">
+          <div class="instructor-avatar">👨‍🏫</div>
+          <div>
+            <div class="instructor-info-title">Ulunur Ustoz Tushuntiradi</div>
+            <div class="instructor-info-sub">Qoidalarni o'zbek tilidagi qiyoslar bilan mustahkamlash</div>
+          </div>
+        </div>
+        <div class="lesson-content" id="lesson-html">
+          Yuklanmoqda...
+        </div>
+      </div>
+
+      <!-- 3. QUIZLET FLASHCARDS -->
+      <div id="section-vocab" style="display: none;">
+        <div style="text-align: center; margin-bottom: 14px;">
+          <h3 style="font-size: 16px; font-weight: 700;">Quizlet So'z Boyligi</h3>
+          <p style="font-size: 12.5px; color: var(--text-muted);">Kartochkani bosib tarjimasini va talaffuzini ko'ring</p>
+        </div>
+
+        <div class="flashcard-wrapper" onclick="flipCard()">
+          <div class="flashcard" id="flashcard-el">
+            <div class="flashcard-front">
+              <span class="card-pos" id="fc-pos">fe'l</span>
+              <div class="card-word" id="fc-word">achieve</div>
+              <span class="card-hint">🔄 O'zbekcha tarjimasini ko'rish uchun bosing</span>
+            </div>
+            <div class="flashcard-back">
+              <div class="card-uz-trans" id="fc-uz">erishmoq</div>
+              <div class="card-ex-en" id="fc-ex-en">"She worked hard to achieve her goal."</div>
+              <div class="card-ex-uz" id="fc-ex-uz">U o'z maqsadiga erishish uchun qattiq ishladi.</div>
             </div>
           </div>
         </div>
 
-        <div class="flashcard-nav">
-          <button class="section-btn" onclick="prevCard()">← Prev</button>
-          <span id="fc-counter" class="flashcard-counter">1 / 8</span>
-          <button class="section-btn" onclick="nextCard()">Next →</button>
+        <div class="card-controls">
+          <button class="btn-secondary" style="padding: 8px 16px;" onclick="prevCard()">← Oldingi</button>
+          <span class="card-counter" id="fc-counter">1 / 8</span>
+          <button class="btn-secondary" style="padding: 8px 16px;" onclick="nextCard()">Keyingi →</button>
         </div>
       </div>
 
-      <!-- 3. Practice Quiz View -->
+      <!-- 4. PRACTICE QUIZ -->
       <div id="section-practice" style="display: none;">
-        <div id="pq-text" class="practice-question">Question text</div>
-        <div id="pq-options" class="practice-options"></div>
-        <div id="pq-expl" class="explanation-box"></div>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span id="pq-counter" class="flashcard-counter">Question 1 of 5</span>
-          <button id="pq-next-btn" class="section-btn" onclick="nextPracticeQ()" style="display: none;">Next Question →</button>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="font-size: 12px; font-weight: 700; color: var(--text-muted);" id="pq-counter">Savol 1 / 4</span>
+          <span style="font-size: 12px; font-weight: 700; color: var(--primary);" id="pq-score-pill">Mustaqil bilimni tekshirish</span>
         </div>
+
+        <div class="quiz-q-title" id="pq-title">Yuklanmoqda...</div>
+        <div class="quiz-options" id="pq-options"></div>
+        <div class="quiz-expl-box" id="pq-expl"></div>
+
+        <button class="btn-submit" id="pq-next-btn" style="display: none; margin-top: 10px;" onclick="nextPracticeQuestion()">
+          Keyingi savol →
+        </button>
       </div>
 
-      <!-- 4. Homework View -->
+      <!-- 5. HOMEWORK -->
       <div id="section-hw" style="display: none;">
-        <div id="hw-prompt" class="hw-prompt">Homework prompt goes here...</div>
-        <textarea id="hw-input" placeholder="Type your sentences / homework response here..."></textarea>
-        <button id="hw-submit-btn" class="btn-submit-hw" onclick="submitHomework()">Submit Homework to Teacher 🚀</button>
-        <div id="hw-status" class="hw-status-msg">✅ Homework sent to your teacher's Telegram!</div>
+        <div class="hw-prompt" id="hw-prompt-text">
+          Yuklanmoqda...
+        </div>
+
+        <label style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px;">
+          Javobingizni shu yerga yozing:
+        </label>
+        <textarea id="hw-textarea" class="hw-textarea" placeholder="1. I have recently...&#10;2. Yesterday I saw..."></textarea>
+
+        <button class="btn-submit" id="hw-submit-btn" onclick="submitHomework()">
+          Ustozga Yuborish (Telegram) 🚀
+        </button>
+
+        <div class="status-toast" id="hw-toast"></div>
       </div>
     </div>
   </main>
 
-  <footer>
-    Ulunur's English • High-Performance 1-on-1 Language Intensive
-  </footer>
-
-  <!-- FIRST TIME NAME MODAL -->
-  <div id="name-modal" style="display: none;">
-    <div class="modal-card">
-      <div style="font-size: 36px; margin-bottom: 12px;">👋</div>
-      <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Welcome to Ulunur's English</h3>
-      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">Please enter your name to access Week 1 tasks.</p>
-      <input type="text" id="modal-name-input" placeholder="Your name..." style="margin-bottom: 20px;" oninput="checkModalName(this.value)">
-      <div id="modal-hint" style="display: none; color: var(--amber); font-size: 12px; margin-bottom: 16px; font-weight: 600;">
-        🛡️ Welcome Ulunur! Telegram notifications will be muted.
+  <!-- NAME MODAL -->
+  <div class="modal-overlay" id="name-modal">
+    <div class="modal-box">
+      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Xush kelibsiz! 👋</h2>
+      <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">
+        Darslarni boshlash uchun ismingizni yozing.
+      </p>
+      <input type="text" id="modal-name-input" class="input-clean" placeholder="Masalan: Malika" oninput="checkModalName(this.value)">
+      <div id="modal-hint" style="display: none; color: var(--amber); font-size: 12px; font-weight: 700; margin-bottom: 10px;">
+        🛡️ Ulunur rejimi aniqlandi: Barcha darslar ochiq va Telegram xabarlari o'chiriladi.
       </div>
-      <button class="btn-primary" onclick="saveName()">Enter Course →</button>
+      <button class="btn-submit" style="width: 100%; justify-content: center; margin-top: 8px;" onclick="saveName()">
+        Davom etish →
+      </button>
     </div>
   </div>
 
-  <!-- CURRICULUM DATA & ENGINE -->
+  <footer>
+    Ulunur's English 1-on-1 Intensiv • Jonli Dars Taqdimot Tizimi
+  </footer>
+
+  <!-- ENGINE SCRIPT -->
   <script>
     const TELEGRAM_BOT_TOKEN = "8828359607:AAFEpXaJusqaorQtIhd2sDMm4enaVWxnmuY";
     const TELEGRAM_CHAT_ID = "7957347033";
 
-    // 7 DAYS OF CURRICULUM DATA
-    const WEEK1_DATA = {
+    // 3 KUNLIK TO'LIQ MA'LUMOT VA SLAYDLAR (GOOGLE MEET DARS UCHUN)
+    const COURSE_DAYS = {
       1: {
+        dateStr: "18-Sentyabr, Juma",
+        shortDate: "18-Sent • Juma",
         title: "Present Perfect vs Past Simple",
-        lessonHtml: `
-          <h3>Day 1: Present Perfect vs Past Simple</h3>
-          <p>The #1 confusion for returning B1 students. Master this single rule and you fix 50% of tense errors:</p>
-          <div class="lesson-rule">
-            • <strong>Past Simple (V2):</strong> The event happened at a FINISHED time in the past (yesterday, last year, in 2020, 2 hours ago).<br>
-            • <strong>Present Perfect (have/has + V3):</strong> The event connects to the PRESENT, or the time is UNFINISHED (ever, never, recently, so far, today).
-          </div>
-          <div class="example-list">
-            <div class="example-item">❌ "I have seen him yesterday." → <strong>Correct:</strong> "I <strong>saw</strong> him yesterday." (Finished past time)</div>
-            <div class="example-item">❌ "I live here for 3 years." → <strong>Correct:</strong> "I <strong>have lived</strong> here for 3 years." (Started in past, still true now)</div>
-          </div>
-          <div class="trap-box">
-            ⚠️ <strong>Watch Out:</strong> If you specify WHEN it happened, you MUST use Past Simple. If you focus on EXPERIENCE or RESULT, use Present Perfect.
-          </div>
-        `,
-        vocab: [
-          { word: "accomplish", def: "to achieve or complete something successfully", ex: "She worked diligently to accomplish her weekly study target." },
-          { word: "milestone", def: "a significant stage or event in the development of something", ex: "Passing the B1 exam was a major milestone in her education." },
-          { word: "breakthrough", def: "a sudden, dramatic, and important discovery or advance", ex: "After days of practice, she made a major breakthrough in grammar." },
-          { word: "overcome", def: "to succeed in dealing with a problem or difficulty", ex: "With consistent effort, you will overcome any language rust." },
-          { word: "acquire", def: "to gain or learn a skill or habit through effort", ex: "It takes deliberate practice to acquire natural fluency." },
-          { word: "transition", def: "a process of changing from one state or condition to another", ex: "Her transition from B1 to B2 requires active vocabulary recall." },
-          { word: "initial", def: "existing or occurring at the beginning; first", ex: "Her initial diagnostic score gave us clear areas to focus on." },
-          { word: "preliminary", def: "action or event preceding or preparing for something fuller", ex: "We completed preliminary drills before taking the mock exam." }
-        ],
-        practice: [
+        unlockDate: new Date("2026-09-18T00:00:00+05:00"),
+
+        // PPT SLIDES FOR LIVE GOOGLE MEET
+        slides: [
           {
-            q: "I ______ to Italy twice in my life, and I hope to visit again next summer.",
-            options: ["went", "have been", "was", "had been"],
-            ans: "have been",
-            expl: "Use Present Perfect ('have been') for life experience when no specific past date is mentioned."
+            tag: "1-SLAYD • KIRISH & MUAMMO",
+            title: "Present Perfect vs. Past Simple",
+            html: `
+              <div style="margin: 18px 0; font-size: 17px; line-height: 1.6; color: #cbd5e1;">
+                🤔 <strong>Savol:</strong> Nega o'zbek tilida so'zlashuvchilar bu ikki zamonda 80% holatda xato qiladi?<br><br>
+                <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 14px 18px; border-radius: 12px; color: #fca5a5; display: inline-block; text-align: left;">
+                  ❌ <em>"Men kecha kinoga borganman"</em> deb o'zbekcha gapira olamiz.<br>
+                  ❌ Lekin ingliz tilida: <em>"I have gone to cinema yesterday"</em> desangiz — <strong>KATTA XATO!</strong>
+                </div>
+              </div>
+              <p style="font-size: 14px; color: #94a3b8;">Bugun ushbu muammoni 1 umrga hal qilamiz. 🚀</p>
+            `
           },
           {
-            q: "Last night at 9 PM, my brother ______ home from his flight.",
-            options: ["has arrived", "arrived", "was arrived", "had been arriving"],
-            ans: "arrived",
-            expl: "Past Simple ('arrived') is mandatory with specific past time markers ('Last night at 9 PM')."
+            tag: "2-SLAYD • KO'Z OLDIGA KELTIRISH",
+            title: "Zamonlar Chizig'i (Visual Timeline)",
+            html: `
+              <div class="visual-timeline">
+                <div class="timeline-row">
+                  <div class="t-icon t-icon-past">❌</div>
+                  <div>
+                    <div class="t-info-title" style="color: #f87171;">PAST SIMPLE (O'tgan oddiy zamon)</div>
+                    <div class="t-info-desc">
+                      Eshik yopiq! Ish-harakat o'tmishda qolib ketgan. Qachon bo'lgani aniq ma'lum: <em>yesterday, last year, in 2021</em>.<br>
+                      👉 <strong>"I saw him yesterday."</strong> (Kecha ko'rganman, vaqt aniq).
+                    </div>
+                  </div>
+                </div>
+
+                <div style="border-top: 1px dashed #2a3b5a; margin: 12px 0;"></div>
+
+                <div class="timeline-row">
+                  <div class="t-icon t-icon-present">🔗</div>
+                  <div>
+                    <div class="t-info-title" style="color: #34d399;">PRESENT PERFECT (Hozirgi tugallangan)</div>
+                    <div class="t-info-desc">
+                      Ko'prik bor! O'tmishdagi ish <strong>HOZIRGI LAHZA</strong> bilan bog'langan. Natijasi hozir bilinib turibdi yoki hayotiy tajriba.<br>
+                      👉 <strong>"I have lost my keys."</strong> (Kalitimni yo'qotdim — hozir ham eshik oldida turibman, natija bor!).
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `
           },
           {
-            q: "Scientists recently ______ a significant breakthrough in cancer research.",
-            options: ["achieved", "have achieved", "were achieving", "had achieved"],
-            ans: "have achieved",
-            expl: "'Recently' connects recent past discoveries with current relevance -> Present Perfect."
+            tag: "3-SLAYD • QOIDA & FORMULA",
+            title: "Formula va Signal So'zlar",
+            html: `
+              <div class="slide-compare-grid">
+                <div class="slide-compare-card slide-card-red">
+                  <div class="slide-card-header" style="color: #f87171;">📌 Past Simple (V2)</div>
+                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
+                    • <strong>Formula:</strong> Subject + V2 / didn't + V1<br>
+                    • <strong>Aniq vaqt:</strong><br>
+                    — yesterday<br>
+                    — last week / last year<br>
+                    — 2 days ago<br>
+                    — in 2019 / when I was young<br>
+                    <em>"She arrived 10 minutes ago."</em>
+                  </div>
+                </div>
+
+                <div class="slide-compare-card slide-card-green">
+                  <div class="slide-card-header" style="color: #34d399;">📌 Present Perfect (have + V3)</div>
+                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
+                    • <strong>Formula:</strong> have / has + V3 (ed)<br>
+                    • <strong>Noma'lum / Natija vaqti:</strong><br>
+                    — ever / never (hayotda)<br>
+                    — already / yet / just<br>
+                    — recently / so far<br>
+                    — today / this week (tugamagan)<br>
+                    <em>"She has just arrived."</em>
+                  </div>
+                </div>
+              </div>
+            `
           },
           {
-            q: "How many job applications ______ you sent out so far this week?",
-            options: ["did", "have", "were", "had"],
-            ans: "have",
-            expl: "'So far this week' is an ongoing, unfinished time period -> Present Perfect ('have you sent')."
+            tag: "4-SLAYD • QIYOSLASH JADVALI",
+            title: "Haqiqiy Farqni His Qilish",
+            html: `
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 16px auto; font-size: 14.5px; line-height: 1.6;">
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 14px 18px; border-radius: 12px; margin-bottom: 12px;">
+                  1️⃣ <strong>"I lived in London for 2 years."</strong> (Past Simple)<br>
+                  <span style="color: #94a3b8;">Ma'nosi: Men Londonda yashab bo'lganman, hozir u yerda EMASMAN. Yashash tugagan.</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 14px 18px; border-radius: 12px;">
+                  2️⃣ <strong>"I have lived in London for 2 years."</strong> (Present Perfect)<br>
+                  <span style="color: #34d399;">Ma'nosi: Men 2 yildan beri Londonda yashayman va HOZIR HAM u yerda yashamoqdaman!</span>
+                </div>
+              </div>
+            `
           },
           {
-            q: "When ______ you finish reading that English novel?",
-            options: ["have", "did", "were", "had"],
-            ans: "did",
-            expl: "Questions with 'When' ask for a specific point in past time, requiring Past Simple ('When did you finish?')."
+            tag: "5-SLAYD • JONLI MASHQ (MEET SAVOL-JAVOB)",
+            title: "O'quvchi Bilan Jonli Mashq",
+            html: `
+              <p style="font-size: 14px; color: #94a3b8; margin-bottom: 14px;">
+                Malika, qaysi javob to'g'ri deb o'ylaysiz? (Javobni eshitgach tugmani bosing)
+              </p>
+              <div class="live-drill-item">
+                <div class="drill-question">1. I ______ (read) that book yesterday.</div>
+                <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
+                <div class="drill-answer">✅ To'g'ri: <strong>read</strong> (Past Simple). Chunki "yesterday" bor!</div>
+              </div>
+
+              <div class="live-drill-item">
+                <div class="drill-question">2. ______ you ever ______ (see) an elephant?</div>
+                <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
+                <div class="drill-answer">✅ To'g'ri: <strong>Have you ever seen</strong>. Chunki hayotiy tajriba so'ralmoqda!</div>
+              </div>
+
+              <div class="live-drill-item">
+                <div class="drill-question">3. She ______ (buy) a new phone this morning, and it looks great!</div>
+                <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
+                <div class="drill-answer">✅ To'g'ri: <strong>has bought</strong> (natijasi hozir ko'rinib turibdi).</div>
+              </div>
+            `
+          },
+          {
+            tag: "6-SLAYD • LUG'AT BOYLIGI",
+            title: "Bugungi 8 ta Yangi So'z",
+            html: `
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 700px; width: 100%; text-align: left; margin: 16px auto;">
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">1. achieve</strong> [fe'l] — erishmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"Achieve a goal"</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">2. milestone</strong> [ot] — muhim bosqich<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"A major milestone"</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">3. improve</strong> [fe'l] — yaxshilamoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"Improve speaking"</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">4. effort</strong> [ot] — sa'y-harakat<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"Make an effort"</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">5. afford</strong> [fe'l] — qurbi yetmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"Cannot afford it"</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">6. hesitate</strong> [fe'l] — ikkilanmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"Don't hesitate"</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">7. recently</strong> [ravish] — yaqinda<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"Seen recently"</span>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
+                  <strong style="color: #38bdf8;">8. experience</strong> [ot] — tajriba<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"Life experience"</span>
+                </div>
+              </div>
+            `
           }
         ],
-        hwPrompt: "Write 3 sentences using the <strong>Present Perfect</strong> (about your life achievements or experiences) and 3 sentences using the <strong>Past Simple</strong> (about specific events that happened last week). Use at least 2 of today's vocabulary words!"
+
+        // STUDENT SELF-STUDY READING
+        lessonHtml: `
+          <h3>O'zbek O'quvchilari Eng Ko'p Adashadigan Mavzu</h3>
+          <p>
+            O'zbek tilida biz <em>"Kecha kinoga borganman"</em> deb bemalol aytamiz.
+            Lekin ingliz tilida agar o'tgan zamondagi <strong>ANIQ VAQT</strong> (yesterday, last year, 2 hours ago, in 2022) bo'lsa, FAQAT Past Simple (V2) ishlatiladi!
+          </p>
+
+          <div class="rule-card">
+            📌 <strong>1-QOIDA: Past Simple (V2) — O'tgan tugallangan vaqt</strong><br>
+            • <em>I saw him yesterday.</em> (To'g'ri)<br>
+            • ❌ <em>I have seen him yesterday.</em> (Xato! Aniq vaqt bo'lsa have/has qo'yilmaydi!)
+          </div>
+
+          <div class="rule-card">
+            📌 <strong>2-QOIDA: Present Perfect (have/has + V3) — Hozirgi natija yoki Tajriba</strong><br>
+            Bu zamonda harakat qachon bo'lgani noma'lum. Muhimi — <strong>natijasi hozir bilinib turgani</strong> yoki <strong>hayotiy tajriba</strong>.<br>
+            • <em>I have lost my key.</em> (Kalitimni yo'qotib qo'ydim — hozir ham uyga kirolmay turibman, natijasi bor!)<br>
+            • <em>Have you ever achieved a big goal?</em> (Hayotingizda katta maqsadga erishganmisiz?)
+          </div>
+        `,
+
+        vocab: [
+          { word: "achieve", pos: "fe'l", uz: "erishmoq, qo'lga kiritmoq", exEn: "She worked hard to achieve her goal.", exUz: "U o'z maqsadiga erishish uchun qattiq ishladi." },
+          { word: "milestone", pos: "ot", uz: "muhim bosqich, burilish nuqtasi", exEn: "Passing B1 is a great milestone.", exUz: "B1 dan o'tish ajoyib bosqichdir." },
+          { word: "improve", pos: "fe'l", uz: "yaxshilamoq, rivojlantirmoq", exEn: "I want to improve my speaking skills.", exUz: "Men gapirish qobiliyatimni yaxshilamoqchiman." },
+          { word: "effort", pos: "ot", uz: "harakat, urinish", exEn: "You need to make an effort every single day.", exUz: "Har kuni harakat qilishingiz kerak." },
+          { word: "afford", pos: "fe'l", uz: "qurbi yetmoq, puli yetmoq", exEn: "I cannot afford to buy a new laptop right now.", exUz: "Hozir yangi noutbuk olishga qurbim yetmaydi." },
+          { word: "hesitate", pos: "fe'l", uz: "ikkilanmoq", exEn: "Don't hesitate to ask questions.", exUz: "Savol berishdan ikkilanmang." },
+          { word: "recently", pos: "ravish", uz: "yaqinda, yaqin orada", exEn: "Have you seen any good movies recently?", exUz: "Yaqinda biror yaxshi kino ko'rdingizmi?" },
+          { word: "experience", pos: "ot", uz: "hayotiy tajriba", exEn: "Traveling alone was an unforgettable experience.", exUz: "Yolg'iz sayohat qilish unutilmas tajriba bo'ldi." }
+        ],
+
+        practice: [
+          {
+            q: "I ______ to Italy twice in my life, and I hope to go again next year.",
+            opts: ["went", "have been", "was", "had been"],
+            ans: "have been",
+            expl: "To'g'ri! Insonning butun hayotidagi tajribasi so'ralmoqda va o'tgan aniq sana ko'rsatilmagan (Present Perfect: 'have been')."
+          },
+          {
+            q: "My brother ______ his driving test last Friday.",
+            opts: ["has passed", "passed", "passes", "is passing"],
+            ans: "passed",
+            expl: "To'g'ri! 'last Friday' — aniq o'tgan zamon. Faqat Past Simple ('passed') ishlatiladi."
+          },
+          {
+            q: "She ______ three different books this month, and she is still reading another one.",
+            opts: ["read", "has read", "reads", "was reading"],
+            ans: "has read",
+            expl: "To'g'ri! 'this month' (shu oy) hali tugamagan davr bo'lgani uchun Present Perfect ('has read') qo'yiladi."
+          },
+          {
+            q: "We ______ an apartment in Tashkent in 2021.",
+            opts: ["have bought", "bought", "buy", "had bought"],
+            ans: "bought",
+            expl: "To'g'ri! 'in 2021' — o'tib ketgan aniq yil. Aniq yil bilan faqat Past Simple ('bought') ishlatiladi."
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 1-Kun Uyga Vazifasi:</strong><br>
+          Bugungi dars asosida 3 ta gap tuzing:<br>
+          1. O'zingiz erishgan yutuq yoki tajribangiz haqida (Present Perfect: <em>have + V3</em>).<br>
+          2. Kecha yoki o'tgan hafta qilgan ishingiz haqida (Past Simple: <em>V2</em>).<br>
+          3. Bugungi 8 ta yangi so'zdan kamida bittasini (masalan: <em>achieve, effort, improve</em>) ishlating.
+        `
       },
 
       2: {
-        title: "Present Perfect with For, Since, Already, Yet, Just",
-        lessonHtml: `
-          <h3>Day 2: For, Since, Already, Yet & Just</h3>
-          <p>These 5 adverbs dictate how Present Perfect functions in daily communication:</p>
-          <div class="lesson-rule">
-            • <strong>For + Duration:</strong> for 3 months, for 10 years, for a long time.<br>
-            • <strong>Since + Point in Time:</strong> since 2022, since Monday, since I graduated.<br>
-            • <strong>Already:</strong> Happened sooner than expected (positive statements).<br>
-            • <strong>Yet:</strong> Expected to happen, used at the END of questions and negatives.<br>
-            • <strong>Just:</strong> Happened very recently (seconds or minutes ago).
-          </div>
-          <div class="example-list">
-            <div class="example-item">• "I have <strong>already</strong> reviewed the vocabulary."</div>
-            <div class="example-item">• "Have you submitted the assignment <strong>yet</strong>?"</div>
-            <div class="example-item">• "I have known her <strong>since</strong> high school." (Specific point)</div>
-          </div>
-        `,
-        vocab: [
-          { word: "duration", def: "the length of time that something continues or lasts", ex: "The flight duration was approximately four hours." },
-          { word: "temporary", def: "lasting for only a limited period of time; not permanent", ex: "Language rust is only temporary if you practice daily." },
-          { word: "permanent", def: "lasting or intended to last or remain unchanged indefinitely", ex: "Retrieval quizzes turn short-term memory into permanent knowledge." },
-          { word: "subsequent", def: "coming after something in time; following", ex: "Her subsequent test scores improved dramatically." },
-          { word: "decade", def: "a period of ten years", ex: "She has lived in this historic neighborhood for over a decade." },
-          { word: "previously", def: "at an earlier time; beforehand", ex: "She had previously studied B1 English before taking a break." },
-          { word: "contemporary", def: "belonging to or occurring in the present; modern", ex: "We study contemporary articles to prepare for B2 reading." },
-          { word: "indefinite", def: "lasting for an unknown or unstated length of time", ex: "The project was postponed for an indefinite period." }
-        ],
-        practice: [
+        dateStr: "19-Sentyabr, Shanba",
+        shortDate: "19-Sent • Shanba",
+        title: "For, Since, Already, Yet va Just",
+        unlockDate: new Date("2026-09-19T00:00:00+05:00"),
+
+        slides: [
           {
-            q: "Leyla has been studying English ______ 8 o'clock this morning.",
-            options: ["for", "since", "during", "from"],
-            ans: "since",
-            expl: "'8 o'clock' is a specific starting point -> use 'since'."
+            tag: "1-SLAYD • MAVZU",
+            title: "For, Since, Already, Yet & Just",
+            html: `
+              <div style="font-size: 17px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                🎯 <strong>Dars Maqsadi:</strong> Ingliz tilida jumlalarni ravon va jonli bog'lashni o'rganish.<br><br>
+                Ushbu 5 ta so'z orqali siz vaqtni xuddi ona tilisi ingliz tili bo'lgan odamdek aniq ifodalay olasiz.
+              </div>
+            `
           },
           {
-            q: "We haven't received the test results ______.",
-            options: ["already", "just", "yet", "still"],
-            ans: "yet",
-            expl: "Use 'yet' at the end of negative sentences."
+            tag: "2-SLAYD • FOR vs SINCE",
+            title: "Davomiylik (For) vs Boshlanish Nuqtasi (Since)",
+            html: `
+              <div class="slide-compare-grid">
+                <div class="slide-compare-card slide-card-green">
+                  <div class="slide-card-header" style="color: #34d399;">📏 FOR (Davomiylik)</div>
+                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
+                    Javob beradi: <em>Qancha vaqt davomida?</em><br><br>
+                    • for 3 years (3 yil davomida)<br>
+                    • for 2 hours (2 soatdan beri)<br>
+                    • for a long time (uzoq vaqt)<br><br>
+                    <em>"I have studied for 2 hours."</em>
+                  </div>
+                </div>
+
+                <div class="slide-compare-card slide-card-red">
+                  <div class="slide-card-header" style="color: #38bdf8;">📍 SINCE (Boshlanish Nuqtasi)</div>
+                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
+                    Javob beradi: <em>Qachondan boshlab?</em><br><br>
+                    • since 2020 (2020-yildan beri)<br>
+                    • since 9 AM (ertalab soat 9 dan)<br>
+                    • since Monday (dushanbadan beri)<br><br>
+                    <em>"I have studied since 9 AM."</em>
+                  </div>
+                </div>
+              </div>
+            `
           },
           {
-            q: "He has worked as an engineer ______ over a decade.",
-            options: ["since", "for", "during", "in"],
-            ans: "for",
-            expl: "'Over a decade' is a period/duration of time -> use 'for'."
+            tag: "3-SLAYD • ALREADY vs YET vs JUST",
+            title: "Tezlik & Kutilmalar",
+            html: `
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px; margin-bottom: 10px;">
+                  ⚡ <strong>JUST (Hozirgina):</strong> Bir necha soniya/daqiqa oldin.<br>
+                  • <em>"I have just arrived at the office."</em>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px; margin-bottom: 10px;">
+                  📦 <strong>ALREADY (Allaqachon):</strong> Kutilgandan oldinroq (darak gapda).<br>
+                  • <em>"I have already sent the email."</em>
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px;">
+                  ⏳ <strong>YET (Hali):</strong> Faqat INKOR va SO'ROQ gaplarda, gapning oxirida.<br>
+                  • <em>"I haven't called him yet."</em><br>
+                  • <em>"Have you eaten yet?"</em>
+                </div>
+              </div>
+            `
           },
           {
-            q: "I have ______ finished dinner, so I'm not hungry right now.",
-            options: ["yet", "just", "since", "ever"],
-            ans: "just",
-            expl: "'Just' indicates an action completed moments ago."
-          },
-          {
-            q: "Don't worry about ordering coffee; I have ______ bought two cups.",
-            options: ["yet", "already", "still", "since"],
-            ans: "already",
-            expl: "'Already' indicates the action happened earlier than expected."
+            tag: "4-SLAYD • JONLI MASHQ",
+            title: "O'quvchi Bilan Jonli Mashq",
+            html: `
+              <p style="font-size: 14px; color: #94a3b8; margin-bottom: 14px;">
+                Malika, quyidagi bo'shliqlarga nima qo'yamiz?
+              </p>
+              <div class="live-drill-item">
+                <div class="drill-question">1. I have lived here ______ 2018.</div>
+                <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
+                <div class="drill-answer">✅ To'g'ri: <strong>since</strong> (chunki 2018 — boshlanish yili).</div>
+              </div>
+
+              <div class="live-drill-item">
+                <div class="drill-question">2. I haven't received the parcel ______.</div>
+                <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
+                <div class="drill-answer">✅ To'g'ri: <strong>yet</strong> (inkor gap va gap oxirida).</div>
+              </div>
+
+              <div class="live-drill-item">
+                <div class="drill-question">3. She has worked here ______ six months.</div>
+                <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
+                <div class="drill-answer">✅ To'g'ri: <strong>for</strong> (vaqt davomiyligi).</div>
+              </div>
+            `
           }
         ],
-        hwPrompt: "Write 4 sentences describing your current English study routine using: 1x <i>since</i>, 1x <i>for</i>, 1x <i>already</i>, and 1x <i>yet</i>. Include at least 2 vocabulary words (e.g. <i>duration, temporary, permanent</i>)."
+
+        lessonHtml: `
+          <h3>Vaqt Signal So'zlarining Nozik Farqlari</h3>
+          <div class="rule-card">
+            ⏳ <strong>FOR va SINCE farqi:</strong><br>
+            • <strong>FOR</strong> — vaqt davomiyligi: <em>for 3 years</em> (3 yil davomida).<br>
+            • <strong>SINCE</strong> — boshlanish nuqtasi: <em>since 2020</em> (2020-yildan beri).
+          </div>
+          <div class="rule-card">
+            ⚡ <strong>ALREADY, YET va JUST:</strong><br>
+            • <strong>JUST</strong> — hozirgina.<br>
+            • <strong>ALREADY</strong> — allaqachon.<br>
+            • <strong>YET</strong> — hali (faqat inkor va savolda).
+          </div>
+        `,
+
+        vocab: [
+          { word: "duration", pos: "ot", uz: "davomiylik", exEn: "The duration of the test was two hours.", exUz: "Testning davomiyligi ikki soat edi." },
+          { word: "put off", pos: "ibora / fe'l", uz: "kechiktirmoq, keyinga qoldirmoq", exEn: "Never put off until tomorrow what you can do today.", exUz: "Bugun qila oladigan ishni aslo ertaga qoldirmang." },
+          { word: "rarely", pos: "ravish", uz: "kamdan-kam, deyarli hech qachon", exEn: "I rarely eat fast food.", exUz: "Men fast-fudni kamdan-kam yeyman." },
+          { word: "opportunity", pos: "ot", uz: "imkoniyat, qulay vaziyat", exEn: "This internship is a fantastic opportunity.", exUz: "Bu amaliyot ajoyib imkoniyatdir." },
+          { word: "essential", pos: "sifat", uz: "o'ta muhim, zarur", exEn: "Water is essential for life.", exUz: "Suv hayot uchun o'ta zarurdir." },
+          { word: "reliable", pos: "sifat", uz: "ishonchli, suyansa bo'ladigan", exEn: "He is a reliable friend.", exUz: "U ishonchli do'st." },
+          { word: "curious", pos: "sifat", uz: "qiziquvchan, bilishga intiluvchan", exEn: "Children are naturally curious.", exUz: "Bolalar tabiatan qiziquvchan bo'lishadi." },
+          { word: "temporary", pos: "sifat", uz: "vaqtinchalik", exEn: "This problem is only temporary.", exUz: "Bu muammo faqat vaqtinchalik." }
+        ],
+
+        practice: [
+          {
+            q: "I have lived in this city ______ five years.",
+            opts: ["for", "since", "from", "during"],
+            ans: "for",
+            expl: "To'g'ri! 'five years' — bu vaqt davomiyligi. Davomiylik uchun 'for' ishlatiladi."
+          },
+          {
+            q: "He hasn't arrived ______; we are still waiting for him.",
+            opts: ["already", "just", "yet", "since"],
+            ans: "yet",
+            expl: "To'g'ri! Inkor gaplarda va gap oxirida 'hali' ma'nosida 'yet' keladi."
+          },
+          {
+            q: "Malika has worked at this company ______ 2019.",
+            opts: ["for", "since", "in", "ago"],
+            ans: "since",
+            expl: "To'g'ri! '2019' — boshlanish nuqtasi. Shuning uchun 'since' to'g'ri."
+          },
+          {
+            q: "I am not hungry because I have ______ eaten lunch.",
+            opts: ["yet", "just", "ever", "since"],
+            ans: "just",
+            expl: "To'g'ri! 'Hozirgina' ma'nosida 'just' ishlatiladi."
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 2-Kun Uyga Vazifasi:</strong><br>
+          Bugungi qoidalar (for, since, already, yet) asosida 3 ta gap tuzing va ustozga yuboring.
+        `
       },
 
       3: {
-        title: "Past Continuous vs Past Simple (Narrative)",
-        lessonHtml: `
-          <h3>Day 3: Past Continuous vs Past Simple</h3>
-          <p>Mastering storytelling and incident reporting:</p>
-          <div class="lesson-rule">
-            • <strong>Past Continuous (was/were + V-ing):</strong> The longer, background activity in progress.<br>
-            • <strong>Past Simple (V2):</strong> The sudden, shorter event that interrupted the background.<br>
-            • Formula: While / As + Past Continuous, Past Simple (or vice versa with 'when').
-          </div>
-          <div class="example-list">
-            <div class="example-item">• "While I <strong>was walking</strong> to work, it <strong>started</strong> to rain."</div>
-            <div class="example-item">• "She <strong>was driving</strong> on the highway when the tire <strong>blew</strong>."</div>
-          </div>
-        `,
-        vocab: [
-          { word: "simultaneous", def: "occurring, operating, or done at the exact same time", ex: "There was simultaneous applause across the auditorium." },
-          { word: "incident", def: "an event or occurrence, especially one that is unusual or unpleasant", ex: "The police investigated the incident thoroughly." },
-          { word: "coincidence", def: "a remarkable concurrence of events without apparent causal connection", ex: "Running into my teacher in London was a pure coincidence." },
-          { word: "distract", def: "prevent someone from giving full attention to something", ex: "Loud notifications can easily distract you while studying." },
-          { word: "witness", def: "see an event (typically a crime or accident) take place", ex: "Several pedestrians witnessed the traffic accident." },
-          { word: "abrupt", def: "sudden and unexpected; brief to the point of rudeness", ex: "The lecture came to an abrupt halt when the fire alarm rang." },
-          { word: "catastrophe", def: "an event causing great and often sudden damage or suffering", ex: "Quick evacuation prevented an environmental catastrophe." },
-          { word: "unravel", def: "undo or begin to fall apart; solve a mystery", ex: "As detectives asked questions, the mystery began to unravel." }
-        ],
-        practice: [
+        dateStr: "20-Sentyabr, Yakshanba",
+        shortDate: "20-Sent • Yakshanba",
+        title: "Haftalik Level Check (Milestone)",
+        unlockDate: new Date("2026-09-20T00:00:00+05:00"),
+
+        slides: [
           {
-            q: "While I ______ for the bus, I ran into an old classmate.",
-            options: ["waited", "was waiting", "had waited", "have waited"],
-            ans: "was waiting",
-            expl: "Past Continuous describes the background activity in progress when interrupted."
-          },
-          {
-            q: "The electricity suddenly went off while we ______ a movie.",
-            options: ["watched", "were watching", "had watched", "have watched"],
-            ans: "were watching",
-            expl: "Use Past Continuous after 'while' for the continuous background action."
-          },
-          {
-            q: "What ______ you doing when the earthquake struck?",
-            options: ["did", "were", "had", "are"],
-            ans: "were",
-            expl: "'What were you doing when...?' is the classic question for an interrupted state."
-          },
-          {
-            q: "The train was moving at full speed when the emergency brakes ______ engaged.",
-            options: ["were", "did", "had", "are"],
-            ans: "were",
-            expl: "Passive past simple interruption ('were engaged')."
-          },
-          {
-            q: "As she ______ across the street, she accidentally dropped her purse.",
-            options: ["stepped", "was stepping", "has stepped", "steps"],
-            ans: "was stepping",
-            expl: "'As' + continuous action describing movement in progress."
+            tag: "1-SLAYD • SINOV KUNI",
+            title: "🏆 Haftalik Level Check & Xulosa",
+            html: `
+              <div style="font-size: 17px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                Bugun — juma va shanba kunlari o'rgangan qoidalarimiz va 16 ta lug'at so'zlarimizni to'liq tekshirish kuni!<br><br>
+                Ushbu sinovdan so'ng, dushanba kunidan boshlab butun yangi haftalik rejamiz ochiladi.
+              </div>
+            `
           }
         ],
-        hwPrompt: "Write a short 4-sentence anecdote about something surprising or funny that happened to you in the past. Use at least 2 instances of Past Continuous (<i>was/were doing</i>) interrupted by Past Simple, plus 2 vocabulary words (e.g. <i>incident, abrupt, coincidence</i>)."
-      },
 
-      4: {
-        title: "Past Perfect (had + V3) in Storytelling",
         lessonHtml: `
-          <h3>Day 4: Past Perfect (had + V3)</h3>
-          <p>The "Past before the Past" — essential for ordering events in B2 narratives:</p>
-          <div class="lesson-rule">
-            • <strong>Past Perfect:</strong> Shows that an event happened BEFORE another past event.<br>
-            • Time indicators: <i>by the time, already, before, after, until then</i>.
-          </div>
-          <div class="example-list">
-            <div class="example-item">• "When we arrived at the cinema, the movie <strong>had already started</strong>." (Movie started first, then we arrived).</div>
-            <div class="example-item">• "She felt confident because she <strong>had prepared</strong> all week."</div>
-          </div>
+          <h3>🏆 Haftalik Sinov: B1 Bosqichini Mustahkamlash</h3>
+          <p>
+            Ushbu yakshanba kunida biz o'rgangan barcha grammatika va 16 ta lug'at so'zlarini sinovdan o'tkazamiz.
+          </p>
         `,
+
         vocab: [
-          { word: "precede", def: "come before something in time, order, or position", ex: "Dark thunderclouds preceded the arrival of the storm." },
-          { word: "anticipate", def: "regard as probable; expect or predict", ex: "She had anticipated the difficult questions on the test." },
-          { word: "prior", def: "existing or coming before in time, order, or importance", ex: "Prior to taking this course, she had forgotten some grammar rules." },
-          { word: "overlook", def: "fail to notice or consider something", ex: "He realized he had overlooked a crucial clue in the report." },
-          { word: "clarify", def: "make a statement or situation less confused and more comprehensible", ex: "The teacher clarified the rule that had confused her earlier." },
-          { word: "hindsight", def: "understanding of a situation only after it has happened", ex: "With hindsight, she realized she should have studied sooner." },
-          { word: "consequence", def: "a result or effect of an action or condition", ex: "Every past decision has a lasting consequence on your progress." },
-          { word: "perceive", def: "become aware or conscious of something; interpret", ex: "She had perceived the exercise to be much harder than it was." }
+          { word: "achieve", pos: "fe'l", uz: "erishmoq", exEn: "She achieved success.", exUz: "U muvaffaqiyatga erishdi." },
+          { word: "hesitate", pos: "fe'l", uz: "ikkilanmoq", exEn: "Do not hesitate.", exUz: "Ikkilanmang." },
+          { word: "afford", pos: "fe'l", uz: "qurbi yetmoq", exEn: "Can you afford it?", exUz: "Bunga qurbingiz yetadimi?" },
+          { word: "put off", pos: "fe'l", uz: "kechiktirmoq", exEn: "Do not put it off.", exUz: "Buni keyinga qoldirmang." }
         ],
+
         practice: [
           {
-            q: "By the time the police arrived, the burglar ______.",
-            options: ["escaped", "had escaped", "was escaping", "has escaped"],
-            ans: "had escaped",
-            expl: "The escape happened prior to the police arriving -> Past Perfect ('had escaped')."
+            q: "Where is my phone? I ______ it everywhere, but I can't find it.",
+            opts: ["searched", "have searched", "search", "was searching"],
+            ans: "have searched",
+            expl: "Natijasi hozir kerak bo'lgani uchun Present Perfect ('have searched') to'g'ri."
           },
           {
-            q: "She couldn't board the flight because she ______ her passport at home.",
-            options: ["forgot", "had forgotten", "was forgetting", "has forgotten"],
-            ans: "had forgotten",
-            expl: "Forgetting the passport occurred earlier in time than attempting to board."
-          },
-          {
-            q: "I didn't recognize her because she ______ her hair color.",
-            options: ["changed", "had changed", "was changing", "has changed"],
-            ans: "had changed",
-            expl: "The hair change took place before the meeting in the past."
-          },
-          {
-            q: "Prior to yesterday's lesson, she ______ never heard of that grammatical rule.",
-            options: ["was", "had", "has", "did"],
-            ans: "had",
-            expl: "'Prior to yesterday... had never heard' -> Past Perfect."
-          },
-          {
-            q: "The meeting ______ already ended when we joined the conference call.",
-            options: ["has", "was", "had", "did"],
-            ans: "had",
-            expl: "Use 'had already ended' for an event completed before another past event."
+            q: "I have been learning English ______ three months.",
+            opts: ["since", "for", "in", "from"],
+            ans: "for",
+            expl: "'three months' — vaqt davomiyligi bo'lgani uchun 'for' qo'yiladi."
           }
         ],
-        hwPrompt: "Write 3 pairs of connected sentences using <strong>Past Perfect + Past Simple</strong> with connectors like <i>by the time, before, or because</i>. Include 2 vocabulary words (e.g. <i>prior, anticipate, overlook</i>)."
-      },
 
-      5: {
-        title: "Used to vs Would vs Be used to",
-        lessonHtml: `
-          <h3>Day 5: Past Habits & Adaptation</h3>
-          <p>Differentiating past states from repeated past actions:</p>
-          <div class="lesson-rule">
-            • <strong>Used to + bare infinitive:</strong> Past habits AND past states (works for both!).<br>
-            • <strong>Would + bare infinitive:</strong> Past repeated actions ONLY (NEVER with state verbs like live, know, like, be).<br>
-            • <strong>Be / Get used to + -ing:</strong> To be accustomed to something new or unfamiliar.
-          </div>
-          <div class="example-list">
-            <div class="example-item">• "I <strong>used to live</strong> in Paris." (Correct - state verb)</div>
-            <div class="example-item">❌ "I would live in Paris." (Wrong - cannot use 'would' for states!)</div>
-            <div class="example-item">• "In summers, we <strong>would swim</strong> in the lake every day." (Correct - repeated action)</div>
-          </div>
-        `,
-        vocab: [
-          { word: "accustomed", def: "customary; usual; in the habit of", ex: "She is accustomed to studying in quiet library environments." },
-          { word: "routine", def: "a sequence of actions regularly followed", ex: "A daily 15-minute quiz routine guarantees B2 retention." },
-          { word: "nostalgia", def: "a sentimental longing or affection for the past", ex: "Looking at childhood photos filled her with nostalgia." },
-          { word: "tendency", def: "an inclination toward a particular characteristic or type of behavior", ex: "She has a tendency to second-guess her answers on tests." },
-          { word: "inclined", def: "leaning or disposed toward a certain opinion or action", ex: "He felt inclined to agree with the teacher's assessment." },
-          { word: "adapt", def: "make something suitable for a new use or purpose; adjust", ex: "Students quickly adapt to the daily active quiz routine." },
-          { word: "obsolete", def: "no longer produced or used; out of date", ex: "Old-fashioned rote memorization has become obsolete." },
-          { word: "evolve", def: "develop gradually, especially from a simple to a more complex form", ex: "Her writing style has evolved into formal academic English." }
-        ],
-        practice: [
-          {
-            q: "When I was a child, I ______ believe in Santa Claus.",
-            options: ["would", "used to", "was used to", "use to"],
-            ans: "used to",
-            expl: "'Believe' is a state verb, so only 'used to' can be used, not 'would'."
-          },
-          {
-            q: "Every summer holiday, my grandfather ______ take us fishing at dawn.",
-            options: ["would", "used", "was used", "is used to"],
-            ans: "would",
-            expl: "'Would' is used for repeated past actions in nostalgic narratives."
-          },
-          {
-            q: "Moving to London was hard at first, but now I ______ driving on the left.",
-            options: ["used to", "am used to", "would", "did use to"],
-            ans: "am used to",
-            expl: "'Am used to + V-ing' means being accustomed to something."
-          },
-          {
-            q: "Did you ______ wear glasses when you were younger?",
-            options: ["use to", "used to", "would", "got used to"],
-            ans: "use to",
-            expl: "In questions with 'Did', the verb reverts to base form 'use to'."
-          },
-          {
-            q: "I ______ like spicy food, but now I eat it almost every day.",
-            options: ["didn't use to", "wouldn't", "wasn't used to", "didn't used to"],
-            ans: "didn't use to",
-            expl: "Negative past state: 'didn't use to like'."
-          }
-        ],
-        hwPrompt: "Write 3 sentences about your childhood habits using <i>used to</i> and <i>would</i>, and 1 sentence about something in your daily life you are <i>accustomed / used to</i>. Include 2 vocabulary words (e.g. <i>routine, nostalgia, adapt</i>)."
-      },
-
-      6: {
-        title: "Defining vs Non-Defining Relative Clauses",
-        lessonHtml: `
-          <h3>Day 6: Relative Clauses & Commas</h3>
-          <p>The essential B2 punctuation and cohesion rule:</p>
-          <div class="lesson-rule">
-            • <strong>Defining (NO commas):</strong> Gives ESSENTIAL info needed to identify the person or thing. You CAN use 'that'.<br>
-            • <strong>Non-Defining (WITH commas):</strong> Gives EXTRA, supplementary info. You CANNOT use 'that' — only <i>who, which, whose, where</i>.
-          </div>
-          <div class="example-list">
-            <div class="example-item">• "The student <strong>who studied every day</strong> passed easily." (Defining: tells us WHICH student).</div>
-            <div class="example-item">• "My mother, <strong>who lives in Madrid</strong>, is visiting us." (Non-defining: extra detail about my one mother).</div>
-          </div>
-        `,
-        vocab: [
-          { word: "remarkable", def: "worthy of attention; extraordinary or striking", ex: "She made remarkable progress in just one week of study." },
-          { word: "significant", def: "sufficiently great or important to be worthy of attention", ex: "There is a significant difference between defining and non-defining clauses." },
-          { word: "complex", def: "consisting of many different and connected parts", ex: "B2 exams test complex sentences with multiple clauses." },
-          { word: "distinct", def: "recognizably different in nature from something else", ex: "The two tenses have distinct communicative purposes." },
-          { word: "essential", def: "absolutely necessary; extremely important", ex: "Punctuation is essential to distinguish relative clauses." },
-          { word: "relevant", def: "closely connected or appropriate to what is being done", ex: "Only include relevant details in your formal report." },
-          { word: "evident", def: "plain or obvious; clearly seen or understood", ex: "Her dedication was evident from her daily quiz scores." },
-          { word: "substantial", def: "of considerable importance, size, or worth", ex: "A substantial amount of vocabulary was mastered this week." }
-        ],
-        practice: [
-          {
-            q: "My sister, ______ lives in Berlin, is coming to visit next weekend.",
-            options: ["that", "which", "who", "whose"],
-            ans: "who",
-            expl: "Non-defining clause with commas referring to a person -> must use 'who', never 'that'."
-          },
-          {
-            q: "The book ______ you recommended to me was absolutely fascinating.",
-            options: ["whose", "that", "where", "who"],
-            ans: "that",
-            expl: "Defining relative clause identifying the book -> 'that' or 'which'."
-          },
-          {
-            q: "This is the artist ______ paintings were sold for thousands of dollars.",
-            options: ["who", "whom", "whose", "which"],
-            ans: "whose",
-            expl: "'Whose' indicates possession ('whose paintings' = the artist's paintings)."
-          },
-          {
-            q: "The university, ______ was founded in 1850, has a rich historical tradition.",
-            options: ["that", "which", "where", "what"],
-            ans: "which",
-            expl: "Non-defining clause referring to a thing -> must use 'which', not 'that'."
-          },
-          {
-            q: "The restaurant ______ we celebrated your birthday has unfortunately closed down.",
-            options: ["which", "where", "that", "whose"],
-            ans: "where",
-            expl: "Refers to a location where an action took place -> 'where'."
-          }
-        ],
-        hwPrompt: "Combine these sentences using relative pronouns (<i>who, which, whose, where</i>):<br>1. I have a friend. Her brother is a pilot.<br>2. London is an exciting city. It has world-class museums.<br>3. The laptop broke down. I bought it last month.<br>Include 2 vocabulary words (e.g. <i>remarkable, significant, complex</i>)!"
-      },
-
-      7: {
-        title: "🏆 SUNDAY MILESTONE LEVEL CHECK",
-        lessonHtml: `
-          <h3>Day 7: Week 1 Milestone Assessment</h3>
-          <p>Congratulations on completing your first 6 days of intensive training! Today is your <strong>Sunday Milestone Check</strong>.</p>
-          <div class="lesson-rule" style="border-left-color: var(--amber);">
-            🎯 <strong>Exam Scope:</strong><br>
-            • 20 Targeted Questions testing all Week 1 topics (Days 1–6).<br>
-            • Tests both Grammar precision and the 48 High-Yield B2 Vocabulary words.<br>
-            • A detailed progress report will be generated and dispatched to your teacher!
-          </div>
-          <p style="margin-top: 14px; font-size: 14px;">Switch to the <strong>🎯 Practice Quiz</strong> tab above to begin your Sunday Level Check!</p>
-        `,
-        vocab: [
-          { word: "accomplish", def: "achieve successfully", ex: "You accomplished Week 1!" },
-          { word: "breakthrough", def: "a major advance or discovery", ex: "Today represents a study breakthrough." },
-          { word: "subsequent", def: "coming after in time", ex: "Subsequent weeks will cover conditionals." },
-          { word: "coincidence", def: "remarkable unplanned concurrence", ex: "Progress is no coincidence; it comes from practice." },
-          { word: "hindsight", def: "understanding after the fact", ex: "With hindsight, you see your growth." },
-          { word: "accustomed", def: "in the habit of", ex: "You are now accustomed to daily practice." },
-          { word: "remarkable", def: "extraordinary; worthy of notice", ex: "You have shown remarkable dedication." },
-          { word: "substantial", def: "of considerable importance", ex: "You've built substantial language momentum." }
-        ],
-        practice: [
-          { q: "I ______ here since 2021, and I still love the city.", options: ["lived", "have lived", "am living", "was living"], ans: "have lived", expl: "Present Perfect with 'since'." },
-          { q: "Yesterday afternoon, they ______ the final contract.", options: ["signed", "have signed", "were signing", "had signed"], ans: "signed", expl: "Past Simple with specific finished time ('Yesterday afternoon')." },
-          { q: "She has been working as a graphic designer ______ six months.", options: ["since", "for", "during", "from"], ans: "for", expl: "'For' with duration." },
-          { q: "Have you submitted your assignment ______?", options: ["already", "just", "yet", "still"], ans: "yet", expl: "'Yet' at end of questions." },
-          { q: "While I ______ down the stairs, I tripped and fell.", options: ["walked", "was walking", "have walked", "had walked"], ans: "was walking", expl: "Past Continuous background action interrupted." },
-          { q: "By the time the ambulance arrived, the doctor ______ first aid.", options: ["administered", "had administered", "was administering", "has administered"], ans: "had administered", expl: "Past Perfect for event completed first." },
-          { q: "When I was young, I ______ have a pet rabbit.", options: ["used to", "would", "was used to", "use to"], ans: "used to", expl: "'Have' is a state verb -> only 'used to'." },
-          { q: "My uncle, ______ is an architect, designed this building.", options: ["that", "which", "who", "whose"], ans: "who", expl: "Non-defining clause with commas referring to person -> 'who'." },
-          { q: "The company achieved a major ______ in battery technology.", options: ["breakthrough", "duration", "routine", "nostalgia"], ans: "breakthrough", expl: "Vocab: 'breakthrough' means dramatic discovery." },
-          { q: "She is thoroughly ______ to speaking English during meetings now.", options: ["accustomed", "obsolete", "abrupt", "preceding"], ans: "accustomed", expl: "Vocab: 'accustomed to' means in the habit of." }
-        ],
-        hwPrompt: "<strong>Sunday Weekly Reflection:</strong> Write a 5-sentence reflection about your first week of intensive English study. What was the most helpful grammar rule you relearned? What vocabulary word will you use most often? Submit directly to your teacher!"
+        hwPrompt: `
+          <strong>🏆 Yakshanba Kungi Xulosa Vazifasi:</strong><br>
+          Ushbu hafta o'rgangan qoidalarimiz va yangi so'zlardan foydalanib, o'zingiz haqingizda 4-5 jumlali qisqa hikoya yozing va o'qituvchiga yuboring.
+        `
       }
     };
 
-    // APP STATE
     let currentDay = 1;
-    let currentSection = "lesson";
-    let currentCardIndex = 0;
-    let practiceIndex = 0;
-    let practiceAnswers = {};
-    let studentName = localStorage.getItem("ue_student_name") || "";
+    let currentSection = "slides"; // Default to PPT slides!
+    let studentName = "";
+    let isTeacher = false;
+
+    // Presentation Slide Deck State
+    let currentSlideIdx = 0;
+
+    // Flashcard State
+    let cardIdx = 0;
+
+    // Practice Quiz State
+    let practiceIdx = 0;
+    let practiceScores = {};
 
     function init() {
-      if (!studentName) {
-        document.getElementById("name-modal").style.display = "flex";
+      const stored = localStorage.getItem("ulunur_student_name");
+      if (stored) {
+        studentName = stored;
+        updateUserMode();
       } else {
-        updateUserUI();
+        openNameModal();
       }
-      loadDay(currentDay);
+
+      refreshScheduleTabs();
+      loadDayContent(currentDay);
+
+      // Keyboard arrow keys for slide navigation
+      window.addEventListener("keydown", (e) => {
+        if (currentSection !== "slides") return;
+        if (e.key === "ArrowRight" || e.key === " ") {
+          nextSlide();
+        } else if (e.key === "ArrowLeft") {
+          prevSlide();
+        }
+      });
     }
 
     function checkModalName(val) {
-      const isUlunur = val.trim().toLowerCase() === "ulunur";
-      document.getElementById("modal-hint").style.display = isUlunur ? "block" : "none";
+      const isU = val.trim().toLowerCase() === "ulunur";
+      document.getElementById("modal-hint").style.display = isU ? "block" : "none";
+    }
+
+    function openNameModal() {
+      document.getElementById("name-modal").style.display = "flex";
+      if (studentName) {
+        document.getElementById("modal-name-input").value = studentName;
+        checkModalName(studentName);
+      }
     }
 
     function saveName() {
-      const input = document.getElementById("modal-name-input");
-      const val = input.value.trim();
-      if (!val) return;
+      const val = document.getElementById("modal-name-input").value.trim();
+      if (!val) {
+        alert("Iltimos, ismingizni kiriting!");
+        return;
+      }
       studentName = val;
-      localStorage.setItem("ue_student_name", studentName);
+      localStorage.setItem("ulunur_student_name", studentName);
       document.getElementById("name-modal").style.display = "none";
-      updateUserUI();
+      updateUserMode();
+      refreshScheduleTabs();
+      loadDayContent(currentDay);
     }
 
-    function openNameChange() {
-      document.getElementById("modal-name-input").value = studentName;
-      document.getElementById("name-modal").style.display = "flex";
+    function updateUserMode() {
+      isTeacher = studentName.trim().toLowerCase() === "ulunur";
+      const teacherBadge = document.getElementById("teacher-badge");
+      teacherBadge.style.display = isTeacher ? "inline-flex" : "none";
+
+      const userGreeting = document.getElementById("user-greeting");
+      userGreeting.innerHTML = isTeacher 
+        ? `👑 <strong>Ulunur Ustoz (O'qituvchi Rejimi)</strong>` 
+        : `Xush kelibsiz, <strong>${studentName}</strong>! 👋`;
     }
 
-    function updateUserUI() {
-      const isUlunur = studentName.trim().toLowerCase() === "ulunur";
-      document.getElementById("user-greeting").textContent = `Welcome, ${studentName}!`;
-      document.getElementById("teacher-badge").style.display = isUlunur ? "flex" : "none";
+    function isDayUnlocked(dayNum) {
+      if (isTeacher) return true; // Teacher sees everything
+      if (dayNum === 1) return true; // Day 1 open for kickoff
+      const now = new Date();
+      return now >= COURSE_DAYS[dayNum].unlockDate;
     }
 
-    function switchDay(dayNum) {
+    function refreshScheduleTabs() {
+      for (let d = 1; d <= 3; d++) {
+        const tab = document.getElementById(`tab-day-${d}`);
+        const statusEl = document.getElementById(`tab-status-${d}`);
+        const titleEl = document.getElementById(`tab-title-${d}`);
+        const unlocked = isDayUnlocked(d);
+
+        if (unlocked) {
+          tab.classList.remove("locked");
+          statusEl.textContent = (d === 3) ? "🏆 Sinov" : "Ochiq ✨";
+          titleEl.textContent = COURSE_DAYS[d].title;
+        } else {
+          tab.classList.add("locked");
+          statusEl.textContent = "🔒 Yopiq";
+          titleEl.textContent = `🔒 ${COURSE_DAYS[d].shortDate}da ochiladi`;
+        }
+
+        if (d === currentDay) {
+          tab.classList.add("active");
+        } else {
+          tab.classList.remove("active");
+        }
+      }
+    }
+
+    function handleDayClick(dayNum) {
+      if (!isDayUnlocked(dayNum)) {
+        const dateStr = COURSE_DAYS[dayNum].dateStr;
+        alert(`🔒 Bu dars ${dateStr} kuni ochiladi!\nAvval oldingi kun vazifalarini to'liq bajaring.`);
+        return;
+      }
       currentDay = dayNum;
-      currentCardIndex = 0;
-      practiceIndex = 0;
-      practiceAnswers = {};
-      
-      // Update tab active classes
-      const tabs = document.querySelectorAll(".day-tab");
-      tabs.forEach((t, i) => {
-        t.classList.toggle("active", (i + 1) === dayNum);
-      });
-
-      loadDay(dayNum);
-      switchSection(currentSection);
+      refreshScheduleTabs();
+      loadDayContent(dayNum);
     }
 
-    function loadDay(dayNum) {
-      const day = WEEK1_DATA[dayNum];
-      
-      // 1. Load Lesson
-      document.getElementById("section-lesson").innerHTML = day.lessonHtml;
+    function loadDayContent(dayNum) {
+      const data = COURSE_DAYS[dayNum];
 
-      // 2. Load Vocab
-      updateCardUI();
+      // 1. Slides Deck
+      currentSlideIdx = 0;
+      renderActiveSlide();
 
-      // 3. Load Practice
+      // 2. Lesson
+      document.getElementById("lesson-html").innerHTML = data.lessonHtml;
+
+      // 3. Flashcards
+      cardIdx = 0;
+      updateFlashcardUI();
+
+      // 4. Practice
+      practiceIdx = 0;
+      practiceScores[dayNum] = practiceScores[dayNum] || {};
       loadPracticeQuestion();
 
-      // 4. Load Homework
-      document.getElementById("hw-prompt").innerHTML = day.hwPrompt;
-      document.getElementById("hw-input").value = "";
-      document.getElementById("hw-status").style.display = "none";
-      document.getElementById("hw-submit-btn").disabled = false;
-      document.getElementById("hw-submit-btn").textContent = dayNum === 7 ? "Submit Sunday Reflection 🚀" : "Submit Homework to Teacher 🚀";
+      // 5. Homework
+      document.getElementById("hw-prompt-text").innerHTML = data.hwPrompt;
+      document.getElementById("hw-textarea").value = "";
+      document.getElementById("hw-toast").style.display = "none";
+      const submitBtn = document.getElementById("hw-submit-btn");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Ustozga Yuborish (Telegram) 🚀";
+
+      switchSection(currentSection);
     }
 
     function switchSection(sec) {
       currentSection = sec;
-      const sections = ["lesson", "vocab", "practice", "hw"];
+      const sections = ["slides", "lesson", "vocab", "practice", "hw"];
       sections.forEach(s => {
-        document.getElementById(`section-${s}`).style.display = (s === sec) ? "block" : "none";
-        document.getElementById(`tab-btn-${s}`).classList.toggle("active", (s === sec));
+        const el = document.getElementById(`section-${s}`);
+        if (el) el.style.display = (s === sec) ? "block" : "none";
+
+        const btn = document.getElementById(`sec-btn-${s}`);
+        if (btn) {
+          if (s === sec) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        }
       });
     }
 
-    // FLASHCARDS LOGIC
-    function flipCard() {
-      document.getElementById("flashcard").classList.toggle("flipped");
+    // ==========================================
+    // PRESENTATION SLIDE CONTROLLER (PPT REJIMI)
+    // ==========================================
+    function renderActiveSlide() {
+      const slides = COURSE_DAYS[currentDay].slides || [];
+      if (slides.length === 0) return;
+
+      const slide = slides[currentSlideIdx];
+      const viewport = document.getElementById("slide-viewport");
+
+      viewport.innerHTML = `
+        <div class="slide-tag">${slide.tag}</div>
+        <div class="slide-title">${slide.title}</div>
+        <div class="slide-body">${slide.html}</div>
+      `;
+
+      // Update dots
+      const dotsContainer = document.getElementById("ppt-dots-container");
+      dotsContainer.innerHTML = "";
+      slides.forEach((_, idx) => {
+        const dot = document.createElement("div");
+        dot.className = `ppt-dot ${idx === currentSlideIdx ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(idx);
+        dotsContainer.appendChild(dot);
+      });
+
+      // Update buttons
+      document.getElementById("btn-prev-slide").disabled = (currentSlideIdx === 0);
+      document.getElementById("btn-next-slide").disabled = (currentSlideIdx === slides.length - 1);
     }
 
-    function updateCardUI() {
-      const list = WEEK1_DATA[currentDay].vocab;
-      const item = list[currentCardIndex];
-      document.getElementById("flashcard").classList.remove("flipped");
-      document.getElementById("fc-word").textContent = item.word;
-      document.getElementById("fc-def").textContent = item.def;
-      document.getElementById("fc-ex").textContent = `"${item.ex}"`;
-      document.getElementById("fc-counter").textContent = `${currentCardIndex + 1} / ${list.length}`;
+    function nextSlide() {
+      const slides = COURSE_DAYS[currentDay].slides || [];
+      if (currentSlideIdx < slides.length - 1) {
+        currentSlideIdx++;
+        renderActiveSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIdx > 0) {
+        currentSlideIdx--;
+        renderActiveSlide();
+      }
+    }
+
+    function goToSlide(idx) {
+      currentSlideIdx = idx;
+      renderActiveSlide();
+    }
+
+    function toggleReveal(btn) {
+      const parent = btn.parentElement;
+      const answer = parent.querySelector(".drill-answer");
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        btn.textContent = "Javobni ko'rsatish 👁️";
+      } else {
+        answer.style.display = "block";
+        btn.textContent = "Yashirish 🙈";
+      }
+    }
+
+    function toggleFullscreen() {
+      const frame = document.getElementById("presentation-frame");
+      if (!document.fullscreenElement) {
+        frame.requestFullscreen().catch(err => {
+          alert(`Fullscreen xatosi: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // FLASHCARD LOGIC
+    function flipCard() {
+      const card = document.getElementById("flashcard-el");
+      card.classList.toggle("flipped");
+    }
+
+    function updateFlashcardUI() {
+      const list = COURSE_DAYS[currentDay].vocab;
+      const c = list[cardIdx];
+
+      const card = document.getElementById("flashcard-el");
+      card.classList.remove("flipped");
+
+      document.getElementById("fc-pos").textContent = c.pos;
+      document.getElementById("fc-word").textContent = c.word;
+      document.getElementById("fc-uz").textContent = c.uz;
+      document.getElementById("fc-ex-en").textContent = `"${c.exEn}"`;
+      document.getElementById("fc-ex-uz").textContent = c.exUz;
+
+      document.getElementById("fc-counter").textContent = `${cardIdx + 1} / ${list.length}`;
     }
 
     function nextCard() {
-      const list = WEEK1_DATA[currentDay].vocab;
-      currentCardIndex = (currentCardIndex + 1) % list.length;
-      updateCardUI();
+      const list = COURSE_DAYS[currentDay].vocab;
+      if (cardIdx < list.length - 1) {
+        cardIdx++;
+        updateFlashcardUI();
+      }
     }
 
     function prevCard() {
-      const list = WEEK1_DATA[currentDay].vocab;
-      currentCardIndex = (currentCardIndex - 1 + list.length) % list.length;
-      updateCardUI();
+      if (cardIdx > 0) {
+        cardIdx--;
+        updateFlashcardUI();
+      }
     }
 
-    // PRACTICE QUIZ LOGIC
+    // PRACTICE LOGIC
     function loadPracticeQuestion() {
-      const list = WEEK1_DATA[currentDay].practice;
-      const q = list[practiceIndex];
+      const list = COURSE_DAYS[currentDay].practice;
+      const q = list[practiceIdx];
 
-      document.getElementById("pq-text").textContent = q.q;
-      document.getElementById("pq-counter").textContent = `Question ${practiceIndex + 1} of ${list.length}`;
-      document.getElementById("pq-next-btn").style.display = "none";
-      
-      const explBox = document.getElementById("pq-expl");
-      explBox.style.display = "none";
-      explBox.className = "explanation-box";
+      document.getElementById("pq-counter").textContent = `Savol ${practiceIdx + 1} / ${list.length}`;
+      document.getElementById("pq-title").textContent = q.q;
 
-      const optContainer = document.getElementById("pq-options");
-      optContainer.innerHTML = "";
+      const optsBox = document.getElementById("pq-options");
+      optsBox.innerHTML = "";
 
-      const answered = practiceAnswers[practiceIndex];
-
-      q.options.forEach(opt => {
+      const letters = ["A", "B", "C", "D"];
+      q.opts.forEach((opt, idx) => {
         const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "practice-opt-btn";
-        btn.innerHTML = `<span>${opt}</span>`;
-
-        if (answered) {
-          btn.classList.add("checked");
-          if (opt === q.ans) btn.classList.add("correct");
-          if (answered === opt && opt !== q.ans) btn.classList.add("wrong");
-        } else {
-          btn.onclick = () => selectPracticeAnswer(opt);
-        }
-
-        optContainer.appendChild(btn);
+        btn.className = "quiz-opt-btn";
+        btn.innerHTML = `<span style="width: 22px; height: 22px; border-radius: 6px; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">${letters[idx]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectPracticeOpt(opt, btn);
+        optsBox.appendChild(btn);
       });
 
-      if (answered) {
-        showPracticeExplanation(answered === q.ans, q.expl);
-        if (practiceIndex < list.length - 1) {
-          document.getElementById("pq-next-btn").style.display = "block";
-        }
+      document.getElementById("pq-expl").style.display = "none";
+      document.getElementById("pq-next-btn").style.display = "none";
+    }
+
+    function selectPracticeOpt(selectedText, btnEl) {
+      const list = COURSE_DAYS[currentDay].practice;
+      const q = list[practiceIdx];
+
+      const isCorrect = selectedText === q.ans;
+      practiceScores[currentDay][practiceIdx] = isCorrect;
+
+      const allBtns = document.querySelectorAll(".quiz-opt-btn");
+      allBtns.forEach(b => {
+        b.disabled = true;
+        const text = b.querySelectorAll("span")[1].textContent;
+        if (text === q.ans) b.classList.add("correct");
+      });
+
+      if (!isCorrect) {
+        btnEl.classList.add("wrong");
       }
+
+      const explBox = document.getElementById("pq-expl");
+      explBox.style.display = "block";
+      explBox.style.borderLeftColor = isCorrect ? "var(--emerald)" : "var(--rose)";
+      explBox.innerHTML = `<strong>${isCorrect ? "✅ To'g'ri!" : "❌ Tushuntirish:"}</strong> ${q.expl}`;
+
+      const nextBtn = document.getElementById("pq-next-btn");
+      nextBtn.style.display = "inline-flex";
+      nextBtn.textContent = (practiceIdx === list.length - 1) ? "Mashqni yakunlash ✨" : "Keyingi savol →";
     }
 
-    function selectPracticeAnswer(opt) {
-      const list = WEEK1_DATA[currentDay].practice;
-      const q = list[practiceIndex];
-      practiceAnswers[practiceIndex] = opt;
-      loadPracticeQuestion();
-
-      // Check if all practice finished
-      if (Object.keys(practiceAnswers).length === list.length) {
-        // notify telegram if student
-        reportPracticeCompletion();
-      }
-    }
-
-    function showPracticeExplanation(isCorrect, expl) {
-      const box = document.getElementById("pq-expl");
-      box.style.display = "block";
-      box.className = `explanation-box ${isCorrect ? 'correct' : 'wrong'}`;
-      box.innerHTML = `<strong>${isCorrect ? '✅ Correct!' : '❌ Explanation:'}</strong> ${expl}`;
-    }
-
-    function nextPracticeQ() {
-      const list = WEEK1_DATA[currentDay].practice;
-      if (practiceIndex < list.length - 1) {
-        practiceIndex++;
+    function nextPracticeQuestion() {
+      const list = COURSE_DAYS[currentDay].practice;
+      if (practiceIdx < list.length - 1) {
+        practiceIdx++;
         loadPracticeQuestion();
+      } else {
+        alert("🎉 Mashq muvaffaqiyatli yakunlandi! Endi uyga vazifani yozib yuborishingiz mumkin.");
+        switchSection("hw");
       }
     }
 
-    async function reportPracticeCompletion() {
-      const isUlunur = studentName.trim().toLowerCase() === "ulunur";
-      if (isUlunur) return; // silent mode
+    // HOMEWORK SUBMISSION
+    async function submitHomework() {
+      const text = document.getElementById("hw-textarea").value.trim();
+      if (!text) {
+        alert("Iltimos, avval vazifangizni yozing!");
+        return;
+      }
 
-      const list = WEEK1_DATA[currentDay].practice;
-      let score = 0;
-      list.forEach((q, idx) => {
-        if (practiceAnswers[idx] === q.ans) score++;
-      });
-      const pct = Math.round((score / list.length) * 100);
+      const submitBtn = document.getElementById("hw-submit-btn");
+      const toast = document.getElementById("hw-toast");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Yuborilmoqda...";
+
+      if (isTeacher) {
+        toast.style.display = "block";
+        toast.style.background = "rgba(245, 158, 11, 0.15)";
+        toast.style.border = "1px solid rgba(245, 158, 11, 0.4)";
+        toast.style.color = "var(--amber)";
+        toast.innerHTML = "🛡️ <b>Ulunur rejimi:</b> Vazifa tekshirildi (Telegramga jo'natilmadi).";
+        submitBtn.textContent = "Yuborildi ✨";
+        return;
+      }
 
       const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      let text = `🎯 <b>QUIZ PRACTICE REPORT</b>\n`;
-      text += `━━━━━━━━━━━━━━━━━━━━\n`;
-      text += `👤 <b>Student:</b> ${studentName}\n`;
-      text += `📅 <b>Day ${currentDay}:</b> ${WEEK1_DATA[currentDay].title}\n`;
-      text += `⏰ <b>Time:</b> ${time}\n`;
-      text += `🏆 <b>Score:</b> <b>${score}/${list.length} (${pct}%)</b>\n`;
-      text += `━━━━━━━━━━━━━━━━━━━━`;
+      let msg = `📝 <b>YANGI UYGA VAZIFA KELDI!</b>\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `👤 <b>O'quvchi:</b> ${studentName}\n`;
+      msg += `📅 <b>Dars:</b> ${COURSE_DAYS[currentDay].dateStr} (${COURSE_DAYS[currentDay].title})\n`;
+      msg += `⏰ <b>Vaqt:</b> ${time}\n\n`;
+      msg += `📄 <b>Vazifa matni:</b>\n`;
+      msg += `<i>"${text}"</i>\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━`;
 
       try {
-        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             chat_id: TELEGRAM_CHAT_ID,
-            text: text,
+            text: msg,
             parse_mode: "HTML"
           })
         });
+
+        if (res.ok) {
+          toast.style.display = "block";
+          toast.style.background = "rgba(16, 185, 129, 0.15)";
+          toast.style.border = "1px solid rgba(16, 185, 129, 0.4)";
+          toast.style.color = "#34d399";
+          toast.innerHTML = "✅ Vazifangiz ustozingizning Telegramiga yetib bordi!";
+          submitBtn.textContent = "Muvaffaqiyatli Yuborildi ✨";
+        } else {
+          toast.style.display = "block";
+          toast.style.background = "rgba(239, 68, 68, 0.15)";
+          toast.style.color = "#f87171";
+          toast.innerHTML = "⚠️ Xatolik yuz berdi. Internetni tekshirib qayta urinib ko'ring.";
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Qayta urinish";
+        }
       } catch (err) {
         console.error(err);
+        toast.style.display = "block";
+        toast.style.background = "rgba(239, 68, 68, 0.15)";
+        toast.style.color = "#f87171";
+        toast.innerHTML = "⚠️ Xatolik yuz berdi.";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Qayta urinish";
       }
     }
 
-    // HOMEWORK SUBMISSION LOGIC
-    async function submitHomework() {
-      const input = document.getElementById("hw-input");
-      const text = input.value.trim();
-      if (!text) {
-        alert("Please write your homework before submitting!");
-        return;
-      }
-
-      const isUlunur = studentName.trim().toLowerCase() === "ulunur";
-      const submitBtn = document.getElementById("hw-submit-btn");
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending to Teacher...";
-
-      if (!isUlunur) {
-        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        let tgText = `📝 <b>NEW HOMEWORK SUBMISSION</b>\n`;
-        tgText += `━━━━━━━━━━━━━━━━━━━━\n`;
-        tgText += `👤 <b>Student:</b> ${studentName}\n`;
-        tgText += `📅 <b>Assignment:</b> Day ${currentDay} (${WEEK1_DATA[currentDay].title})\n`;
-        tgText += `⏰ <b>Time:</b> ${time}\n\n`;
-        tgText += `📄 <b>Student Submission:</b>\n`;
-        tgText += `<i>"${text}"</i>\n`;
-        tgText += `━━━━━━━━━━━━━━━━━━━━`;
-
-        try {
-          await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              chat_id: TELEGRAM_CHAT_ID,
-              text: tgText,
-              parse_mode: "HTML"
-            })
-          });
-        } catch (err) {
-          console.error(err);
-        }
-      }
-
-      const statusBox = document.getElementById("hw-status");
-      statusBox.style.display = "block";
-      statusBox.textContent = isUlunur 
-        ? "🛡️ Ulunur Mode: Silent test submission complete (no alert sent)." 
-        : "✅ Homework sent to your teacher's Telegram!";
-      submitBtn.textContent = "Submitted! ✨";
-    }
-
-    // Initialize on load
     window.addEventListener("DOMContentLoaded", init);
   </script>
 </body>
