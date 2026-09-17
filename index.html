@@ -1057,7 +1057,7 @@
           <span id="tab-status-1">Ochiq ✨</span>
         </div>
         <div class="day-tab-title" id="tab-title-1">
-          Present Perfect vs Past Simple
+          Present Simple vs. Present Continuous
         </div>
       </div>
 
@@ -1249,376 +1249,435 @@
     const TELEGRAM_BOT_TOKEN = "8828359607:AAFEpXaJusqaorQtIhd2sDMm4enaVWxnmuY";
     const TELEGRAM_CHAT_ID = "7957347033";
 
-    // 3 KUNLIK TO'LIQ MA'LUMOT VA SLAYDLAR (GOOGLE MEET DARS UCHUN)
+    // 3 KUNLIK TO'LIQ MA'LUMOT VA SLAYDLAR (OXFORD ENGLISH FILE & RAYMOND MURPHY METODIKASI)
     const COURSE_DAYS = {
       1: {
         dateStr: "18-Sentyabr, Juma",
         shortDate: "18-Sent • Juma",
-        title: "Present Perfect vs Past Simple",
+        title: "Present Simple vs. Present Continuous",
         unlockDate: new Date("2026-09-18T00:00:00+05:00"),
 
-        // PPT SLIDES FOR LIVE GOOGLE MEET
+        // PPT SLIDES FOR LIVE GOOGLE MEET (ENGLISH FILE UNIT 1)
         slides: [
           {
-            tag: "1-SLAYD • KIRISH & MUAMMO",
-            title: "Present Perfect vs. Past Simple",
+            tag: "1-SLAYD • HOOK & SOLISHTIRISH",
+            title: "Present Simple vs. Present Continuous",
             html: `
-              <div style="margin: 18px 0; font-size: 17px; line-height: 1.6; color: #cbd5e1;">
-                🤔 <strong>Savol:</strong> Nega o'zbek tilida so'zlashuvchilar bu ikki zamonda 80% holatda xato qiladi?<br><br>
-                <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 14px 18px; border-radius: 12px; color: #fca5a5; display: inline-block; text-align: left;">
-                  ❌ <em>"Men kecha kinoga borganman"</em> deb o'zbekcha gapira olamiz.<br>
-                  ❌ Lekin ingliz tilida: <em>"I have gone to cinema yesterday"</em> desangiz — <strong>KATTA XATO!</strong>
+              <div style="margin: 18px 0; font-size: 16px; line-height: 1.6; color: #cbd5e1;">
+                🤔 <strong>English File Asosiy Savoli:</strong><br><br>
+                <div class="slide-compare-grid" style="margin: 10px 0;">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399; font-size: 15px;">"What does she do?"</strong><br>
+                    <span style="font-size: 13.5px; color: #cbd5e1;">
+                      👉 U nima ish qiladi? (Kasbi, doimiy odati)<br>
+                      <em>"She is a doctor. She works in a clinic."</em>
+                    </span>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #38bdf8; font-size: 15px;">"What is she doing right now?"</strong><br>
+                    <span style="font-size: 13.5px; color: #cbd5e1;">
+                      👉 Ayni shu soniyada nima qilyapti?<br>
+                      <em>"She is playing the guitar with her daughter."</em>
+                    </span>
+                  </div>
                 </div>
               </div>
-              <p style="font-size: 14px; color: #94a3b8;">Bugun ushbu muammoni 1 umrga hal qilamiz. 🚀</p>
+              <p style="font-size: 13.5px; color: #94a3b8;">Ustoz o'quvchidan so'raydi: <em>"Malika, what do you do? And what are you doing right now?"</em></p>
             `
           },
           {
-            tag: "2-SLAYD • KO'Z OLDIGA KELTIRISH",
-            title: "Zamonlar Chizig'i (Visual Timeline)",
+            tag: "2-SLAYD • PRESENT SIMPLE",
+            title: "Doimiy Odatlar, Tartib va Faktlar",
             html: `
-              <div class="visual-timeline">
-                <div class="timeline-row">
-                  <div class="t-icon t-icon-past">❌</div>
-                  <div>
-                    <div class="t-info-title" style="color: #f87171;">PAST SIMPLE (O'tgan oddiy zamon)</div>
-                    <div class="t-info-desc">
-                      Eshik yopiq! Ish-harakat o'tmishda qolib ketgan. Qachon bo'lgani aniq ma'lum: <em>yesterday, last year, in 2021</em>.<br>
-                      👉 <strong>"I saw him yesterday."</strong> (Kecha ko'rganman, vaqt aniq).
-                    </div>
-                  </div>
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="rule-card" style="margin-bottom: 12px;">
+                  📌 <strong>Qachon ishlatiladi:</strong> Doimiy odatlar, har kuni takrorlanadigan ishlar va o'zgarmas haqiqatlar.<br>
+                  • <code>+</code> Subject + V1 (he/she/it uchun <strong>-s / -es</strong>)<br>
+                  • <code>-</code> Subject + <strong>don't / doesn't</strong> + V1<br>
+                  • <code>?</code> <strong>Do / Does</strong> + Subject + V1?
                 </div>
 
-                <div style="border-top: 1px dashed #2a3b5a; margin: 12px 0;"></div>
-
-                <div class="timeline-row">
-                  <div class="t-icon t-icon-present">🔗</div>
-                  <div>
-                    <div class="t-info-title" style="color: #34d399;">PRESENT PERFECT (Hozirgi tugallangan)</div>
-                    <div class="t-info-desc">
-                      Ko'prik bor! O'tmishdagi ish <strong>HOZIRGI LAHZA</strong> bilan bog'langan. Natijasi hozir bilinib turibdi yoki hayotiy tajriba.<br>
-                      👉 <strong>"I have lost my keys."</strong> (Kalitimni yo'qotdim — hozir ham eshik oldida turibman, natija bor!).
-                    </div>
-                  </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px;">
+                  ⏱️ <strong>Chastotalik Ravishlari (Adverbs of Frequency):</strong><br>
+                  <em>always, usually, often, sometimes, hardly ever, never</em><br>
+                  <span style="color: #34d399; font-size: 12.5px;">Asosiy fe'ldan oldin, lekin 'be' fe'lidan keyin keladi:</span><br>
+                  • <em>"I <strong>usually drink</strong> tea in the morning."</em><br>
+                  • <em>"He <strong>is always</strong> late for work."</em>
                 </div>
               </div>
             `
           },
           {
-            tag: "3-SLAYD • QOIDA & FORMULA",
-            title: "Formula va Signal So'zlar",
+            tag: "3-SLAYD • PRESENT CONTINUOUS",
+            title: "Ayni Damdagi va Vaqtinchalik Ishlar",
             html: `
-              <div class="slide-compare-grid">
-                <div class="slide-compare-card slide-card-red">
-                  <div class="slide-card-header" style="color: #f87171;">📌 Past Simple (V2)</div>
-                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
-                    • <strong>Formula:</strong> Subject + V2 / didn't + V1<br>
-                    • <strong>Aniq vaqt:</strong><br>
-                    — yesterday<br>
-                    — last week / last year<br>
-                    — 2 days ago<br>
-                    — in 2019 / when I was young<br>
-                    <em>"She arrived 10 minutes ago."</em>
-                  </div>
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="rule-card" style="border-left-color: #38bdf8; margin-bottom: 12px;">
+                  📌 <strong>Qachon ishlatiladi:</strong> Ayni gapirayotgan lahzada yoki shu kunlarda vaqtinchalik bo'layotgan ishlar.<br>
+                  • <code>+</code> Subject + <strong>am / is / are</strong> + V-ing<br>
+                  • <code>-</code> Subject + <strong>am not / isn't / aren't</strong> + V-ing<br>
+                  • <code>?</code> <strong>Am / Is / Are</strong> + Subject + V-ing?
                 </div>
 
-                <div class="slide-compare-card slide-card-green">
-                  <div class="slide-card-header" style="color: #34d399;">📌 Present Perfect (have + V3)</div>
-                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
-                    • <strong>Formula:</strong> have / has + V3 (ed)<br>
-                    • <strong>Noma'lum / Natija vaqti:</strong><br>
-                    — ever / never (hayotda)<br>
-                    — already / yet / just<br>
-                    — recently / so far<br>
-                    — today / this week (tugamagan)<br>
-                    <em>"She has just arrived."</em>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px;">
+                  📍 <strong>Signal So'zlar:</strong><br>
+                  <em>now, right now, at the moment, today, this week, currently, Listen!, Look!</em><br>
+                  • <em>"Please be quiet. The baby <strong>is sleeping</strong>."</em><br>
+                  • <em>"I'm reading a really good book <strong>this week</strong>."</em>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • ENG KATTA TUZOQ (STATIVE VERBS)",
+            title: "⚠️ Hech Qachon '-ing' Olmaydigan Fe'llar",
+            html: `
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <p style="color: #fde68a; margin-bottom: 12px;">
+                  Ayrim fe'llar harakatni emas, balki <strong>holat, tuyg'u va fikrni</strong> ifodalaydi. Ular ayni damda ro'y berayotgan bo'lsa ham, ularga <strong>-ing qo'shilmaydi!</strong>
+                </p>
+
+                <div style="background: rgba(11, 17, 32, 0.8); border: 1.5px solid #2a3b5a; padding: 14px 18px; border-radius: 12px; margin-bottom: 12px;">
+                  🧠 <strong>Fikr & Tuyg'u fe'llari:</strong><br>
+                  <em>like, love, hate, want, need, prefer, know, understand, remember, believe, mean</em>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13.5px;">
+                  <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 10px 14px; border-radius: 8px; color: #fca5a5;">
+                    ❌ I am knowing you.<br>
+                    ❌ I am wanting coffee.<br>
+                    ❌ Are you understanding?
+                  </div>
+                  <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px 14px; border-radius: 8px; color: #86efac;">
+                    ✅ <strong>I know you.</strong><br>
+                    ✅ <strong>I want coffee.</strong><br>
+                    ✅ <strong>Do you understand?</strong>
                   </div>
                 </div>
               </div>
             `
           },
           {
-            tag: "4-SLAYD • QIYOSLASH JADVALI",
-            title: "Haqiqiy Farqni His Qilish",
+            tag: "5-SLAYD • QIYOSLASH JADVALI",
+            title: "English File Klassik Taqqoslash",
             html: `
-              <div style="max-width: 680px; width: 100%; text-align: left; margin: 16px auto; font-size: 14.5px; line-height: 1.6;">
-                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 14px 18px; border-radius: 12px; margin-bottom: 12px;">
-                  1️⃣ <strong>"I lived in London for 2 years."</strong> (Past Simple)<br>
-                  <span style="color: #94a3b8;">Ma'nosi: Men Londonda yashab bo'lganman, hozir u yerda EMASMAN. Yashash tugagan.</span>
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px; margin-bottom: 10px;">
+                  1️⃣ <strong>"It rains a lot in winter."</strong> (Present Simple — har yili qishda bo'ladigan umumiy fakt)<br>
+                  ⚡ <strong>"Take an umbrella, it is raining!"</strong> (Present Continuous — ayni ko'chada yog'yapti)
                 </div>
-                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 14px 18px; border-radius: 12px;">
-                  2️⃣ <strong>"I have lived in London for 2 years."</strong> (Present Perfect)<br>
-                  <span style="color: #34d399;">Ma'nosi: Men 2 yildan beri Londonda yashayman va HOZIR HAM u yerda yashamoqdaman!</span>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px;">
+                  2️⃣ <strong>"I live with my parents."</strong> (Present Simple — doimiy uyim shu yerda)<br>
+                  ⚡ <strong>"I'm staying in a hotel this week."</strong> (Present Continuous — faqat shu hafta, vaqtinchalik)
                 </div>
               </div>
             `
           },
           {
-            tag: "5-SLAYD • JONLI MASHQ (MEET SAVOL-JAVOB)",
+            tag: "6-SLAYD • JONLI MASHQ (MEET)",
             title: "O'quvchi Bilan Jonli Mashq",
             html: `
-              <p style="font-size: 14px; color: #94a3b8; margin-bottom: 14px;">
-                Malika, qaysi javob to'g'ri deb o'ylaysiz? (Javobni eshitgach tugmani bosing)
+              <p style="font-size: 14px; color: #94a3b8; margin-bottom: 12px;">
+                Malika, qaysi shakl to'g'ri? (O'quvchi javob bergach tugmani bosing)
               </p>
               <div class="live-drill-item">
-                <div class="drill-question">1. I ______ (read) that book yesterday.</div>
+                <div class="drill-question">1. Listen! Somebody ______ (sing) in the shower.</div>
                 <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
-                <div class="drill-answer">✅ To'g'ri: <strong>read</strong> (Past Simple). Chunki "yesterday" bor!</div>
+                <div class="drill-answer">✅ To'g'ri: <strong>is singing</strong> ("Listen!" ayni shu soniyada bo'layotganini bildiradi).</div>
               </div>
 
               <div class="live-drill-item">
-                <div class="drill-question">2. ______ you ever ______ (see) an elephant?</div>
+                <div class="drill-question">2. How often ______ you ______ (go) to the gym?</div>
                 <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
-                <div class="drill-answer">✅ To'g'ri: <strong>Have you ever seen</strong>. Chunki hayotiy tajriba so'ralmoqda!</div>
+                <div class="drill-answer">✅ To'g'ri: <strong>do you go</strong> ("How often" doimiy odatni so'raydi).</div>
               </div>
 
               <div class="live-drill-item">
-                <div class="drill-question">3. She ______ (buy) a new phone this morning, and it looks great!</div>
+                <div class="drill-question">3. I'm sorry, I ______ (not understand) what you mean.</div>
                 <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
-                <div class="drill-answer">✅ To'g'ri: <strong>has bought</strong> (natijasi hozir ko'rinib turibdi).</div>
+                <div class="drill-answer">✅ To'g'ri: <strong>don't understand</strong> ("understand" his-fikr fe'li bo'lgani uchun -ing olmaydi!).</div>
+              </div>
+
+              <div class="live-drill-item">
+                <div class="drill-question">4. Why ______ you ______ (wear) a warm coat today? It's warm!</div>
+                <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
+                <div class="drill-answer">✅ To'g'ri: <strong>are you wearing</strong> ("today" bugungi vaqtinchalik kiyimni so'raydi).</div>
               </div>
             `
           },
           {
-            tag: "6-SLAYD • LUG'AT BOYLIGI",
-            title: "Bugungi 8 ta Kerakli So'z",
+            tag: "7-SLAYD • LUG'AT BOYLIGI",
+            title: "English File Unit 1: 8 ta Kundalik So'z",
             html: `
               <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 700px; width: 100%; text-align: left; margin: 16px auto;">
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">1. visit</strong> [fe'l] — bormoq, ko'rgani bormoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"Have you ever visited Samarkand?"</span>
+                  <strong style="color: #38bdf8;">1. wake up</strong> [fe'l] — uyg'onmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I wake up at 7 AM every day."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">2. forget</strong> [fe'l] — unutmoq, esdan chiqarmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I have forgotten my password!"</span>
+                  <strong style="color: #38bdf8;">2. spend</strong> [fe'l] — sarflamoq (vaqt/pul)<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I spend 1 hour reading every evening."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">3. remember</strong> [fe'l] — eslamoq, yodda tutmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I remembered her name yesterday."</span>
+                  <strong style="color: #38bdf8;">3. need</strong> [fe'l] — muhtoj bo'lmoq / kerak bo'lmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I need a cup of hot coffee."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">4. arrive</strong> [fe'l] — yetib kelmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"The taxi has just arrived."</span>
+                  <strong style="color: #38bdf8;">4. want</strong> [fe'l] — xohlamoq, istamoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"She wants to learn English."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">5. decide</strong> [fe'l] — qaror qilmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I decided to study English."</span>
+                  <strong style="color: #38bdf8;">5. look for</strong> [fe'l] — qidirmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I am looking for my keys right now."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">6. change</strong> [fe'l] — o'zgarmoq, o'zgartirmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"Tashkent has changed a lot."</span>
+                  <strong style="color: #38bdf8;">6. prefer</strong> [fe'l] — afzal ko'rmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I prefer tea to coffee."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">7. meet</strong> [fe'l] — uchrashmoq, tanishmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I met my best friend in 2021."</span>
+                  <strong style="color: #38bdf8;">7. wear</strong> [fe'l] — kiyib yurmoq / taqmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"She is wearing blue jeans today."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">8. try</strong> [fe'l] — tatib ko'rmoq, urinib ko'rmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"Have you ever tried sushi?"</span>
+                  <strong style="color: #38bdf8;">8. stay</strong> [fe'l] — vaqtincha turmoq / qolmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I am staying with my friend this week."</span>
                 </div>
               </div>
             `
           }
         ],
 
-        // STUDENT SELF-STUDY READING
         lessonHtml: `
-          <h3>O'zbek O'quvchilari Eng Ko'p Adashadigan Mavzu</h3>
+          <h3>Present Simple vs. Present Continuous (English File Unit 1B)</h3>
           <p>
-            O'zbek tilida biz <em>"Kecha kinoga borganman"</em> deb bemalol aytamiz.
-            Lekin ingliz tilida agar o'tgan zamondagi <strong>ANIQ VAQT</strong> (yesterday, last year, 2 hours ago, in 2022) bo'lsa, FAQAT Past Simple (V2) ishlatiladi!
+            Ingliz tilidagi eng muhim birinchi poydevor: <em>har kungi odatlar</em> va <em>ayni damdagi ish-harakatlar</em> o'rtasidagi farq.
           </p>
 
           <div class="rule-card">
-            📌 <strong>1-QOIDA: Past Simple (V2) — O'tgan tugallangan vaqt</strong><br>
-            • <em>I saw him yesterday.</em> (To'g'ri)<br>
-            • ❌ <em>I have seen him yesterday.</em> (Xato! Aniq vaqt bo'lsa have/has qo'yilmaydi!)
+            📌 <strong>1. PRESENT SIMPLE — Doimiy Odatlar va Faktlar:</strong><br>
+            • Har kuni, odatda yoki umuman sodir bo'ladigan ishlar.<br>
+            • <em>"I live in Tashkent."</em> (Men Toshkentda yashayman — doimiy uyim).<br>
+            • <em>"She always drinks tea in the morning."</em> (U har doim ertalab choy ichadi).
           </div>
 
-          <div class="rule-card">
-            📌 <strong>2-QOIDA: Present Perfect (have/has + V3) — Hozirgi natija yoki Tajriba</strong><br>
-            Bu zamonda harakat qachon bo'lgani noma'lum. Muhimi — <strong>natijasi hozir bilinib turgani</strong> yoki <strong>hayotiy tajriba</strong>.<br>
-            • <em>I have lost my key.</em> (Kalitimni yo'qotib qo'ydim — hozir ham uyga kirolmay turibman, natijasi bor!)<br>
-            • <em>Have you ever achieved a big goal?</em> (Hayotingizda katta maqsadga erishganmisiz?)
+          <div class="rule-card" style="border-left-color: #38bdf8;">
+            📌 <strong>2. PRESENT CONTINUOUS — Ayni Damda yoki Vaqtinchalik:</strong><br>
+            • Ayni gapirayotgan paytda yoki shu kunlarda bo'layotgan ishlar.<br>
+            • <em>"Please be quiet, the baby is sleeping."</em> (Iltimos sekinroq, chaqaloq uxlayapti).<br>
+            • <em>"I'm staying in a hotel this week."</em> (Bu hafta mehmonxonada turibman — vaqtinchalik).
+          </div>
+
+          <div class="uz-trap-box">
+            ⚠️ <strong>Oltin Qoida (Stative Verbs):</strong> Tuyg'u va fikr fe'llari (<em>like, want, need, know, understand, remember</em>) hech qachon <strong>-ing</strong> olmaydi!<br>
+            • ❌ <em>"I am wanting coffee."</em> ➔ ✅ <strong>"I want coffee."</strong><br>
+            • ❌ <em>"Are you understanding?"</em> ➔ ✅ <strong>"Do you understand?"</strong>
           </div>
         `,
 
         vocab: [
-          { word: "visit", pos: "fe'l", uz: "bormoq, ko'rgani bormoq", exEn: "Have you ever visited Samarkand?", exUz: "Hech Samarqandga borganmisiz?" },
-          { word: "forget", pos: "fe'l", uz: "unutmoq, esdan chiqarmoq", exEn: "I have forgotten my password!", exUz: "Parolimni unutib qo'ydim!" },
-          { word: "remember", pos: "fe'l", uz: "eslamoq, yodda tutmoq", exEn: "I remembered her name yesterday.", exUz: "Kecha uning ismini esladim." },
-          { word: "arrive", pos: "fe'l", uz: "yetib kelmoq", exEn: "The taxi has just arrived.", exUz: "Taksi hozirgina yetib keldi." },
-          { word: "decide", pos: "fe'l", uz: "qaror qilmoq", exEn: "I decided to study English.", exUz: "Men ingliz tilini o'rganishga qaror qildim." },
-          { word: "change", pos: "fe'l", uz: "o'zgarmoq, o'zgartirmoq", exEn: "Tashkent has changed a lot.", exUz: "Toshkent juda ko'p o'zgardi." },
-          { word: "meet", pos: "fe'l", uz: "uchrashmoq, tanishmoq", exEn: "I met my best friend in 2021.", exUz: "Eng yaxshi do'stim bilan 2021-yilda tanishganman." },
-          { word: "try", pos: "fe'l", uz: "tatib ko'rmoq, urinib ko'rmoq", exEn: "Have you ever tried sushi?", exUz: "Hech sushini tatib ko'rganmisiz?" }
+          { word: "wake up", pos: "fe'l", uz: "uyg'onmoq", exEn: "I usually wake up at 7 AM.", exUz: "Men odatda ertalab soat 7 da uyg'onaman." },
+          { word: "spend", pos: "fe'l", uz: "sarflamoq (vaqt yoki pul)", exEn: "I spend an hour reading every evening.", exUz: "Men har oqshom bir soat kitob o'qishga sarflayman." },
+          { word: "need", pos: "fe'l", uz: "kerak bo'lmoq / muhtoj bo'lmoq", exEn: "I need to drink some water.", exUz: "Menga ozgina suv ichish kerak." },
+          { word: "want", pos: "fe'l", uz: "xohlamoq, istamoq", exEn: "She wants to travel to London.", exUz: "U Londonga sayohat qilishni xohlaydi." },
+          { word: "look for", pos: "fe'l", uz: "qidirmoq", exEn: "I am looking for my phone right now.", exUz: "Hozir telefonimni qidiryapman." },
+          { word: "prefer", pos: "fe'l", uz: "afzal ko'rmoq", exEn: "I prefer tea to coffee.", exUz: "Men choyni qahvadan afzal ko'raman." },
+          { word: "wear", pos: "fe'l", uz: "kiyib yurmoq / taqmoq", exEn: "She is wearing a beautiful dress today.", exUz: "U bugun chiroyli ko'ylak kiyib olgan." },
+          { word: "stay", pos: "fe'l", uz: "vaqtincha turmoq, qolmoq", exEn: "I am staying at a hotel this week.", exUz: "Men bu hafta mehmonxonada turibman." }
         ],
 
         practice: [
           {
-            q: "I ______ to Italy twice in my life, and I hope to go again next year.",
-            opts: ["went", "have been", "was", "had been"],
-            ans: "have been",
-            expl: "To'g'ri! Insonning butun hayotidagi tajribasi so'ralmoqda va o'tgan aniq sana ko'rsatilmagan (Present Perfect: 'have been')."
+            q: "Listen! Somebody ______ (play) the piano in the other room.",
+            opts: ["plays", "is playing", "play", "are playing"],
+            ans: "is playing",
+            expl: "To'g'ri! 'Listen!' so'zi ish-harakat ayni damda ro'y berayotganini ko'rsatadi (Present Continuous: 'is playing')."
           },
           {
-            q: "My brother ______ his driving test last Friday.",
-            opts: ["has passed", "passed", "passes", "is passing"],
-            ans: "passed",
-            expl: "To'g'ri! 'last Friday' — aniq o'tgan zamon. Faqat Past Simple ('passed') ishlatiladi."
+            q: "Tom ______ to the gym three times a week.",
+            opts: ["goes", "is going", "go", "are going"],
+            ans: "goes",
+            expl: "To'g'ri! 'three times a week' (haftada 3 marta) — bu doimiy odat. Shuning uchun Present Simple ('goes') ishlatiladi."
           },
           {
-            q: "She ______ three different books this month, and she is still reading another one.",
-            opts: ["read", "has read", "reads", "was reading"],
-            ans: "has read",
-            expl: "To'g'ri! 'this month' (shu oy) hali tugamagan davr bo'lgani uchun Present Perfect ('has read') qo'yiladi."
+            q: "I ______ (not understand) this grammar rule right now.",
+            opts: ["am not understanding", "don't understand", "not understand", "doesn't understand"],
+            ans: "don't understand",
+            expl: "To'g'ri! 'understand' fe'li his-tuyg'u va aqliy faoliyat fe'li bo'lgani uchun hech qachon -ing olmaydi."
           },
           {
-            q: "We ______ an apartment in Tashkent in 2021.",
-            opts: ["have bought", "bought", "buy", "had bought"],
-            ans: "bought",
-            expl: "To'g'ri! 'in 2021' — o'tib ketgan aniq yil. Aniq yil bilan faqat Past Simple ('bought') ishlatiladi."
+            q: "What ______ you usually ______ on Sundays?",
+            opts: ["do / do", "are / doing", "does / do", "is / doing"],
+            ans: "do / do",
+            expl: "To'g'ri! 'usually' (odatda) — Present Simple signal so'zi. 'What do you usually do?' to'g'ri savol shakli."
           }
         ],
 
         hwPrompt: `
-          <strong>📝 1-Kun Uyga Vazifasi:</strong><br>
-          Bugungi dars asosida 3 ta gap tuzing:<br>
-          1. O'zingiz erishgan yutuq yoki tajribangiz haqida (Present Perfect: <em>have + V3</em>).<br>
-          2. Kecha yoki o'tgan hafta qilgan ishingiz haqida (Past Simple: <em>V2</em>).<br>
-          3. Bugungi 8 ta yangi so'zdan kamida bittasini (masalan: <em>achieve, effort, improve</em>) ishlating.
+          <strong>📝 1-Kun Uyga Vazifasi (English File Unit 1):</strong><br>
+          Bugungi qoidalar asosida 3 ta gap yozing:<br>
+          1. Har kuni qiladigan odatingiz haqida (Present Simple: <em>I usually...</em>).<br>
+          2. Ayni damda yoki shu kunlarda qilayotgan ishingiz haqida (Present Continuous: <em>Right now, I am...</em>).<br>
+          3. Bugungi fe'llardan kamida bittasini (masalan: <em>prefer, need, spend</em>) ishlating.
         `
       },
 
       2: {
         dateStr: "19-Sentyabr, Shanba",
         shortDate: "19-Sent • Shanba",
-        title: "For, Since, Already, Yet va Just",
+        title: "Past Simple: Regular & Irregular Verbs + DID",
         unlockDate: new Date("2026-09-19T00:00:00+05:00"),
 
         slides: [
           {
-            tag: "1-SLAYD • MAVZU",
-            title: "For, Since, Already, Yet & Just",
+            tag: "1-SLAYD • ENGLISH FILE UNIT 2",
+            title: "Past Simple: O'tmish Hikoyalari",
             html: `
-              <div style="font-size: 17px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
-                🎯 <strong>Dars Maqsadi:</strong> Ingliz tilida jumlalarni ravon va jonli bog'lashni o'rganish.<br><br>
-                Ushbu 5 ta so'z orqali siz vaqtni xuddi ona tilisi ingliz tili bo'lgan odamdek aniq ifodalay olasiz.
+              <div style="font-size: 16px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                💬 <strong>Klassik Savol:</strong> <em>"What did you do last weekend?"</em><br><br>
+                O'tgan zamonda erkin gapirish — ingliz tilidagi eng quvonchli lahzadir. O'tgan voqea, kecha nima qilganingiz va qayerga borganingizni xatosiz gapirishni o'rganamiz.
               </div>
             `
           },
           {
-            tag: "2-SLAYD • FOR vs SINCE",
-            title: "Davomiylik (For) vs Boshlanish Nuqtasi (Since)",
+            tag: "2-SLAYD • TO'G'RI FE'LLAR (-ED) & TALAFFUZ",
+            title: "Regular Verbs va Ularning 3 Xil O'qilishi",
             html: `
-              <div class="slide-compare-grid">
-                <div class="slide-compare-card slide-card-green">
-                  <div class="slide-card-header" style="color: #34d399;">📏 FOR (Davomiylik)</div>
-                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
-                    Javob beradi: <em>Qancha vaqt davomida?</em><br><br>
-                    • for 3 years (3 yil davomida)<br>
-                    • for 2 hours (2 soatdan beri)<br>
-                    • for a long time (uzoq vaqt)<br><br>
-                    <em>"I have studied for 2 hours."</em>
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.6;">
+                <p style="margin-bottom: 10px;">To'g'ri fe'llarga <strong>-ed</strong> qo'shiladi (<em>play ➔ played, live ➔ lived</em>). Lekin ular 3 xil o'qiladi:</p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                  <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 12px; border-radius: 10px;">
+                    <strong style="color: #38bdf8;">1. /t/ tovushi</strong><br>
+                    watched<br>worked<br>stopped
+                  </div>
+                  <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 12px; border-radius: 10px;">
+                    <strong style="color: #34d399;">2. /d/ tovushi</strong><br>
+                    played<br>lived<br>cleaned
+                  </div>
+                  <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 12px; border-radius: 10px;">
+                    <strong style="color: #f59e0b;">3. /ɪd/ tovushi</strong><br>
+                    wanted<br>decided<br>invited
                   </div>
                 </div>
-
-                <div class="slide-compare-card slide-card-red">
-                  <div class="slide-card-header" style="color: #38bdf8;">📍 SINCE (Boshlanish Nuqtasi)</div>
-                  <div style="font-size: 13.5px; line-height: 1.6; color: #cbd5e1;">
-                    Javob beradi: <em>Qachondan boshlab?</em><br><br>
-                    • since 2020 (2020-yildan beri)<br>
-                    • since 9 AM (ertalab soat 9 dan)<br>
-                    • since Monday (dushanbadan beri)<br><br>
-                    <em>"I have studied since 9 AM."</em>
-                  </div>
-                </div>
+                <p style="font-size: 12px; color: #94a3b8; margin-top: 8px;">*Faqat T va D bilan tugagan fe'llar "id" deb talaffuz qilinadi!</p>
               </div>
             `
           },
           {
-            tag: "3-SLAYD • ALREADY vs YET vs JUST",
-            title: "Tezlik & Kutilmalar",
+            tag: "3-SLAYD • ENG KERAKLI 15 TA NOTO'G'RI FE'L",
+            title: "Top 15 Essential Irregular Verbs",
+            html: `
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 13px;">
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">go ➔ <strong>went</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">see ➔ <strong>saw</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">have ➔ <strong>had</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">buy ➔ <strong>bought</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">meet ➔ <strong>met</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">take ➔ <strong>took</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">come ➔ <strong>came</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">get ➔ <strong>got</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">do ➔ <strong>did</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">make ➔ <strong>made</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">find ➔ <strong>found</strong></div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 8px 10px; border-radius: 8px;">leave ➔ <strong>left</strong></div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • 'DID' QOIDASI",
+            title: "Savol va Inkor Yasashning Oltin Qoidasi",
             html: `
               <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
-                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px; margin-bottom: 10px;">
-                  ⚡ <strong>JUST (Hozirgina):</strong> Bir necha soniya/daqiqa oldin.<br>
-                  • <em>"I have just arrived at the office."</em>
-                </div>
-                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px; margin-bottom: 10px;">
-                  📦 <strong>ALREADY (Allaqachon):</strong> Kutilgandan oldinroq (darak gapda).<br>
-                  • <em>"I have already sent the email."</em>
-                </div>
-                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px;">
-                  ⏳ <strong>YET (Hali):</strong> Faqat INKOR va SO'ROQ gaplarda, gapning oxirida.<br>
-                  • <em>"I haven't called him yet."</em><br>
-                  • <em>"Have you eaten yet?"</em>
+                <div class="rule-card">
+                  ⚡ <strong>Yodda saqlang:</strong> Inkor va savolda <code>didn't</code> yoki <code>did</code> kelishi bilan, asosiy fe'l 1-shaklida (V1) qoladi!<br><br>
+                  • Darak: <em>"I <strong>went</strong> to Samarkand."</em><br>
+                  • Inkor: <em>"I <strong>didn't go</strong> to Samarkand."</em> (❌ didn't went EMAS!)<br>
+                  • Savol: <em>"<strong>Did you go</strong> to Samarkand?"</em> (❌ Did you went EMAS!)
                 </div>
               </div>
             `
           },
           {
-            tag: "4-SLAYD • JONLI MASHQ",
+            tag: "5-SLAYD • ENG KATTA TUZOQ (WAS/WERE vs DID)",
+            title: "⚠️ WAS / WERE vs. DID",
+            html: `
+              <div style="max-width: 680px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">DID (Harakat/Fe'l bor bo'lsa)</strong><br>
+                    • <em>"Did you watch the movie?"</em><br>
+                    • <em>"I didn't buy the ticket."</em>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #f87171;">WAS / WERE (Sifat/Joy bo'lsa)</strong><br>
+                    • <em>"Were you tired yesterday?"</em><br>
+                    • <em>"I wasn't at home."</em>
+                  </div>
+                </div>
+                <p style="font-size: 12.5px; color: #fca5a5; margin-top: 6px;">
+                  ❌ "Did you tired?" deyilmaydi, chunki "tired" (charchagan) — bu sifat, harakat emas!
+                </p>
+              </div>
+            `
+          },
+          {
+            tag: "6-SLAYD • JONLI MASHQ (MEET)",
             title: "O'quvchi Bilan Jonli Mashq",
             html: `
-              <p style="font-size: 14px; color: #94a3b8; margin-bottom: 14px;">
-                Malika, quyidagi bo'shliqlarga nima qo'yamiz?
-              </p>
               <div class="live-drill-item">
-                <div class="drill-question">1. I have lived here ______ 2018.</div>
+                <div class="drill-question">1. Where ______ you ______ (go) on holiday last summer?</div>
                 <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
-                <div class="drill-answer">✅ To'g'ri: <strong>since</strong> (chunki 2018 — boshlanish yili).</div>
+                <div class="drill-answer">✅ To'g'ri: <strong>did you go</strong> (savolda 'did' + V1 ishlatiladi).</div>
               </div>
 
               <div class="live-drill-item">
-                <div class="drill-question">2. I haven't received the parcel ______.</div>
+                <div class="drill-question">2. I was very tired, so I ______ (not go) to the party.</div>
                 <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
-                <div class="drill-answer">✅ To'g'ri: <strong>yet</strong> (inkor gap va gap oxirida).</div>
+                <div class="drill-answer">✅ To'g'ri: <strong>didn't go</strong> (inkorda 'didn't' + V1).</div>
               </div>
 
               <div class="live-drill-item">
-                <div class="drill-question">3. She has worked here ______ six months.</div>
+                <div class="drill-question">3. ______ the hotel expensive?</div>
                 <button class="btn-reveal" onclick="toggleReveal(this)">Javobni ko'rsatish 👁️</button>
-                <div class="drill-answer">✅ To'g'ri: <strong>for</strong> (vaqt davomiyligi).</div>
+                <div class="drill-answer">✅ To'g'ri: <strong>Was</strong> (expensive — sifat, fe'l yo'q!).</div>
               </div>
             `
           },
           {
-            tag: "5-SLAYD • LUG'AT BOYLIGI",
-            title: "Bugungi 8 ta Kerakli So'z",
+            tag: "7-SLAYD • LUG'AT BOYLIGI",
+            title: "English File Unit 2: O'tmish Fe'llari",
             html: `
               <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 700px; width: 100%; text-align: left; margin: 16px auto;">
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">1. wait</strong> [fe'l] — kutmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I have waited for 30 minutes."</span>
+                  <strong style="color: #38bdf8;">1. arrive</strong> [fe'l] — yetib kelmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"We arrived at 6 PM."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">2. start</strong> [fe'l] — boshlamoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"The lesson has already started."</span>
+                  <strong style="color: #38bdf8;">2. invite</strong> [fe'l] — taklif qilmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"She invited me to lunch."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">3. finish</strong> [fe'l] — tugatmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I haven't finished yet."</span>
+                  <strong style="color: #38bdf8;">3. choose</strong> [fe'l] — tanlamoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I chose the black shoes."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">4. buy</strong> [fe'l] — sotib olmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I have just bought a dress."</span>
+                  <strong style="color: #38bdf8;">4. forget</strong> [fe'l] — unutmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I forgot my homework."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">5. spend</strong> [fe'l] — sarflamoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"Spend time / money"</span>
+                  <strong style="color: #38bdf8;">5. remember</strong> [fe'l] — eslamoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I remembered his name."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">6. call</strong> [fe'l] — qo'ng'iroq qilmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"Have you called him yet?"</span>
+                  <strong style="color: #38bdf8;">6. happen</strong> [fe'l] — sodir bo'lmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"What happened yesterday?"</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">7. leave</strong> [fe'l] — jo'nab ketmoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"The train has just left."</span>
+                  <strong style="color: #38bdf8;">7. decide</strong> [fe'l] — qaror qilmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"We decided to stay home."</span>
                 </div>
                 <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;">
-                  <strong style="color: #38bdf8;">8. choose</strong> [fe'l] — tanlamoq<br>
-                  <span style="color: #94a3b8; font-size: 12px;">"I haven't chosen yet."</span>
+                  <strong style="color: #38bdf8;">8. enjoy</strong> [fe'l] — rohatlanmoq, yoqtirmoq<br>
+                  <span style="color: #94a3b8; font-size: 12px;">"I enjoyed the trip."</span>
                 </div>
               </div>
             `
@@ -1626,115 +1685,141 @@
         ],
 
         lessonHtml: `
-          <h3>Vaqt Signal So'zlarining Nozik Farqlari</h3>
+          <h3>Past Simple: Regular & Irregular Verbs (English File Unit 2)</h3>
+          <p>
+            O'tgan zamon — o'tmishdagi voqealar, kecha nima qilganingiz yoki oxirgi dam olish kunlaringiz haqida so'zlab berish uchun asosiy zamondir.
+          </p>
+
           <div class="rule-card">
-            ⏳ <strong>FOR va SINCE farqi:</strong><br>
-            • <strong>FOR</strong> — vaqt davomiyligi: <em>for 3 years</em> (3 yil davomida).<br>
-            • <strong>SINCE</strong> — boshlanish nuqtasi: <em>since 2020</em> (2020-yildan beri).
+            📌 <strong>1. To'g'ri Fe'llar (Regular Verbs):</strong><br>
+            Fe'l oxiriga <strong>-ed</strong> qo'shiladi: <em>watch ➔ watched, play ➔ played, live ➔ lived</em>.
           </div>
-          <div class="rule-card">
-            ⚡ <strong>ALREADY, YET va JUST:</strong><br>
-            • <strong>JUST</strong> — hozirgina.<br>
-            • <strong>ALREADY</strong> — allaqachon.<br>
-            • <strong>YET</strong> — hali (faqat inkor va savolda).
+
+          <div class="rule-card" style="border-left-color: #38bdf8;">
+            📌 <strong>2. Noto'g'ri Fe'llar (Irregular Verbs):</strong><br>
+            Ular o'zgaradi va yodlanadi: <em>go ➔ went, see ➔ saw, buy ➔ bought, meet ➔ met, have ➔ had</em>.
+          </div>
+
+          <div class="uz-trap-box">
+            ⚠️ <strong>Eng Katta Qoida ('did' va 'was/were'):</strong><br>
+            • Inkor va savolda <code>didn't</code> yoki <code>did</code> kelsa, fe'l o'zining 1-shakliga qaytadi: <em>"I didn't go"</em> (❌ didn't went EMAS!).<br>
+            • Agar harakat bo'lmasa, faqat holat yoki sifat bo'lsa: <code>was / were</code> ishlatiladi: <em>"Were you tired?"</em> (❌ Did you tired EMAS!).
           </div>
         `,
 
         vocab: [
-          { word: "wait", pos: "fe'l", uz: "kutmoq", exEn: "I have waited for you for 30 minutes.", exUz: "Sizni 30 daqiqadan beri kutyapman." },
-          { word: "start", pos: "fe'l", uz: "boshlamoq, boshlanmoq", exEn: "The lesson has already started.", exUz: "Dars allaqachon boshlandi." },
-          { word: "finish", pos: "fe'l", uz: "tugatmoq", exEn: "I haven't finished my homework yet.", exUz: "Hali uyga vazifamni tugatmadim." },
-          { word: "buy", pos: "fe'l", uz: "sotib olmoq", exEn: "I have just bought a new dress.", exUz: "Hozirgina yangi ko'ylak sotib oldim." },
-          { word: "spend", pos: "fe'l", uz: "vaqt yoki pul sarflamoq", exEn: "I spent two hours on my phone yesterday.", exUz: "Kecha telefonimda ikki soat vaqt sarfladim." },
-          { word: "call", pos: "fe'l", uz: "qo'ng'iroq qilmoq", exEn: "Have you called your friend yet?", exUz: "Do'stingizga qo'ng'iroq qilib bo'ldingizmi?" },
-          { word: "leave", pos: "fe'l", uz: "jo'nab ketmoq, tark etmoq", exEn: "The train has just left the station.", exUz: "Poyezd hozirgina bekatdan jo'nab ketdi." },
-          { word: "choose", pos: "fe'l", uz: "tanlamoq", exEn: "I haven't chosen my career yet.", exUz: "Hali kasbimni tanlaganim yo'q." }
+          { word: "arrive", pos: "fe'l", uz: "yetib kelmoq", exEn: "We arrived at the hotel yesterday.", exUz: "Biz kecha mehmonxonaga yetib keldik." },
+          { word: "invite", pos: "fe'l", uz: "taklif qilmoq", exEn: "She invited me to her party.", exUz: "U meni o'z bazmiga taklif qildi." },
+          { word: "choose", pos: "fe'l", uz: "tanlamoq", exEn: "I chose the blue shirt.", exUz: "Men ko'k ko'ylakni tanladim." },
+          { word: "forget", pos: "fe'l", uz: "unutmoq", exEn: "I forgot my wallet at home.", exUz: "Hamyonimni uyda unutib qoldirdim." },
+          { word: "remember", pos: "fe'l", uz: "eslamoq, yodda tutmoq", exEn: "I remembered her phone number.", exUz: "Uning telefon raqamini esladim." },
+          { word: "happen", pos: "fe'l", uz: "sodir bo'lmoq", exEn: "What happened last night?", exUz: "Kecha oqshom nima sodir bo'ldi?" },
+          { word: "decide", pos: "fe'l", uz: "qaror qilmoq", exEn: "We decided to go home.", exUz: "Biz uyga ketishga qaror qildik." },
+          { word: "enjoy", pos: "fe'l", uz: "rohatlanmoq, yoqtirmoq", exEn: "I really enjoyed the movie.", exUz: "Film menga juda yoqdi." }
         ],
 
         practice: [
           {
-            q: "I have lived in this city ______ five years.",
-            opts: ["for", "since", "from", "during"],
-            ans: "for",
-            expl: "To'g'ri! 'five years' — bu vaqt davomiyligi. Davomiylik uchun 'for' ishlatiladi."
+            q: "Where ______ you ______ on holiday last year?",
+            opts: ["did / go", "did / went", "were / go", "have / gone"],
+            ans: "did / go",
+            expl: "To'g'ri! 'last year' — Past Simple. Savolda 'did' + V1 ('did you go') bo'ladi."
           },
           {
-            q: "He hasn't arrived ______; we are still waiting for him.",
-            opts: ["already", "just", "yet", "since"],
-            ans: "yet",
-            expl: "To'g'ri! Inkor gaplarda va gap oxirida 'hali' ma'nosida 'yet' keladi."
+            q: "I was tired, so I ______ to the party.",
+            opts: ["didn't went", "didn't go", "wasn't go", "not went"],
+            ans: "didn't go",
+            expl: "To'g'ri! 'didn't' dan keyin fe'l 1-shaklda keladi ('didn't go')."
           },
           {
-            q: "Malika has worked at this company ______ 2019.",
-            opts: ["for", "since", "in", "ago"],
-            ans: "since",
-            expl: "To'g'ri! '2019' — boshlanish nuqtasi. Shuning uchun 'since' to'g'ri."
+            q: "______ the weather good when you were in Samarkand?",
+            opts: ["Was", "Did", "Were", "Is"],
+            ans: "Was",
+            expl: "To'g'ri! 'the weather' bilan fe'l yo'q, faqat sifat ('good') bor. Shuning uchun 'Was' ishlatiladi."
           },
           {
-            q: "I am not hungry because I have ______ eaten lunch.",
-            opts: ["yet", "just", "ever", "since"],
-            ans: "just",
-            expl: "To'g'ri! 'Hozirgina' ma'nosida 'just' ishlatiladi."
+            q: "Yesterday I ______ my old friend at the cafe.",
+            opts: ["met", "meet", "was meet", "did met"],
+            ans: "met",
+            expl: "To'g'ri! 'meet' fe'lining o'tgan zamon shakli — 'met'."
           }
         ],
 
         hwPrompt: `
-          <strong>📝 2-Kun Uyga Vazifasi:</strong><br>
-          Bugungi qoidalar (for, since, already, yet) asosida 3 ta gap tuzing va ustozga yuboring.
+          <strong>📝 2-Kun Uyga Vazifasi (English File Unit 2):</strong><br>
+          O'tgan hafta yoki dam olish kuningiz haqida 3 ta gap yozing:<br>
+          1. Qayerga borganingiz haqida (Past Simple: <em>I went to...</em>).<br>
+          2. Nima ish qilmaganingiz haqida (Inkor: <em>I didn't...</em>).<br>
+          3. Bugungi fe'llardan kamida bittasini (masalan: <em>enjoy, decide, invite</em>) ishlating.
         `
       },
 
       3: {
         dateStr: "20-Sentyabr, Yakshanba",
         shortDate: "20-Sent • Yakshanba",
-        title: "Haftalik Level Check (Milestone)",
+        title: "Haftalik Level Check (Unit 1 & Unit 2)",
         unlockDate: new Date("2026-09-20T00:00:00+05:00"),
 
         slides: [
           {
             tag: "1-SLAYD • SINOV KUNI",
-            title: "🏆 Haftalik Level Check & Xulosa",
+            title: "🏆 1-Hafta Yakuniy Sinovi (Unit 1 & 2)",
             html: `
-              <div style="font-size: 17px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
-                Bugun — juma va shanba kunlari o'rgangan qoidalarimiz va 16 ta lug'at so'zlarimizni to'liq tekshirish kuni!<br><br>
-                Ushbu sinovdan so'ng, dushanba kunidan boshlab butun yangi haftalik rejamiz ochiladi.
+              <div style="font-size: 16px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                Bugun — <strong>Oxford English File Unit 1 va Unit 2</strong> mavzularini mustahkamlash kuni!<br><br>
+                • Present Simple vs Present Continuous<br>
+                • His-tuyg'u fe'llari (Stative verbs)<br>
+                • Past Simple va DID qoidalari<br><br>
+                Sinovni muvaffaqiyatli topshirgach, dushanba kunidan keyingi haftalik yangi darslar ochiladi!
               </div>
             `
           }
         ],
 
         lessonHtml: `
-          <h3>🏆 Haftalik Sinov: B1 Bosqichini Mustahkamlash</h3>
+          <h3>🏆 Haftalik Sinov: Unit 1 & Unit 2 Yakuni</h3>
           <p>
-            Ushbu yakshanba kunida biz o'rgangan barcha grammatika va 16 ta lug'at so'zlarini sinovdan o'tkazamiz.
+            Juma va shanba kunlari o'rgangan qoidalarimiz va 16 ta fe'l bo'yicha yengil sinov.
           </p>
         `,
 
         vocab: [
-          { word: "visit", pos: "fe'l", uz: "bormoq / ko'rgani bormoq", exEn: "She visited Bukhara.", exUz: "U Buxoroga borgan." },
-          { word: "forget", pos: "fe'l", uz: "unutmoq", exEn: "I forgot my key.", exUz: "Kalitimni unutdim." },
-          { word: "wait", pos: "fe'l", uz: "kutmoq", exEn: "Wait for me.", exUz: "Meni kuting." },
-          { word: "finish", pos: "fe'l", uz: "tugatmoq", exEn: "Finished already.", exUz: "Allaqachon tugadi." }
+          { word: "wake up", pos: "fe'l", uz: "uyg'onmoq", exEn: "Wake up early.", exUz: "Erta uyg'onmoq." },
+          { word: "spend", pos: "fe'l", uz: "sarflamoq", exEn: "Spend time wisely.", exUz: "Vaqtni to'g'ri sarflamoq." },
+          { word: "arrive", pos: "fe'l", uz: "yetib kelmoq", exEn: "Arrived safely.", exUz: "Eson-omon yetib keldi." },
+          { word: "enjoy", pos: "fe'l", uz: "rohatlanmoq", exEn: "Enjoy the lesson.", exUz: "Darsdan zavqlanmoq." }
         ],
 
         practice: [
           {
-            q: "Where is my phone? I ______ it everywhere, but I can't find it.",
-            opts: ["searched", "have searched", "search", "was searching"],
-            ans: "have searched",
-            expl: "Natijasi hozir kerak bo'lgani uchun Present Perfect ('have searched') to'g'ri."
+            q: "Where ______ your brother work?",
+            opts: ["does", "do", "is", "are"],
+            ans: "does",
+            expl: "To'g'ri! 'your brother' (he) uchun Present Simple savoli 'does' bilan yasaladi."
           },
           {
-            q: "I have been learning English ______ three months.",
-            opts: ["since", "for", "in", "from"],
-            ans: "for",
-            expl: "'three months' — vaqt davomiyligi bo'lgani uchun 'for' qo'yiladi."
+            q: "Look! It ______ outside.",
+            opts: ["is snowing", "snows", "snow", "are snowing"],
+            ans: "is snowing",
+            expl: "To'g'ri! 'Look!' ayni damda bo'layotgan ishni bildiradi (Present Continuous)."
+          },
+          {
+            q: "We ______ to the cinema last night.",
+            opts: ["went", "go", "did go", "was go"],
+            ans: "went",
+            expl: "To'g'ri! 'last night' — Past Simple, 'go' ning o'tgan shakli 'went'."
+          },
+          {
+            q: "I ______ coffee right now, but I ______ tea usually.",
+            opts: ["am drinking / prefer", "drink / am preferring", "am drinking / am preferring", "drink / prefer"],
+            ans: "am drinking / prefer",
+            expl: "To'g'ri! 'am drinking' ayni damda, 'prefer' esa his-fikr fe'li bo'lgani uchun -ing olmaydi."
           }
         ],
 
         hwPrompt: `
           <strong>🏆 Yakshanba Kungi Xulosa Vazifasi:</strong><br>
-          Ushbu hafta o'rgangan qoidalarimiz va yangi so'zlardan foydalanib, o'zingiz haqingizda 4-5 jumlali qisqa hikoya yozing va o'qituvchiga yuboring.
+          Bugungi kunga qadar o'rgangan barcha qoidalarimiz (Present Simple, Continuous va Past Simple)dan foydalanib, o'zingiz haqingizda 4 jumlali qisqa hikoya yozing va o'qituvchiga yuboring.
         `
       }
     };
